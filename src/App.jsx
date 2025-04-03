@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router"
 // Pages
 import AboutUs from "./pages/AboutUs.jsx"
 import Error from "./pages/Error.jsx"
+import FairyTale from "./pages/FairyTale.jsx"
 import Home from './pages/Home.jsx'
 import MakingOf from "./pages/MakingOf.jsx"
 import Sprookjes from "./pages/Sprookjes.jsx"
@@ -30,6 +31,7 @@ function App() {
 
             <Route path="*" element={<Error />} />
           </Route>
+          <Route path="/Fairy-tale" element={<FairyTale />} />
         </Routes>
       </BrowserRouter>
     </>
