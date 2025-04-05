@@ -1,8 +1,10 @@
+import { Canvas } from '@react-three/fiber'
+
 const FairyTale = () => {
-    return(
-        <>
-        
-        </>
+    return (
+        <Canvas>
+           
+        </Canvas>
     )
 }
 
