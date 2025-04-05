@@ -4,8 +4,8 @@ const Text = ({ text, position }) => {
 
     return (
         <Text3D
-            font="/fonts/helvetiker_regular.typeface.json"
-            size={0.75}
+            font="/fonts/luckiest_guy.json"
+            size={0.5}
             height={0.08}
             curveSegments={8}
             bevelEnabled={true}

@@ -1,7 +1,11 @@
 import { Canvas } from '@react-three/fiber'
 import { useEffect, useState } from 'react'
 
+//Components
 import CloudScene from '../components/CloudScene'
+
+//CSS
+import '../components/FairyTale.css'
 
 const FairyTale = () => {
     //zet de muispositie standaard op 0 en 0
@@ -18,13 +22,19 @@ const FairyTale = () => {
     }, [])
 
     return (
-        <Canvas>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[10, 10, 5]} intensity={1} />
-
-            {/* CloudScene handles the clouds and parallax effect */}
-            <CloudScene mousePosition={mousePosition} />
-        </Canvas>
+        <div className="scroll-wrapper">
+            <div className="opening-scene scene">
+                <Canvas>
+                    <ambientLight intensity={0.5} />
+                    <directionalLight position={[10, 10, 5]} intensity={1} />
+                    
+                    <CloudScene mousePosition={mousePosition} />
+                </Canvas>
+            </div>
+            <div className="scene scene-2">
+>
+            </div>
+        </div>
     )
 }
 
