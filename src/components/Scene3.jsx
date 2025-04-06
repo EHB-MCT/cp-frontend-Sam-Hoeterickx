@@ -3,18 +3,18 @@ import { useState } from "react";
 
 //Compnentw
 import House from "./House.jsx";
-import { PlaneGeometry } from "three";
 
 const Scene3 = () => {
-    const [enableControls, setEnableControls] = useState(false);
+    // const [enableControls, setEnableControls] = useState(false);
 
-    const handleClick = () => {
-        setEnableControls(!enableControls);
-    };
+    // const handleClick = () => {
+    //     setEnableControls(!enableControls);
+    // };
 
+    //
     return (
         <>
-            {enableControls && <OrbitControls />}
+            {/* {enableControls && <OrbitControls />} */}
             <group>
                 {/* Left house */}
                 <House
@@ -47,15 +47,15 @@ const Scene3 = () => {
                 />
 
                 <mesh rotation={ [-Math.PI * 0.5, 0, -Math.PI * 0.2] } position={ [0, -1.5, 0] }>
-                    <planeGeometry args={ [10, 10] } />
+                    <planeGeometry args={ [100, 100] } />
                     <meshStandardMaterial color={"green"} />
                 </mesh>
             </group>
-            <Html>
+            {/* <Html>
                 <button onClick={handleClick}>
                     {enableControls ? "Disable OrbitControls" : "Enable OrbitControls"}
                 </button>
-            </Html>
+            </Html> */}
         </>
     );
 };
