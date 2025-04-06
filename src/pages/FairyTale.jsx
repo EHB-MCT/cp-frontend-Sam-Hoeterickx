@@ -56,7 +56,6 @@ const FairyTale = () => {
                     />
 
                     <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"}/>
-                    <PigScene mousePosition={ mousePosition } />
                 </Canvas>
             </div>
             
