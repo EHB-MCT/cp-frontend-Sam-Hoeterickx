@@ -16,6 +16,11 @@ const FairyTale = () => {
     //zet de muispositie standaard op 0 en 0
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
+    window.addEventListener("scroll", () => {
+        let scroll = window.scrollY;
+        console.log(scroll);
+    });
+
     useEffect(() => {
         const handleMouseMovement = (e) => {
             const x = (e.clientX / window.innerWidth) * 2 - 1

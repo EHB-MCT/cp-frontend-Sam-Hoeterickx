@@ -7,8 +7,8 @@ const Prop = ({ path ,scale, position, rotation }) => {
     if(gltf){
         // console.log("active")
         // console.log(gltf)
-        console.log("gltf is not loaded")
-        console.log(gltf)
+        // console.log("gltf is not loaded")
+        // console.log(gltf)
     }
 
     return(

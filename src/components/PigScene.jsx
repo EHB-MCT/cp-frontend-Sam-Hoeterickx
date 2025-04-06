@@ -21,7 +21,7 @@ const PigScene = ({ mousePosition }) => {
             <Pig 
                 scale={ 1.2 }
                 position={[
-                    3.55 - smoothMousePosition.current.x * 0.45,
+                    4.05 - smoothMousePosition.current.x * 0.45,
                     -2.0 + smoothMousePosition.current.y * 0.45, 
                     0]}
                 rotation={[0, - Math.PI * 0.25, 0]}
@@ -29,28 +29,46 @@ const PigScene = ({ mousePosition }) => {
             <Pig 
                 scale={ 1.0 }
                 position={[
-                    4.55 - smoothMousePosition.current.x * 0.45, 
+                    5.5 - smoothMousePosition.current.x * 0.45, 
                     -0.5 + smoothMousePosition.current.y * 0.45, 
-                    -0.3]}
+                    -2]}
                 rotation={[0, - Math.PI * 0.25, 0]}
             />
             <Pig 
                 scale={ 1.0 }
                 position={[
-                    5.5 - smoothMousePosition.current.x * 0.45, 
+                    7 - smoothMousePosition.current.x * 0.45, 
                     -1.75 + smoothMousePosition.current.y * 0.45,
-                    .2]}
+                    -1]}
                 rotation={[0, - Math.PI * 0.25, 0]}
             />
 
             <Prop
                 path={"../../public/models/stylized_stones_props.glb"}
-                scale={ 2.75 }
+                scale={ 4.75 }
                 position={[
-                    -6 - smoothMousePosition.current.x * 0.45,
-                    -3.2 + smoothMousePosition.current.y * 0.45, 
-                    0]}
+                    -9.5 - smoothMousePosition.current.x * 0.45,
+                    -5.5 + smoothMousePosition.current.y * 0.45, 
+                    -3]}
                 rotation={[0, - Math.PI * 0.4, 0]}
+            />
+            <Prop
+                path={"../../public/models/wooden_prop.glb"}
+                scale={ 0.75 }
+                position={[
+                    -4 - smoothMousePosition.current.x * 0.45,
+                    -3.0 + smoothMousePosition.current.y * 0.45, 
+                    -1]}
+                rotation={[- Math.PI * 0.65, Math.PI * 0.5, 0]}
+            />
+            <Prop
+                path={"../../public/models/wooden_prop.glb"}
+                scale={ 1.40 }
+                position={[
+                    -4 - smoothMousePosition.current.x * 0.45,
+                    -4 + smoothMousePosition.current.y * 0.45, 
+                    -3]}
+                rotation={[- Math.PI * 0.45, 0, - Math.PI * 0.8]}
             />
         </>
     )
