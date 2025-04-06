@@ -7,19 +7,20 @@ import AnimatedText from '../components/AnimatedText.jsx'
 import CloudScene from '../components/CloudScene.jsx'
 import Lights from '../components/Lights.jsx'
 import PigScene from '../components/PigScene.jsx'
-
+import Scene3 from '../components/Scene3.jsx'
 
 //CSS
 import '../components/FairyTale.css'
+
 
 const FairyTale = () => {
     //zet de muispositie standaard op 0 en 0
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
-    window.addEventListener("scroll", () => {
-        let scroll = window.scrollY;
-        console.log(scroll);
-    });
+    // window.addEventListener("scroll", () => {
+    //     let scroll = window.scrollY;
+    //     console.log(scroll);
+    // });
 
     useEffect(() => {
         const handleMouseMovement = (e) => {
@@ -56,6 +57,19 @@ const FairyTale = () => {
                     />
 
                     <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"}/>
+                </Canvas>
+            </div>
+            <div className="scene">
+                <Canvas 
+                    id='canvas'
+                >
+                    <Lights
+                        intensity={ 1.5 }
+                        position={ [10, 10, 5] }
+                    />
+
+                    <Scene3 />
+
                 </Canvas>
             </div>
             
