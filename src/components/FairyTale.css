@@ -1,10 +1,15 @@
 .scroll-wrapper{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100dvw;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+
+    background: rgb(6,84,171);
+    background: linear-gradient(180deg, rgba(6,84,171,1) 0%, rgba(0,212,255,1) 53%);
+    /* background: rgb(6,84,171);
+    background: linear-gradient(180deg, rgba(6,84,171,1) 0%, rgba(0,212,255,1) 44%, rgba(0,204,47,1) 100%); */
 }
 
 .scene{
