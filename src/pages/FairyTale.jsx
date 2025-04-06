@@ -2,7 +2,9 @@ import { Canvas } from '@react-three/fiber'
 import { useEffect, useState } from 'react'
 
 //Components
-import CloudScene from '../components/CloudScene'
+import CloudScene from '../components/CloudScene.jsx'
+import Lights from '../components/Lights.jsx'
+import Scene2 from '../components/Scene2.jsx'
 
 //CSS
 import '../components/FairyTale.css'
@@ -25,13 +27,16 @@ const FairyTale = () => {
         <div className="scroll-wrapper">
             <div className="opening-scene scene">
                 <Canvas id='canvas'>
-                    <ambientLight intensity={0.5} />
-                    <directionalLight position={[10, 10, 5]} intensity={1} />
+                   <Lights />
                     
                     <CloudScene mousePosition={mousePosition} />
                 </Canvas>
             </div>
             <div className="scene scene-2">
+                <Canvas id='canvas'>
+                    
+                    <Scene2/>
+                </Canvas>
             </div>
         </div>
     )
