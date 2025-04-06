@@ -59,10 +59,8 @@ const FairyTale = () => {
                     <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"}/>
                 </Canvas>
             </div>
-            <div className="scene">
-                <Canvas 
-                    id='canvas'
-                >
+            <div className="scene scene-3">
+                <Canvas id='canvas'>
                     <Lights
                         intensity={ 1.5 }
                         position={ [10, 10, 5] }

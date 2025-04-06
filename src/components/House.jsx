@@ -5,9 +5,10 @@ import { GLTFLoader } from "three/examples/jsm/Addons.js"
 
 //Components
 import Pig from "./Pig.jsx"
+import { Text3D } from "@react-three/drei";
 
 
-const House = ({ path, houseScale, housePosition, houseRotation, pigScale, pigPosition, pigRotation }) => {
+const House = ({ path, houseScale, housePosition, rotation, pigScale, pigPosition }) => {
 
     const gltf = useLoader(GLTFLoader, path);
 
@@ -16,14 +17,14 @@ const House = ({ path, houseScale, housePosition, houseRotation, pigScale, pigPo
             <Pig 
                 scale={ pigScale }
                 position={ pigPosition }
-                rotation={ pigRotation }
+                rotation={ rotation }
             />
 
             <primitive
                 object={ gltf.scene.clone() }
                 scale={ houseScale }
                 position={ housePosition }
-                rotation={ houseRotation }
+                rotation={ rotation }
                 receiveShadow
                 castShadow
             />
