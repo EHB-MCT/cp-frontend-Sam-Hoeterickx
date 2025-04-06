@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Center, Html } from '@react-three/drei'
 import { motion } from 'framer-motion'
@@ -11,20 +11,30 @@ import Text from './Text.jsx'
 import './CloudScene.css'
 
 const CloudScene = ({ mousePosition }) => {
-    const smoothMousePosition = useRef({ x: 0, y: 0 })
+    const smoothMousePosition = useRef({ x: 0, y: 0 });
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 1024);
+        }
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+    })
 
     useFrame(() => {
         // Smoothly interpolate the mouse position
-        smoothMousePosition.current.x += (mousePosition.x - smoothMousePosition.current.x) * 0.1
-        smoothMousePosition.current.y += (mousePosition.y - smoothMousePosition.current.y) * 0.1
+        smoothMousePosition.current.x += (mousePosition.x - smoothMousePosition.current.x) * 0.1;
+        smoothMousePosition.current.y += (mousePosition.y - smoothMousePosition.current.y) * 0.1;
     })
 
     return (
         <>
             <Cloud
-                scale={1.5}
+                scale={isMobile ? 0.5 : 1.5}
                 position={[
-                    -5.75 - smoothMousePosition.current.x * 0.45,
+                    isMobile ? -1.3 : -5.75 - smoothMousePosition.current.x * 0.45,
                     -1.55 - smoothMousePosition.current.y * 0.45,
                     -1,
                 ]}
@@ -33,7 +43,7 @@ const CloudScene = ({ mousePosition }) => {
             <Cloud
                 scale={1}
                 position={[
-                    5 - smoothMousePosition.current.x * 0.45,
+                    isMobile ? 2 : 5 - smoothMousePosition.current.x * 0.45,
                     2 - smoothMousePosition.current.y * 0.45,
                     0,
                 ]}
@@ -42,15 +52,15 @@ const CloudScene = ({ mousePosition }) => {
             <Cloud
                 scale={2}
                 position={[
-                    -6 - smoothMousePosition.current.x * 0.45,
+                    isMobile ? -2 : -6 - smoothMousePosition.current.x * 0.45,
                     4.5 - smoothMousePosition.current.y * 0.45,
                     -4,
                 ]}
             />
             <Cloud
-                scale={4}
+                scale={isMobile ? 2 : 4}
                 position={[
-                    4.25 - smoothMousePosition.current.x * 0.45,
+                    isMobile ? 1 : 4.25 - smoothMousePosition.current.x * 0.45,
                     -5 - smoothMousePosition.current.y * 0.45,
                     -6,
                 ]}
@@ -67,21 +77,6 @@ const CloudScene = ({ mousePosition }) => {
                     </motion.h1>
                 </div>
             </Html>
-
-            {/* <Center>
-                    <Text 
-                        text="Once upon a time"
-                        position={[0, 1, 0]}
-                    />
-                    <Text 
-                        text="three little pigs"
-                        position={[0, 0, 0]}
-                    />
-                    <Text 
-                        text="lived in a house"
-                        position={[0, -1, 0]}
-                    />
-            </Center> */}
         </>
     )
 }

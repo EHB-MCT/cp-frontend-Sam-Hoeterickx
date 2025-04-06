@@ -24,7 +24,7 @@ const FairyTale = () => {
     return (
         <div className="scroll-wrapper">
             <div className="opening-scene scene">
-                <Canvas>
+                <Canvas id='canvas'>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[10, 10, 5]} intensity={1} />
                     
@@ -32,7 +32,6 @@ const FairyTale = () => {
                 </Canvas>
             </div>
             <div className="scene scene-2">
->
             </div>
         </div>
     )

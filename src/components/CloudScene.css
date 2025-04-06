@@ -9,8 +9,18 @@
     font-style: normal;
 
     h1{
-        font-size: 82pt;
-        width: 90vh;
+        font-size: 5rem;
+        width: 90vw;
         margin: 0;
     }
+}
+
+@media(max-width: 768px) {
+    .hero-text{
+        h1{
+            max-width: 60vh;
+            font-size: 3rem;
+        }
+    }
+    
 }

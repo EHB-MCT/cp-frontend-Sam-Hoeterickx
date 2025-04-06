@@ -5,5 +5,13 @@ html, body, #root{
     margin: 0;
     padding: 0;
 
-    background-color: skyblue;
+    background: rgb(6,84,171);
+    background: linear-gradient(180deg, rgba(6,84,171,1) 0%, rgba(0,212,255,1) 100%);
 }
+
+Canvas#canvas{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* Compare this snippet from src/components/CloudScene.css: */
