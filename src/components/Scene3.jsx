@@ -19,6 +19,7 @@ const Scene3 = () => {
     const { camera } = useThree();
     const [angleIndex, setAngleIndex] = useState(0);
     const [selectedPig, setSelectedPig] = useState(null);
+    const [forestData, setForestData] = useState([]);
 
     useEffect(() => {
         const angle = angleIndex * angleIncrease;
@@ -36,6 +37,35 @@ const Scene3 = () => {
             }
         })
     }, [angleIndex])
+
+    useEffect(() => {
+        const trees = [];
+        for(let i = 0; i < 100; i++){
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 10 + Math.random()* 10;
+            const x = Math.cos(angle) * distance;
+            const z = Math.sin(angle) * distance
+
+            let path;
+            if(i % 2 === 0){
+                path = "../../public/models/round-tree.glb";
+            }else{
+                path = "../../public/models/tree-1.glb";
+            }
+
+            const scale = (Math.random() * 2) + 1;
+
+            trees.push({
+                key: i,
+                path: path,
+                scale: scale,
+                position: [x, 0, z],
+                rotation: [0, Math.random() * Math.PI *2, 0]
+            });
+        } 
+        setForestData(trees)
+        console.log(trees)
+    }, [])
 
     const next = () => {
         setAngleIndex((previousAngle) => {
@@ -156,6 +186,15 @@ const Scene3 = () => {
 
             <group>
                 {/* Forest */}
+                {forestData.map((tree) => (
+                    <Tree
+                        key={tree.key}
+                        path={tree.path}
+                        scale={tree.scale}
+                        position={tree.position}
+                        rotation={tree.rotation}
+                    />
+                ))}
             </group>
         </>
     );
