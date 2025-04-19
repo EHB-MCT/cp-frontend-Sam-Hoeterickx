@@ -6,12 +6,10 @@ import { useEffect, useState } from 'react'
 import AnimatedText from '../components/AnimatedText.jsx'
 import CloudScene from '../components/CloudScene.jsx'
 import Lights from '../components/Lights.jsx'
-import PigScene from '../components/PigScene.jsx'
 import Scene3 from '../components/Scene3.jsx'
 
 //CSS
 import '../components/FairyTale.css'
-
 
 const FairyTale = () => {
     //zet de muispositie standaard op 0 en 0

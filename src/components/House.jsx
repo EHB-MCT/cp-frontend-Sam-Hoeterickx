@@ -3,7 +3,6 @@ import { GLTFLoader } from "three/examples/jsm/Addons.js"
 
 //Components
 import Pig from "./Pig.jsx"
-import { Text3D } from "@react-three/drei";
 
 
 const House = ({ path, houseScale, housePosition, rotation, pigScale, pigPosition }) => {
