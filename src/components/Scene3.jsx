@@ -64,7 +64,6 @@ const Scene3 = () => {
             });
         } 
         setForestData(trees)
-        console.log(trees)
     }, [])
 
     const next = () => {
@@ -103,22 +102,29 @@ const Scene3 = () => {
     
     return (
         <>
-            <Html position={[0, 1, 1]}>
-                <div style={{ display: 'flex', gap: '1rem', background: 'rgba(255,255,255,0.85)', padding: '10px', borderRadius: '10px' }}>
-                    <button
-                        onClick={ previous }>
-                        Previous
-                    </button>
-                    <button
-                        onClick={ selectPig }>
-                        Select
-                    </button>
-                    <button
-                        onClick={ next }>
-                        Next
-                    </button>
-                </div>
-            </Html>
+            <primitive object={camera}>
+                <group position={[0, 0, -2]}>
+                    <Html
+                        className="button-outer-wrapper" 
+                        fullscreen          
+                    >
+                        <div className="button-wrapper">
+                            <button
+                                onClick={ previous }>
+                                Previous
+                            </button>
+                            <button
+                                onClick={ selectPig }>
+                                Select
+                            </button>
+                            <button
+                                onClick={ next }>
+                                Next
+                            </button>
+                        </div>
+                    </Html>
+                </group>
+            </primitive>
             <group>
                 {/* Left house */}
                 <House
