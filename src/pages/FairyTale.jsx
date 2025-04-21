@@ -1,24 +1,22 @@
 import { Canvas } from '@react-three/fiber'
 import { useEffect, useState } from 'react'
 
-
-//Components
+// Components
 import AnimatedText from '../components/AnimatedText.jsx'
 import CloudScene from '../components/CloudScene.jsx'
 import Lights from '../components/Lights.jsx'
 import Scene3 from '../components/Scene3.jsx'
 
-//CSS
+// CSS
 import '../components/FairyTale.css'
 
 const FairyTale = () => {
-    //zet de muispositie standaard op 0 en 0
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+    const [selectedPig, setSelectedPig] = useState(null);
 
-    // window.addEventListener("scroll", () => {
-    //     let scroll = window.scrollY;
-    //     console.log(scroll);
-    // });
+    useEffect(() => {
+        console.log(selectedPig)
+    }, [selectedPig])
 
     useEffect(() => {
         const handleMouseMovement = (e) => {
@@ -34,41 +32,33 @@ const FairyTale = () => {
         <div className="scroll-wrapper">
             <div className="opening-scene scene">
                 <Canvas id='canvas'>
-                   <Lights
-                        intensity={1.5}
-                        position={[10, 10, 5]}
-                   />
-                    
+                    <Lights intensity={1.5} position={[10, 10, 5]} />
                     <CloudScene mousePosition={mousePosition} />
                 </Canvas>
             </div>
-            <div className="scene">
-                <Canvas id='canvas'>
-                    <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."}/>
-                </Canvas>
-            </div>
-            <div className="scene">
-                <Canvas id='canvas'>
-                    <Lights
-                        intensity={1.5}
-                        position={[10, 10, 5]}
-                    />
 
-                    <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"}/>
+            <div className="scene">
+                <Canvas id='canvas'>
+                    <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
                 </Canvas>
             </div>
+
+            <div className="scene">
+                <Canvas id='canvas'>
+                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                    <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
+                </Canvas>
+            </div>
+
             <div className="scene scene-3">
                 <Canvas id='canvas'>
-                    <Lights
-                        intensity={ 1.5 }
-                        position={ [10, 10, 5] }
+                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                    <Scene3
+                        selectedPig={selectedPig}
+                        setSelectedPig={setSelectedPig}
                     />
-
-                    <Scene3 />
-
                 </Canvas>
             </div>
-            
         </div>
     )
 }

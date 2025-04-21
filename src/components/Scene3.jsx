@@ -8,7 +8,7 @@ import House from "./House.jsx";
 import Tree from "./Tree.jsx";
 
 
-const Scene3 = () => {
+const Scene3 = ({ selectedPig, setSelectedPig }) => {
     const center = [0, 0, -3];
     const radius = 6;
     const cameraHeight = 0.3;
@@ -18,12 +18,10 @@ const Scene3 = () => {
 
     const { camera } = useThree();
     const [angleIndex, setAngleIndex] = useState(0);
-    const [selectedPig, setSelectedPig] = useState(null);
     const [forestData, setForestData] = useState([]);
 
     useEffect(() => {
         const angle = angleIndex * angleIncrease;
-
         const x = center[0] + radius * Math.sin(angle);
         const z = center[2] + radius * Math.cos(angle);
 
@@ -35,14 +33,14 @@ const Scene3 = () => {
             onUpdate: () => {
                 camera.lookAt(...center)
             }
-        })
-    }, [angleIndex])
+        });
+    }, [angleIndex]);
 
     useEffect(() => {
         const trees = [];
-        for(let i = 0; i < 150; i++){
+        for (let i = 0; i < 150; i++) {
             const angle = Math.random() * Math.PI * 2;
-            const distance = 10 + Math.random()* 10;
+            const distance = 10 + Math.random() * 10;
             const x = Math.cos(angle) * distance;
             const z = Math.sin(angle) * distance
 
@@ -84,20 +82,17 @@ const Scene3 = () => {
             return next;
         });
     };
-
     const selectPig = () => {
         let pig;
-
-        if(angleIndex === 0){
-            pig = "Wooden"
-        }else if(angleIndex === 1){
-            pig = "Stone"
-        }else if(angleIndex === 2){
-            pig = "Straw"
-        }else
-
-        setSelectedPig(pig)
-    }
+        if (angleIndex === 0) {
+            pig = "Wooden";
+        } else if (angleIndex === 1) {
+            pig = "Stone";
+        } else if (angleIndex === 2) {
+            pig = "Straw";
+        }
+        setSelectedPig(pig);
+    };
  
     
     return (
