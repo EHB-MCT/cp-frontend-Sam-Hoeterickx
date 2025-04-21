@@ -10,6 +10,7 @@ import Scene3 from '../components/Scene3.jsx'
 // CSS
 import '../components/FairyTale.css'
 
+
 const FairyTale = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
     const [selectedPig, setSelectedPig] = useState(null);

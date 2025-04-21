@@ -7,7 +7,6 @@ import { useThree } from "@react-three/fiber";
 import House from "./House.jsx";
 import Tree from "./Tree.jsx";
 
-
 const Scene3 = ({ selectedPig, setSelectedPig }) => {
     const center = [0, 0, -3];
     const radius = 6;
