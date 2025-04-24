@@ -1,9 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 
+//Routes
+import { ERROR_ROUTE } from "../../../shared/Error/error.route";
+import { HOME_ROUTE } from "../../Home/home.route";
+
+
 //Components
 import { App } from "../App";
-import { Error } from "../../../shared/Error";
-import { Home } from "../../Home";
 
 export const Root = () => {
 
@@ -13,13 +16,14 @@ export const Root = () => {
             element: <App />,
             children: [
                 {
-                    path:'*',
-                    element: <Error />
+                    path:ERROR_ROUTE.path,
+                    element: ERROR_ROUTE.element
                 },
                 {
-                    path: '/home',
-                    element: <Home />
+                    path: HOME_ROUTE.path,
+                    element: HOME_ROUTE.element
                 },
+
 
             ]
         }
