@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router"
 //Components
 import { App } from "../App";
 import { Error } from "../../../shared/Error";
+import { Home } from "../../Home";
 
 export const Root = () => {
 
@@ -17,7 +18,7 @@ export const Root = () => {
                 },
                 {
                     path: '/home',
-                    element: <div>Home</div>
+                    element: <Home />
                 },
 
             ]
