@@ -1,0 +1,1 @@
+export { Fairytale } from './pages/fairytale.page.tsx'

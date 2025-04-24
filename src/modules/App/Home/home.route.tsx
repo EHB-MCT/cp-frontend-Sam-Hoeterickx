@@ -1,5 +1,5 @@
 //Commponent
-import { Home } from "./pages/Home.pages";
+import { Home } from "./pages/Home.page";
 
 export const HOME_ROUTE = {
     path: '/home',
