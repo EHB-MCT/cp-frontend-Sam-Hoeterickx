@@ -1,0 +1,62 @@
+@use 'reset' as *;
+@import url("https://use.typekit.net/zfk7jjs.css");
+
+:root{
+    --font-family: "itc-avant-garde-gothic-pro";
+    --font-weight-bold: 700;
+    --font-weight-demi: 600;
+    --font-weight-medium: 500;
+
+    --title-margin: 24px 0;
+    --smaller-title-margin: 16px 0;
+}
+
+body, html{
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    background-color: #131212;
+    color: #fff;
+}
+
+.wrapper{
+    width: 95dvw;
+    margin-top: 5vh;
+}
+
+div{
+    margin: 32px 0;
+}
+
+h1{
+    font-size: 48pt;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+
+    margin: var(--title-margin);
+}
+h2{
+    font-size: 32pt;
+    font-weight: var(--font-weight-demi);
+    text-align: center;
+
+    margin: var(--title-margin);
+}
+h3{
+    font-size: 24pt;
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+
+    margin: var(--smaller-title-margin);
+}
+h4{
+    font-size: 16pt;
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+
+    margin: var(--smaller-title-margin);
+}
+
+.oblique{
+    font-style: italic;
+}
