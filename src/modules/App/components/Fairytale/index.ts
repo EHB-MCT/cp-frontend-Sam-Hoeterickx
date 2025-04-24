@@ -1,1 +1,1 @@
-export { Fairytale } from './pages/fairytale.page.tsx'
+export { Fairytale } from './pages/Fairytale.page.tsx'

@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router"
 
+//Components
+import { Navigation } from "../../../shared/Navigation";
+
 export const App = () => {
 
   const NAVIGATE = useNavigate();
@@ -13,8 +16,8 @@ export const App = () => {
 
   return (
     <div>
-      <h1>Hello world</h1>
-      <Outlet />
+      <Navigation />
+      <Outlet /> 
     </div>
   )
 }

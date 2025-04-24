@@ -15,6 +15,7 @@ export const Root = () => {
 
     const ROUTE = createBrowserRouter([
         {
+            //ROUTES voor paginas met navigatie
             path: '/',
             element: <App />,
             children: [
@@ -38,6 +39,7 @@ export const Root = () => {
             ]
         },
         {
+            //ROUTE voor eigen fairytale zonder navigatie
             path: FAIRY_TALE_ROUTE.path,
             element: FAIRY_TALE_ROUTE.element
         }
