@@ -1,5 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
-import { App } from "../App"
+
+//Components
+import { App } from "../App";
+import { Error } from "../../../shared/Error";
 
 export const Root = () => {
 
@@ -9,13 +12,14 @@ export const Root = () => {
             element: <App />,
             children: [
                 {
+                    path:'*',
+                    element: <Error />
+                },
+                {
                     path: '/home',
                     element: <div>Home</div>
                 },
-                {
-                    path:'*',
-                    element: <div>404</div>
-                }
+
             ]
         }
     ])
