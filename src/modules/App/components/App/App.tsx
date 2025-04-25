@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router"
 
 //Components
-import { Navigation } from "../../../shared/Navigation";
+import { Footer } from "../../../shared/Footer";
 
+import { Navigation } from "../../../shared/Navigation";
 export const App = () => {
 
   const NAVIGATE = useNavigate();
@@ -18,6 +19,7 @@ export const App = () => {
     <div>
       <Navigation />
       <Outlet /> 
+      <Footer />
     </div>
   )
 }
