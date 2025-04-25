@@ -1,9 +1,9 @@
 import { FC } from "react"
 
 //Types
-import { WidgetType } from "../../Types/WidgetType"
+import { WidgetType } from "../.././../../../Types/WidgetType"
 
-export const LargeWidget: FC<WidgetType> = ({ id, title, theme, image }) => {
+export const Widget: FC<WidgetType> = ({ id, title, theme, image }) => {
     return (
         <div id={ id }>
             <img src={image} alt={`picture of fairytale: ${title}`} />

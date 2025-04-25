@@ -13,6 +13,7 @@ import { SearchBar } from "../SearchBar"
 export const Navigation = () => {
     return (
         <nav>
+            <img src="./" alt="Logo" />
             <NavLink to={ABOUT_US_ROUTE.path}>About</NavLink>
             <NavLink to={MAKING_OF_ROUTE.path}>Making Of</NavLink>
             <NavLink to={ALL_FAIRY_TALES_ROUTE.path}>Explore</NavLink>

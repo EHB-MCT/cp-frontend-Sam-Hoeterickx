@@ -1,6 +1,6 @@
 export interface WidgetType {
     id: string;
     title: string;
-    description: string;
+    theme: string;
     image: string;
 }
