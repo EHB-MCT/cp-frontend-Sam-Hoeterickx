@@ -3,9 +3,14 @@ import { Outlet, useNavigate } from "react-router"
 
 //Components
 import { Footer } from "../../../shared/Footer";
-
 import { Navigation } from "../../../shared/Navigation";
+
+//Routes
 import { ALL_FAIRY_TALES_ROUTE } from "../AllFairyTales/allFairyTales.route";
+
+//CSS
+import '../../../../styles/base/_index.scss'
+
 export const App = () => {
 
   const NAVIGATE = useNavigate();
@@ -17,7 +22,7 @@ export const App = () => {
   }, [])
 
   return (
-    <div>
+    <div className="outer-wrapper">
       <Navigation />
       <Outlet /> 
       <Footer />

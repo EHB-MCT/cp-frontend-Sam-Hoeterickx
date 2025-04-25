@@ -1,62 +1,67 @@
 @use 'reset' as *;
-@import url("https://use.typekit.net/zfk7jjs.css");
+@import 'https://fonts.googleapis.com/css2?family=Bungee&display=swap';
 
 :root{
-    --font-family: "itc-avant-garde-gothic-pro";
-    --font-weight-bold: 700;
-    --font-weight-demi: 600;
-    --font-weight-medium: 500;
+    --title-font-family: "Bungee";
+    --title-font-weight: 400;
+
+    --main-font-color: #1d1d1b;
+    --title-font-color: #E51131;
+    --background-color: #fff;
 
     --title-margin: 24px 0;
     --smaller-title-margin: 16px 0;
 }
 
-body, html{
-    font-family: var(--font-family);
-    display: flex;
-    justify-content: center;
-    background-color: #131212;
-    color: #fff;
+body{
+    font-family: "Helvetica Neue";
+
+    width: 100dvw;
+
+    background-color: var(--background-color);
+    color: var(--main-font-color);
 }
 
-.wrapper{
-    width: 95dvw;
-    margin-top: 5vh;
+.outer-wrapper{
+    max-width: 90%;
+    margin: 0 5%;
 }
 
-div{
-    margin: 32px 0;
-}
 
 h1{
     font-size: 48pt;
-    font-weight: var(--font-weight-bold);
-    text-align: center;
+    font-family: var(--title-font-family);
+    font-weight: var(--title-font-weight);
+    color: var(--title-font-color);
 
     margin: var(--title-margin);
 }
 h2{
     font-size: 32pt;
-    font-weight: var(--font-weight-demi);
-    text-align: center;
+    font-family: var(--title-font-family);
+    font-weight: var(--title-font-weight);
+    color: var(--title-font-color);
 
     margin: var(--title-margin);
 }
 h3{
     font-size: 24pt;
-    font-weight: var(--font-weight-medium);
-    text-align: center;
+    font-family: var(--title-font-family);
+    font-weight: var(--title-font-weight);
 
     margin: var(--smaller-title-margin);
 }
 h4{
     font-size: 16pt;
-    font-weight: var(--font-weight-medium);
-    text-align: center;
+    font-family: var(--title-font-family);
+    font-weight: var(--title-font-weight);
 
     margin: var(--smaller-title-margin);
 }
 
-.oblique{
-    font-style: italic;
+@media(min-width:1640px){
+    .outer-wrapper{
+        max-width: 1520px;
+        margin: 0 auto;
+    }
 }

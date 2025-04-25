@@ -1,4 +1,5 @@
 import { NavLink } from "react-router"
+import clsx from "clsx"
 
 //Routes
 import { ABOUT_US_ROUTE } from "../../App/components/AboutUs/about.route"
@@ -9,16 +10,20 @@ import { MAKING_OF_ROUTE } from "../../App/components/Makingof/makingOf.route"
 //Components
 import { SearchBar } from "../SearchBar"
 
+//CSS
+import styles from "./navigation.module.scss"
 
 export const Navigation = () => {
     return (
-        <nav>
-            <img src="./" alt="Logo" />
-            <NavLink to={ABOUT_US_ROUTE.path}>About</NavLink>
-            <NavLink to={MAKING_OF_ROUTE.path}>Making Of</NavLink>
+        <nav className={clsx(styles["navigation"])}>
+            <img className={clsx(styles['navigation--logo'])} src="Logo_cp_front-end.svg" alt="Logo" />
+            <div className={clsx(styles["navigation--links"])}>
             <NavLink to={ALL_FAIRY_TALES_ROUTE.path}>Explore</NavLink>
-            <NavLink to={FAIRY_TALE_ROUTE.path}>Fairytale</NavLink>
-            <SearchBar />
+                <NavLink to={ABOUT_US_ROUTE.path}>About</NavLink>
+                <NavLink to={MAKING_OF_ROUTE.path}>Making Of</NavLink>
+                {/* <NavLink to={FAIRY_TALE_ROUTE.path}>Fairytale</NavLink> */}
+                <SearchBar />
+            </div>
         </nav>
     )
 }

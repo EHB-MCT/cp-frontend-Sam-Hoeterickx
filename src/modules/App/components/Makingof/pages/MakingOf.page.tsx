@@ -7,7 +7,7 @@ export const MakingOf = () => {
 
 
     return (
-        <div>
+        <>
             <h1>Making Of</h1>
             <div className="banner-wrapper">
                 <img src="./" alt="banner image of fairytale:" />
@@ -56,6 +56,6 @@ export const MakingOf = () => {
                     Deze illustratie is gemaakt door de illustrator van het verhaal. Het is een afbeelding van de hoofdpersoon in het verhaal, die zich in een magische omgeving bevindt. De kleuren zijn levendig en de details zijn prachtig, waardoor het lijkt alsof je zelf in het verhaal bent beland.
                 </p>
             </section>
-        </div>
+        </>
     )
 }

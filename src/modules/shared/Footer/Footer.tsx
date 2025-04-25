@@ -6,7 +6,7 @@ import { ABOUT_US_ROUTE } from "../../App/components/AboutUs/about.route"
 export const Footer = () => {
     return(
         <footer>
-            <img src="./" alt="Logo" />
+            <img src="Logo_cp_front-end.svg" alt="Logo" />
             <p>23 studenten van de opleiding MCT die kozen ...</p>
             <Link to={ABOUT_US_ROUTE.path}>About us</Link>
         </footer>

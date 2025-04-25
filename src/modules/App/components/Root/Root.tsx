@@ -10,6 +10,9 @@ import { MAKING_OF_ROUTE } from "../Makingof/makingOf.route";
 //Components
 import { App } from "../App";
 
+//CSS
+import '../../../../styles/main.scss'
+
 
 export const Root = () => {
 

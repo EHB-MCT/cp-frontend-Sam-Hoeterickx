@@ -1,7 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.scss'
 import { Root } from './modules/App/components/Root'
+
+//CSS
+import './index.scss'
+import './styles/main.scss'
 
 
 createRoot(document.getElementById('root')!).render(
