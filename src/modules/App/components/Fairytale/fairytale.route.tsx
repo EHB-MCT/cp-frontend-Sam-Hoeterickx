@@ -1,5 +1,5 @@
 //Component
-import { Fairytale } from "../Fairytale";
+import { Fairytale } from ".";
 
 export const FAIRY_TALE_ROUTE = {
     path: '/fairy-tale',

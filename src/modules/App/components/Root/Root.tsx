@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 
 //Routes
+import { ABOUT_US_ROUTE } from "../AboutUs/about.route";
 import { ALL_FAIRY_TALES_ROUTE } from "../AllFairyTales/allFairyTales.route";
 import { ERROR_ROUTE } from "../../../shared/Error/error.route";
 import { FAIRY_TALE_ROUTE } from "../Fairytale/fairytale.route";
-import { HOME_ROUTE } from "../../Home/home.route";
 import { MAKING_OF_ROUTE } from "../Makingof/makingOf.route";
 
 //Components
@@ -24,8 +24,8 @@ export const Root = () => {
                     element: ERROR_ROUTE.element
                 },
                 {
-                    path: HOME_ROUTE.path,
-                    element: HOME_ROUTE.element
+                    path: ABOUT_US_ROUTE.path,
+                    element: ABOUT_US_ROUTE.element
                 },
                 {
                     path: MAKING_OF_ROUTE.path,
