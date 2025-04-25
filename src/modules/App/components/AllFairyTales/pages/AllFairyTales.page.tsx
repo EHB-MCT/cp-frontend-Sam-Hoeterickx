@@ -2,9 +2,6 @@
 import { Trending } from "../../../../shared/Trending/Trending";
 import { Widget } from "../components/widget";
 
-//Types
-import { FairytaleType } from "../../../../Types/FairyTaleType";
-
 
 export const AllFairyTales = () => {
 
