@@ -22,10 +22,10 @@ export const App = () => {
   }, [])
 
   return (
-    <div className="outer-wrapper">
+    <>
       <Navigation />
       <Outlet /> 
       <Footer />
-    </div>
+    </>
   )
 }

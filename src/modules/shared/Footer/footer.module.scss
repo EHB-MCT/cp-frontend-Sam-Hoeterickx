@@ -1,0 +1,21 @@
+.footer{
+    background-color: var(--widget-color);
+    margin-top: 124px;
+    padding: 64px 0;
+
+    &--inner-wrapper{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--logo{
+            width: 200px;
+        }
+
+        &--info{
+            width: 100%;
+            margin-left: 156px;
+        }
+    }
+}

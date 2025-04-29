@@ -65,7 +65,7 @@ export const AllFairyTales = () => {
     ]
 
     return (
-        <>
+        <div className="outer-wrapper">
 
             <Trending
                 data={ fairyTales }
@@ -88,6 +88,6 @@ export const AllFairyTales = () => {
                     })}
                 </div>
             </section>
-        </> 
+        </div> 
     );
 }

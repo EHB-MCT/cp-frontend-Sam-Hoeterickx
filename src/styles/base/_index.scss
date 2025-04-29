@@ -8,6 +8,7 @@
     --main-font-color: #1d1d1b;
     --title-font-color: #E51131;
     --background-color: #fff;
+    --widget-color: #EBF5EC;
 
     --title-margin: 24px 0;
     --smaller-title-margin: 16px 0;
@@ -68,12 +69,9 @@ a{
 }
 
 .widget{
-    border: 2pt solid black;
-    border-radius: 32px;
-    background-color: #dfddd5;
-
+    background-color: var(--widget-color);
     padding: 32px;
-
+    border-radius: 32px;
     
     &--image-wrapper{
         display: flex;
@@ -81,7 +79,7 @@ a{
     }
 
     img{
-        width: 80%;
+        width: 100%;
         border-radius: 28px;
 
         aspect-ratio: 1/1;

@@ -15,15 +15,18 @@ import styles from "./navigation.module.scss"
 
 export const Navigation = () => {
     return (
-        <nav className={clsx(styles["navigation"])}>
-            <img className={clsx(styles['navigation--logo'])} src="Logo_cp_front-end.svg" alt="Logo" />
-            <div className={clsx(styles["navigation--links"])}>
-            <NavLink to={ALL_FAIRY_TALES_ROUTE.path}>Explore</NavLink>
-                <NavLink to={ABOUT_US_ROUTE.path}>About</NavLink>
-                <NavLink to={MAKING_OF_ROUTE.path}>Making Of</NavLink>
-                {/* <NavLink to={FAIRY_TALE_ROUTE.path}>Fairytale</NavLink> */}
-                <SearchBar />
-            </div>
-        </nav>
+        <div className="outer-wrapper">
+            <nav className={clsx(styles["navigation"])}>
+                <img className={clsx(styles['navigation--logo'])} src="Logo_cp_front-end.svg" alt="Logo" />
+                <div className={clsx(styles["navigation--links"])}>
+                <NavLink to={ALL_FAIRY_TALES_ROUTE.path}>Explore</NavLink>
+                    <NavLink to={ABOUT_US_ROUTE.path}>About</NavLink>
+                    <NavLink to={MAKING_OF_ROUTE.path}>Making Of</NavLink>
+                    {/* <NavLink to={FAIRY_TALE_ROUTE.path}>Fairytale</NavLink> */}
+                    <SearchBar />
+                </div>
+            </nav>
+        </div>
+        
     )
 }
