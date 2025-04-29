@@ -1,8 +1,65 @@
-export const Fairytale = () => {
+import { Canvas } from '@react-three/fiber'
+import { useEffect, useState } from 'react'
+
+// Components
+import AnimatedText from '../components/AnimatedText.js'
+import CloudScene from '../components/CloudScene.js'
+import Lights from '../components/Lights.js'
+import Scene3 from '../components/Scene3.js'
+
+// CSS
+import './fairytale.module.scss'
+
+
+export const FairyTale = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+    const [selectedPig, setSelectedPig] = useState(null);
+
+    useEffect(() => {
+        console.log(selectedPig)
+    }, [selectedPig])
+
+    useEffect(() => {
+        const handleMouseMovement = (e) => {
+            const x = (e.clientX / window.innerWidth) * 2 - 1
+            const y = -(e.clientY / window.innerHeight) * 2 + 1
+            setMousePosition({ x, y })
+        }
+
+        window.addEventListener('mousemove', handleMouseMovement)
+    }, [])
+
     return (
-        <>
-            <h1>Fairytale</h1>
-            <p>Welcome to the Fairytale page!</p>
-        </>
-    );
+        <div className="scroll-wrapper">
+            <div className="opening-scene scene">
+                <Canvas id='canvas'>
+                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                    <CloudScene mousePosition={mousePosition} />
+                </Canvas>
+            </div>
+
+            <div className="scene">
+                <Canvas id='canvas'>
+                    <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
+                </Canvas>
+            </div>
+
+            <div className="scene">
+                <Canvas id='canvas'>
+                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                    <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
+                </Canvas>
+            </div>
+
+            <div className="scene scene-3">
+                <Canvas id='canvas'>
+                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                    <Scene3
+                        selectedPig={selectedPig}
+                        setSelectedPig={setSelectedPig}
+                    />
+                </Canvas>
+            </div>
+        </div>
+    )
 }
