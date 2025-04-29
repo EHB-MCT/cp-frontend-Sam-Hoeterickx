@@ -9,26 +9,56 @@ export const AllFairyTales = () => {
         {
             id: "1",
             title: "The Little Mermaid",
+            student: "Voornaam Achternaam",
             theme: "Sea",
             images: {
-                main_image: "https://example.com/little-mermaid-main.jpg",
-                thumbnail: "https://example.com/little-mermaid-thumbnail.jpg",
+                main_image: "temp-image.jpg",
+                thumbnail: "temp-image.jpg",
                 gallery: [
-                    "https://example.com/little-mermaid-gallery1.jpg",
-                    "https://example.com/little-mermaid-gallery2.jpg"
+                    "temp-image.jpg",
+                    "temp-image.jpg"
                 ]
             }
         },
         {
             id: "2",
             title: "Cinderella",
+            student: "Voornaam Achternaam",
             theme: "Adventure",
             images: {
-                main_image: "https://example.com/cinderella-main.jpg",
-                thumbnail: "https://example.com/cinderella-thumbnail.jpg",
+                main_image: "temp-image.jpg",
+                thumbnail: "temp-image.jpg",
                 gallery: [
-                    "https://example.com/cinderella-gallery1.jpg",
-                    "https://example.com/cinderella-gallery2.jpg"
+                    "temp-image.jpg",
+                    "temp-image.jpg"
+                ]
+            }
+        },
+        {
+            id: "3",
+            title: "Cinderella",
+            student: "Voornaam Achternaam",
+            theme: "Adventure",
+            images: {
+                main_image: "temp-image.jpg",
+                thumbnail: "temp-image.jpg",
+                gallery: [
+                    "temp-image.jpg",
+                    "temp-image.jpg"
+                ]
+            }
+        },
+        {
+            id: "4",
+            title: "Cinderella",
+            student: "Voornaam Achternaam",
+            theme: "Adventure",
+            images: {
+                main_image: "temp-image.jpg",
+                thumbnail: "temp-image.jpg",
+                gallery: [
+                    "temp-image.jpg",
+                    "temp-image.jpg"
                 ]
             }
         }
@@ -36,8 +66,6 @@ export const AllFairyTales = () => {
 
     return (
         <>
-            <h1>All Fairy Tales</h1>
-            <p>List of all fairy tales will be displayed here.</p>
 
             <Trending
                 data={ fairyTales }
@@ -54,6 +82,7 @@ export const AllFairyTales = () => {
                                 title={ fairytale.title }
                                 theme={ fairytale.theme }
                                 image={ fairytale.images.main_image }
+                                student={ fairytale.student }
                             />
                         )
                     })}

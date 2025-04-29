@@ -4,15 +4,23 @@ import { NavLink } from "react-router"
 //Types
 import { WidgetType } from "../../Types/WidgetType"
 
-export const LargeWidget: FC<WidgetType> = ({ id, title, theme, image }) => {
+export const LargeWidget: FC<WidgetType> = ({ id, title, theme, image, student }) => {
     return (
-        <div id={ id }>
-            <img src={image} alt={`picture of fairytale: ${title}`} />
-            <h2>{ title }</h2>
-            <p>{ theme }</p>
-            <NavLink to={`/making-of/${id}`}>
-                More
-            </NavLink>
+        <div className="widget" id={ id }>
+            <div className="widget--image-wrapper">
+                <img src={image} alt={`picture of fairytale: ${title}`} />
+            </div>
+            <div className="widget--info">
+                <div className="widget--info--wrapper">
+                    <h4>{ student }</h4>
+                    <p>{ title }</p>
+                    <p>{ theme }</p>
+                </div>
+                <NavLink to={`/making-of/${id}`}>
+                    →
+                </NavLink>
+            </div>
+
         </div>
     )
 }
