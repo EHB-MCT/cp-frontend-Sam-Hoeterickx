@@ -5,6 +5,8 @@ export const MakingOf = () => {
     const { id } = useParams();
     console.log(id);
 
+    document.title = `Making of {student}  | Er was eens...`;
+
 
     return (
         <div className="outer-wrapper">

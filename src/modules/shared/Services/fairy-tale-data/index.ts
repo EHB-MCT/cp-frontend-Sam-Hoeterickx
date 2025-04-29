@@ -1,0 +1,1 @@
+export { fairyTaleService } from './fairyTale.service'

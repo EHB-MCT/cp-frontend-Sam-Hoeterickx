@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 //Routes
 import { ABOUT_US_ROUTE } from "../AboutUs/about.route";
@@ -12,6 +13,8 @@ import { App } from "../App";
 
 //CSS
 import '../../../../styles/main.scss'
+
+const queryClient = new QueryClient();
 
 
 export const Root = () => {
@@ -49,6 +52,9 @@ export const Root = () => {
     ])
 
     return (
-        <RouterProvider router={ROUTE} />
+        <QueryClientProvider client={queryClient}>
+            <RouterProvider router={ROUTE} />
+        </QueryClientProvider>
+        
     )
 }

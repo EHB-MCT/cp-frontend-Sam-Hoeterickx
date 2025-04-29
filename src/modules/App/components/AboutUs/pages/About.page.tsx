@@ -1,4 +1,7 @@
 export const About = () =>  {
+
+    document.title = "About us | Er was eens..."
+
     return(
         <div className="outer-wrapper">
             <h1>About Us</h1>

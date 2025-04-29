@@ -1,7 +1,7 @@
 import { FC } from "react"
 
 //Types
-import { FairytaleType } from "../../Types/FairyTaleType"
+import { FairytaleType } from "../Services/fairy-tale-data/types/FairyTaleType"
 
 //Components
 import { LargeWidget } from "../LargeWidget"
