@@ -1,11 +1,20 @@
 import { useParams } from "react-router";
 
+//Hooks
+import { useFairyTaleData } from "../../../../shared/const/hooks/getFairyTaleData.hook";
+
 export const MakingOf = () => {
 
     const { id } = useParams();
     console.log(id);
 
-    document.title = `Making of {student}  | Er was eens...`;
+
+    const { data, isLoading } = useFairyTaleData();
+
+    const makingOfData = data?.filter((fairytale) => fairytale.id === id) || [];
+    
+    const student = makingOfData[0]?.student
+    document.title = `Making of ${student}  | Er was eens...`;
 
 
     return (

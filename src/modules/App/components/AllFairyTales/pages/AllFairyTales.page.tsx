@@ -2,6 +2,7 @@
 import { Trending } from "../../../../shared/Trending/Trending";
 import { Widget } from "../components/widget";
 
+//Hooks
 import { useFairyTaleData } from '../../../../shared/const/hooks/getFairyTaleData.hook'
 
 export const AllFairyTales = () => {

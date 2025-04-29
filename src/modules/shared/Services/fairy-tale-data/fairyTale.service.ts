@@ -6,7 +6,7 @@ class FairyTaleService {
         return new Promise<FairytaleType[]>((resolve)=> {
 			setTimeout(()=>{
 				resolve(DATA_MOCK);
-			}, 2000);
+			}, 0);
 		});
     }
 
