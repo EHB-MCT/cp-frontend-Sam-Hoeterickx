@@ -21,7 +21,7 @@ export const AllFairyTales: FC = () => {
                 <>
                     <Trending data={fairyTales || []} />
 
-                    <section className="story-section"µ>
+                    <section className="story-section">
                         <h2>Storys</h2>
                         <div className="widget-wrapper">
                             {fairyTales && fairyTales.length > 0 ? (

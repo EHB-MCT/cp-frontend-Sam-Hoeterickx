@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router"
+import { createBrowserRouter, data, RouterProvider } from "react-router"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 //Routes
@@ -17,10 +17,10 @@ import { useFairyTaleData } from "../../../shared/const/hooks/getFairyTaleData.h
 //CSS
 import '../../../../styles/main.scss'
 
-const queryClient = new QueryClient();
 
 
 export const Root = () => {
+    const queryClient = new QueryClient();
 
     const ROUTE = createBrowserRouter([
         {
