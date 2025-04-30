@@ -22,7 +22,6 @@ export const Navigation = () => {
                 <NavLink to={ALL_FAIRY_TALES_ROUTE.path}>Explore</NavLink>
                     <NavLink to={ABOUT_US_ROUTE.path}>About</NavLink>
                     <NavLink to="/making-of/2">Making Of</NavLink>
-                    {/* <NavLink to={FAIRY_TALE_ROUTE.path}>Fairytale</NavLink> */}
                     <SearchBar />
                 </div>
             </nav>

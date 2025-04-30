@@ -2,7 +2,7 @@ export const DATA_MOCK = [
     {
         id: "1",
         title: "The Little Mermaid",
-        student: "Jos Kemps",
+        student: "John Doo ",
         theme: "Sea",
         images: {
             main_image: "temp-image.jpg",
