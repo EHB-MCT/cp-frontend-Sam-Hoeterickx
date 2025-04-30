@@ -11,6 +11,9 @@ import { MAKING_OF_ROUTE } from "../Makingof/makingOf.route";
 //Components
 import { App } from "../App";
 
+//Hooks
+import { useFairyTaleData } from "../../../shared/const/hooks/getFairyTaleData.hook";
+
 //CSS
 import '../../../../styles/main.scss'
 

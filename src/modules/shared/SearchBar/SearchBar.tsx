@@ -15,7 +15,7 @@ export const SearchBar = () => {
     return (
         <div className={clsx(styles["search-bar"])}>
             {
-                clickState ? <div><input type="text" placeholder="Search..." /> <button type="submit" onClick={toggleState}>Search</button></div> : <div><button onClick={toggleState}>Search</button></div>
+                clickState ? <div><input type="text" placeholder="Search..." /> <button type="submit" onClick={toggleState}>🔍</button></div> : <div><button onClick={toggleState}>🔍</button></div>
             }
             
         </div>

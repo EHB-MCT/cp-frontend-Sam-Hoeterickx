@@ -1,14 +1,17 @@
 //Components
 import { Trending } from "../../../../shared/Trending/Trending";
 import { Widget } from "../components/widget";
+import { FC } from "react";
 
 //Hooks
 import { useFairyTaleData } from '../../../../shared/const/hooks/getFairyTaleData.hook'
 
-export const AllFairyTales = () => {
+//Types
+
+export const AllFairyTales: FC = () => {
     document.title = "Explore | Er was eens...";
 
-    const { data: fairyTales, isLoading } = useFairyTaleData();
+    const {data: fairyTales, isLoading} = useFairyTaleData();
 
     return (
         <div className="outer-wrapper">
@@ -18,7 +21,7 @@ export const AllFairyTales = () => {
                 <>
                     <Trending data={fairyTales || []} />
 
-                    <section className="story-section">
+                    <section className="story-section"µ>
                         <h2>Storys</h2>
                         <div className="widget-wrapper">
                             {fairyTales && fairyTales.length > 0 ? (

@@ -4,7 +4,6 @@ import clsx from "clsx"
 //Routes
 import { ABOUT_US_ROUTE } from "../../App/components/AboutUs/about.route"
 import { ALL_FAIRY_TALES_ROUTE } from "../../App/components/AllFairyTales/allFairyTales.route"
-import { FAIRY_TALE_ROUTE } from "../../App/components/Fairytale/fairytale.route"
 
 //Components
 import { SearchBar } from "../SearchBar"
