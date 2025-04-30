@@ -2,8 +2,8 @@ import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 
 //Components
-import Pig from "./Pig.js";
-import Prop from './Prop.js';
+import Pig from "./Pig";
+import Prop from './Prop';
 
 const PigScene = ({ mousePosition }) => {
 

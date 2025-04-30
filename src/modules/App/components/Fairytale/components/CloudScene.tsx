@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 
 //Components
-import AnimatedText from './AnimatedText.js'
+import AnimatedText from './AnimatedText'
 import Cloud from './Cloud.js'
 
 //CSS

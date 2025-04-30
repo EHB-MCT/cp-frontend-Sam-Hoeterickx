@@ -2,7 +2,7 @@ import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
 const Cloud = ({ scale, position, rotation }) => {
-        const gltf = useLoader(GLTFLoader, "../../public/models/cloud.glb")
+        const gltf = useLoader(GLTFLoader, "models/cloud.glb")
         if(!gltf){
             // console.log("active")
             // console.log(gltf)

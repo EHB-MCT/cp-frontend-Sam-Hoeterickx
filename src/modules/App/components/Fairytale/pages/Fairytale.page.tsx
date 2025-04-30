@@ -2,10 +2,10 @@ import { Canvas } from '@react-three/fiber'
 import { useEffect, useState } from 'react'
 
 // Components
-import AnimatedText from '../components/AnimatedText.js'
-import CloudScene from '../components/CloudScene.js'
-import Lights from '../components/Lights.js'
-import Scene3 from '../components/Scene3.js'
+import AnimatedText from '../components/AnimatedText'
+import CloudScene from '../components/CloudScene'
+import Lights from '../components/Lights'
+import Scene3 from '../components/Scene3'
 
 // CSS
 import './fairytale.module.scss'

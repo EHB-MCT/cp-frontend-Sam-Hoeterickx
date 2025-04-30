@@ -4,8 +4,8 @@ import gsap from 'gsap';
 import { useThree } from "@react-three/fiber";
 
 //Compnent
-import House from "./House.js";
-import Tree from "./Tree.js";
+import House from "./House";
+import Tree from "./Tree";
 
 const Scene3 = ({ selectedPig, setSelectedPig }) => {
     const center = [0, 0, -3];

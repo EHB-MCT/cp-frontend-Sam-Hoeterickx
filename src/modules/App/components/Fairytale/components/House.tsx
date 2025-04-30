@@ -2,7 +2,7 @@ import { useLoader } from "@react-three/fiber"
 import { GLTFLoader } from "three/examples/jsm/Addons.js"
 
 //Components
-import Pig from "./Pig.js"
+import Pig from "./Pig"
 
 
 const House = ({ path, houseScale, housePosition, rotation, pigScale, pigPosition }) => {
