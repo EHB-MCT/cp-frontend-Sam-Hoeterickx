@@ -5,18 +5,15 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ABOUT_US_ROUTE } from "../AboutUs/about.route";
 import { ALL_FAIRY_TALES_ROUTE } from "../AllFairyTales/allFairyTales.route";
 import { ERROR_ROUTE } from "../../../shared/Error/error.route";
+import { EXPLORE_ROUTE } from "../Explore/explore.route";
 import { FAIRY_TALE_ROUTE } from "../Fairytale/fairytale.route";
 import { MAKING_OF_ROUTE } from "../Makingof/makingOf.route";
 
 //Components
 import { App } from "../App";
 
-//Hooks
-import { useFairyTaleData } from "../../../shared/const/hooks/getFairyTaleData.hook";
-
 //CSS
 import '../../../../styles/main.scss'
-
 
 
 export const Root = () => {
@@ -44,6 +41,10 @@ export const Root = () => {
                     path: ALL_FAIRY_TALES_ROUTE.path,
                     element: ALL_FAIRY_TALES_ROUTE.element
                 },
+                {
+                    path: EXPLORE_ROUTE.path,
+                    element: EXPLORE_ROUTE.element,
+                }
 
             ]
         },

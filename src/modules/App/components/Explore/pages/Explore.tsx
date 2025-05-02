@@ -1,14 +1,12 @@
-//Components
-import { Trending } from "../../../../shared/Trending/Trending";
-import { Widget } from "../../../../shared/widget";
 import { FC } from "react";
 
-//Hooks
-import { useFairyTaleData } from '../../../../shared/const/hooks/getFairyTaleData.hook'
+//Components
+import { Widget } from "../../../../shared/widget";
 
-//Types
+//Hooke 
+import { useFairyTaleData } from "../../../../shared/const/hooks/getFairyTaleData.hook";
 
-export const AllFairyTales: FC = () => {
+export const Explore: FC = () => {
     document.title = "Explore | Er was eens...";
 
     const {data: fairyTales, isLoading} = useFairyTaleData();
@@ -16,14 +14,13 @@ export const AllFairyTales: FC = () => {
     return (
         <div className="outer-wrapper">
             {isLoading ? (
-                <p>Loading...</p> // Show a loading message while data is being fetched
+                <p>Loading...</p>
             ) : (
                 <>
-                    <Trending data={fairyTales || []} />
 
                     <section className="story-section">
                         <h2>Storys</h2>
-                        <div className="widget-wrapper">
+                        <div className="widget-wrapper">e
                             {fairyTales && fairyTales.length > 0 ? (
                                 fairyTales.map((fairytale) => (
                                     <Widget
@@ -44,4 +41,4 @@ export const AllFairyTales: FC = () => {
             )}
         </div>
     );
-};
+}

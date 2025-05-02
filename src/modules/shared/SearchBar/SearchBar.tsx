@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 //Routes
-import { ALL_FAIRY_TALES_ROUTE } from "../../App/components/AllFairyTales/allFairyTales.route";
+import { EXPLORE_ROUTE } from "../../App/components/Explore/explore.route";
 
 export const SearchBar = () => {
 
@@ -20,7 +20,7 @@ export const SearchBar = () => {
 
     const handleChange = (event: { target: { value: any; }; }) => {
         if(location.pathname !== "/explore"){
-            nav(ALL_FAIRY_TALES_ROUTE.path)
+            nav(EXPLORE_ROUTE.path)
         }
 
         console.log(event.target.value)

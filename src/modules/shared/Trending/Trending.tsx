@@ -16,18 +16,21 @@ export const Trending:FC<TrendingProps> = ( data ) => {
         <section className="trending-section">
             <h2>HOT TODAY</h2>
             <div className="trending-widget-wrapper trending">
-                { data.data.slice(0, 2).map((fairytale) => {
-                    return (
-                        <LargeWidget
-                            key={ fairytale.id }
-                            id={ fairytale.id }
-                            title={ fairytale.title }
-                            theme={ fairytale.theme }
-                            student={ fairytale.student }
-                            image={ fairytale.images.main_image }
-                        />
-                    )
-                })}
+                {   data.data
+                    .sort(() => 0.5 - Math.random())
+                    .slice(0, 2)
+                    .map((fairytale) => {
+                        return (
+                            <LargeWidget
+                                key={ fairytale.id }
+                                id={ fairytale.id }
+                                title={ fairytale.title }
+                                theme={ fairytale.theme }
+                                student={ fairytale.student }
+                                image={ fairytale.images.main_image }
+                            />
+                        )
+                    })}
             </div>
         </section>
     )

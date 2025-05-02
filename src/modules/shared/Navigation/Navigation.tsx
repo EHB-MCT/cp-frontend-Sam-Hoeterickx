@@ -4,6 +4,7 @@ import clsx from "clsx"
 //Routes
 import { ABOUT_US_ROUTE } from "../../App/components/AboutUs/about.route"
 import { ALL_FAIRY_TALES_ROUTE } from "../../App/components/AllFairyTales/allFairyTales.route"
+import { EXPLORE_ROUTE } from "../../App/components/Explore/explore.route"
 
 //Components
 import { SearchBar } from "../SearchBar"
@@ -19,7 +20,7 @@ export const Navigation = () => {
                     <img className={clsx(styles['navigation--logo'])} src="Logo_cp_front-end.svg" alt="Logo" />
                 </NavLink>
                 <div className={clsx(styles["navigation--links"])}>
-                <NavLink to={ALL_FAIRY_TALES_ROUTE.path}>Explore</NavLink>
+                    <NavLink to={EXPLORE_ROUTE.path}>Explore</NavLink>
                     <NavLink to={ABOUT_US_ROUTE.path}>About</NavLink>
                     <NavLink to="/making-of/2">Making Of</NavLink>
                     <SearchBar />
