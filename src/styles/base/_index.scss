@@ -1,9 +1,14 @@
 @use 'reset' as *;
 @import 'https://fonts.googleapis.com/css2?family=Bungee&display=swap';
+@import "https://use.typekit.net/ukf6ace.css";
 
 :root{
     --title-font-family: "Bungee";
     --title-font-weight: 400;
+
+    --main-font-family: "helvetica-neue-lt-pro";
+    --main-font-weight: 400;
+    --main-font-style: normal;
 
     --main-font-color: #1d1d1b;
     --title-font-color: #E51131;
@@ -15,14 +20,16 @@
 }
 
 body{
-    font-family: "Helvetica Neue";
+    font-family: var(--main-font-family);
+    font-weight: var(--main-font-weight);
+    font-style: var(--main-font-style);
 
     width: 100dvw;
     min-height: 100dvh;
 
     background-color: var(--background-color);
     color: var(--main-font-color);
-    overflow-x: hidden;
+
 }
 
 section{
