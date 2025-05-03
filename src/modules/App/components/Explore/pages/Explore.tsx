@@ -20,7 +20,7 @@ export const Explore: FC = () => {
 
                     <section className="story-section">
                         <h2>Storys</h2>
-                        <div className="widget-wrapper">e
+                        <div className="widget-wrapper">
                             {fairyTales && fairyTales.length > 0 ? (
                                 fairyTales.map((fairytale) => (
                                     <Widget
