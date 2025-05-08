@@ -1,10 +1,10 @@
 import { FC } from "react"
 
 //Types
-import { FairytaleType } from "../Services/fairy-tale-data/types/FairyTaleType"
+import { FairytaleType } from "~shared/Services/fairy-tale-data/types/FairyTaleType"
 
 //Components
-import { LargeWidget } from "../LargeWidget"
+import { LargeWidget } from "~shared/LargeWidget"
 
 interface TrendingProps {
     data: FairytaleType[]

@@ -2,8 +2,8 @@ import { NavLink } from "react-router"
 import clsx from "clsx"
 
 //Route
-import { ABOUT_US_ROUTE } from "../../App/components/AboutUs/about.route";
-import { ALL_FAIRY_TALES_ROUTE } from "../../App/components/AllFairyTales/allFairyTales.route";
+import { ABOUT_US_ROUTE } from "~app/components/AboutUs/about.route";
+import { ALL_FAIRY_TALES_ROUTE } from "~app/components/AllFairyTales/allFairyTales.route";
 
 //Css
 import styles from './footer.module.scss';

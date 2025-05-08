@@ -2,12 +2,12 @@ import { NavLink } from "react-router"
 import clsx from "clsx"
 
 //Routes
-import { ABOUT_US_ROUTE } from "../../App/components/AboutUs/about.route"
-import { ALL_FAIRY_TALES_ROUTE } from "../../App/components/AllFairyTales/allFairyTales.route"
-import { EXPLORE_ROUTE } from "../../App/components/Explore/explore.route"
+import { ABOUT_US_ROUTE } from "~app/components/AboutUs/about.route"
+import { ALL_FAIRY_TALES_ROUTE } from "~app/components/AllFairyTales/allFairyTales.route"
+import { EXPLORE_ROUTE } from "~app/components/Explore/explore.route"
 
 //Components
-import { SearchBar } from "../SearchBar"
+import { SearchBar } from "~shared/SearchBar"
 
 //CSS
 import styles from "./navigation.module.scss"

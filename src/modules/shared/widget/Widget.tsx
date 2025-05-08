@@ -2,7 +2,7 @@ import { FC } from "react"
 import { NavLink } from "react-router"
 
 //Types
-import { WidgetType } from "../const/Types/WidgetType"
+import { WidgetType } from "~shared/const/Types/WidgetType"
 
     export const Widget: FC<WidgetType> = ({ id, image, title, theme, student }) => {
     return (

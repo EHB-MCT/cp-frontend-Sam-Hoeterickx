@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 
 //Hooks
-import { useFairyTaleData } from "../../../../shared/const/hooks/getFairyTaleData.hook";
+import { useFairyTaleData } from "~shared/const/hooks/getFairyTaleData.hook";
 
 export const MakingOf = () => {
 

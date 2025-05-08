@@ -1,10 +1,10 @@
 import { FC } from "react";
 
 //Components
-import { Widget } from "../../../../shared/widget";
+import { Widget } from "~shared/widget";
 
 //Hooke 
-import { useFairyTaleData } from "../../../../shared/const/hooks/getFairyTaleData.hook";
+import { useFairyTaleData } from "~shared/const/hooks/getFairyTaleData.hook";
 
 export const Explore: FC = () => {
     document.title = "Explore | Er was eens...";

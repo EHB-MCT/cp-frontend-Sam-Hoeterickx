@@ -1,10 +1,10 @@
 //Components
-import { Trending } from "../../../../shared/Trending/Trending";
-import { Widget } from "../../../../shared/widget";
+import { Trending } from "~shared/Trending/Trending";
+import { Widget } from "~shared/widget";
 import { FC } from "react";
 
 //Hooks
-import { useFairyTaleData } from '../../../../shared/const/hooks/getFairyTaleData.hook'
+import { useFairyTaleData } from '~shared/const/hooks/getFairyTaleData.hook'
 
 //Types
 

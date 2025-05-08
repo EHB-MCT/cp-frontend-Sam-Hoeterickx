@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 //Routes
-import { EXPLORE_ROUTE } from "../../App/components/Explore/explore.route";
+import { EXPLORE_ROUTE } from "~app/components/Explore/explore.route";
 
 export const SearchBar = () => {
 
