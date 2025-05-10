@@ -1,9 +1,9 @@
 import { DATA_MOCK } from "./data";
-import { FairytaleType } from "./types/FairyTaleType";
+import { FairyTaleType } from "./types/FairyTaleType";
 
 class FairyTaleService {
-    getFairyTaleData():Promise<FairytaleType[]>{
-        return new Promise<FairytaleType[]>((resolve)=> {
+    getFairyTaleData():Promise<FairyTaleType[]>{
+        return new Promise<FairyTaleType[]>((resolve)=> {
 			setTimeout(()=>{
 				resolve(DATA_MOCK);
 			}, 0);

@@ -1,17 +1,18 @@
-export const DATA_MOCK = [
+export const DATA_MOCK: FairyTaleType[] = [
     {
         id: "1",
         title: "The Little Mermaid",
-        student: "John Doo ",
+        student: "John Doo",
         theme: "Sea",
         images: {
-            main_image: "temp-image.jpg",
-            thumbnail: "temp-image.jpg",
+            main_image: "/temp-image.jpg",
+            thumbnail: "/temp-image.jpg",
             gallery: [
-                "temp-image.jpg",
-                "temp-image.jpg"
-            ]
-        }
+                { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
+                { extra_image_2: "/temp-image.jpg" },
+                { extra_image_3: "/temp-image.jpg" },
+            ],
+        },
     },
     {
         id: "2",
@@ -19,13 +20,14 @@ export const DATA_MOCK = [
         student: "Sam Hoeterickx",
         theme: "Adventure",
         images: {
-            main_image: "temp-image.jpg",
-            thumbnail: "temp-image.jpg",
+            main_image: "public//temp-image.jpg",
+            thumbnail: "/temp-image.jpg",
             gallery: [
-                "temp-image.jpg",
-                "temp-image.jpg"
-            ]
-        }
+                { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
+                { extra_image_2: "/temp-image.jpg" },
+                { extra_image_3: "/temp-image.jpg" },
+            ],
+        },
     },
     {
         id: "3",
@@ -33,13 +35,14 @@ export const DATA_MOCK = [
         student: "Voornaam Achternaam",
         theme: "Adventure",
         images: {
-            main_image: "temp-image.jpg",
-            thumbnail: "temp-image.jpg",
+            main_image: "/temp-image.jpg",
+            thumbnail: "/temp-image.jpg",
             gallery: [
-                "temp-image.jpg",
-                "temp-image.jpg"
-            ]
-        }
+                { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
+                { extra_image_2: "/temp-image.jpg" },
+                { extra_image_3: "/temp-image.jpg" },
+            ],
+        },
     },
     {
         id: "4",
@@ -47,12 +50,13 @@ export const DATA_MOCK = [
         student: "Voornaam Achternaam",
         theme: "Adventure",
         images: {
-            main_image: "temp-image.jpg",
-            thumbnail: "temp-image.jpg",
+            main_image: "/temp-image.jpg",
+            thumbnail: "/temp-image.jpg",
             gallery: [
-                "temp-image.jpg",
-                "temp-image.jpg"
-            ]
-        }
-    }
-]
+                { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
+                { extra_image_2: "//temp-image.jpg" },
+                { extra_image_3: "//temp-image.jpg" },
+            ],
+        },
+    },
+];
