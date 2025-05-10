@@ -74,6 +74,12 @@
 
 }
 
+section.extra-info{
+    p{
+        max-width: 80%;
+    }
+}
+
 .extra-info-image-wrapper{
     display: flex;
     justify-content: space-between;

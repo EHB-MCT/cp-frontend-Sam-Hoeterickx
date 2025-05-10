@@ -93,8 +93,8 @@ export const MakingOf = () => {
                         </div>
                     </section>
 
-                    <section>
-                        <h1>Extra info</h1>
+                    <section className={clsx(styles["extra-info"])}>
+                        <h1>Extra informatie</h1>
                         <div className={clsx(styles["extra-info-image-wrapper"])}>
                             {makingOfData[0]?.images.gallery.map((image: { [key: string]: string }, index: number) => (
                                 <img
@@ -105,11 +105,7 @@ export const MakingOf = () => {
                             ))}
                         </div>
                         <p>
-                            Deze illustratie is gemaakt door de illustrator van het verhaal. Het
-                            is een afbeelding van de hoofdpersoon in het verhaal, die zich in een
-                            magische omgeving bevindt. De kleuren zijn levendig en de details
-                            zijn prachtig, waardoor het lijkt alsof je zelf in het verhaal bent
-                            beland.
+                        Deze illustratie heb ik gemaakt met behulp van Adobe Firefly. Ik vond deze stijl heel passend bij de sfeer van klassieke sprookjes, zoals het verhaal van Duimelintje. Het zachte kleurgebruik, de dromerige details en de magische uitstraling van het kleine elfje sluiten perfect aan bij die betoverende wereld vol wonderlijke wezentjes en kleine avonturen.
                         </p>
                     </section>
                 </>
