@@ -1,5 +1,7 @@
 import { NavLink } from "react-router"
 import clsx from "clsx"
+import { useEffect, useState } from "react"
+
 
 //Routes
 import { ABOUT_US_ROUTE } from "~app/components/AboutUs/about.route"
@@ -13,6 +15,18 @@ import { SearchBar } from "~shared/SearchBar"
 import styles from "./navigation.module.scss"
 
 export const Navigation = () => {
+    const [activeExploreState, setActiveExploreState] = useState<string>('');
+
+    let url = window.location.href;
+    const route = url.split('/');
+    const currentRoute = route[3];
+
+    useEffect(() => {
+        if(currentRoute === "explore"){
+            setActiveExploreState("active");
+        }
+    }, [route])    
+
     return (
         <div className="outer-wrapper">
             <nav className={clsx(styles["navigation"])}>
@@ -20,9 +34,9 @@ export const Navigation = () => {
                     <img className={clsx(styles['navigation--logo'])} src="/Logo_cp_front-end.svg" alt="Logo" />
                 </NavLink>
                 <div className={clsx(styles["navigation--links"])}>
-                    <NavLink to={EXPLORE_ROUTE.path}>Explore</NavLink>
-                    <NavLink to={ABOUT_US_ROUTE.path}>About</NavLink>
-                    <NavLink to="/making-of/2">Making Of</NavLink>
+                    <NavLink className={clsx(styles[activeExploreState])} to={EXPLORE_ROUTE.path}>Explore</NavLink>
+                    <NavLink  to={ABOUT_US_ROUTE.path}>About</NavLink>
+                    <NavLink  to="/making-of/2">Making Of</NavLink>
                     <SearchBar />
                 </div>
             </nav>

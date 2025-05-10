@@ -20,10 +20,10 @@ export const SearchBar = () => {
 
     const handleChange = (event: { target: { value: any; }; }) => {
         if(location.pathname !== "/explore"){
-            nav(EXPLORE_ROUTE.path)
+            const searchValue = event.target.value;
+            nav(EXPLORE_ROUTE.path);
+            console.log(searchValue);
         }
-
-        console.log(event.target.value)
     }
 
     return (
