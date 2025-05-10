@@ -1,3 +1,6 @@
+//Types
+import { FairyTaleType } from "~shared/Services/fairy-tale-data/types/FairyTaleType";
+
 export const DATA_MOCK: FairyTaleType[] = [
     {
         id: "1",
