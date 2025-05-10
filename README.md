@@ -24,6 +24,7 @@ To run this project locally, follow these steps:
 - [Loading Models R3F](https://r3f.docs.pmnd.rs/tutorials/loading-models)
 - [Text3D Drei](https://drei.docs.pmnd.rs/abstractions/text3d)
 - [Animate using Framer motion](https://motion.dev/docs/react-use-animate)
+- [dangerouslySetInnerHTML - use html elements in a string ](https://stackoverflow.com/questions/76265471/how-to-add-br-tag-in-react-in-this-situation/76266303](https://legacy.reactjs.org/docs/dom-elements.html))
 
 
 
