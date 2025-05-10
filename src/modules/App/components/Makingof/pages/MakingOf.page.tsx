@@ -74,7 +74,7 @@ export const MakingOf = () => {
                                     <p>{ makingOfData[0]?.storyFrom }</p>
                                     <p>{ makingOfData[0]?.genre }</p>
                                 </div>
-                                <div className="button">
+                                <div className="button-wrapper">
                                     <button
                                         className="button"
                                         onClick={ toggleDescriptionState }
@@ -93,9 +93,9 @@ export const MakingOf = () => {
                         </div>
                     </section>
 
-                    {/* <section>
+                    <section>
                         <h1>Extra info</h1>
-                        <div className="extra-info-image-wrapper">
+                        <div className={clsx(styles["extra-info-image-wrapper"])}>
                             {makingOfData[0]?.images.gallery.map((image: { [key: string]: string }, index: number) => (
                                 <img
                                     key={index}
@@ -111,7 +111,7 @@ export const MakingOf = () => {
                             zijn prachtig, waardoor het lijkt alsof je zelf in het verhaal bent
                             beland.
                         </p>
-                    </section> */}
+                    </section>
                 </>
             )}
         </div>

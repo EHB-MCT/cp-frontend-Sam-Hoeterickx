@@ -73,3 +73,18 @@
     }
 
 }
+
+.extra-info-image-wrapper{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 32px;
+
+    img{
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        width: 32%;
+
+        box-shadow: var(--image-box-shadow);
+    }
+}

@@ -17,8 +17,10 @@ export const Footer = () => {
                         <img className={clsx(styles["footer--inner-wrapper--logo"])} src="/Logo_cp_front-end.svg" alt="Logo" />
                     </NavLink>
                     <div className={clsx(styles["footer--inner-wrapper--info"])}>
-                        <p>23 studenten van de opleiding MCT die kozen ...</p>
-                        <NavLink className="button" to={ABOUT_US_ROUTE.path}>About us</NavLink>
+                        <p style={{display: "inline-block", marginBottom: "24px"}}>23 studenten van de opleiding MCT die kozen ...</p>
+                        <div className="button-wrapper">
+                            <NavLink className="button" to={ABOUT_US_ROUTE.path}>About us</NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
