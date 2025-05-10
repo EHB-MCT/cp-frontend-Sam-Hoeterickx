@@ -6,7 +6,7 @@ export const DATA_MOCK: FairyTaleType[] = [
         id: "1",
         title: "The Little Mermaid",
         student: "John Doo",
-        theme: "Sea",
+        genre: "Sea",
         description: {
             verhaal:`Duimelintje, een piepklein meisje geboren uit een bloem, wordt ontvoerd door een pad die haar wil uithuwelijken aan haar lelijke zoon. Met hulp van vissen en een vlinder ontsnapt ze. Daarna wordt ze meegenomen door een kever, maar verstoten omdat ze geen voelsprieten heeft. <br> <br>
                 Ze overleeft de zomer in het bos, maar als de winter komt, vindt een veldmuis haar en biedt haar onderdak. De veldmuis wil haar uithuwelijken aan een blinde, sombere mol. In de ondergrondse gangen verzorgt Duimelintje in het geheim een zieke zwaluw, die later naar het zuiden vliegt. <br> <br>
@@ -24,12 +24,13 @@ export const DATA_MOCK: FairyTaleType[] = [
                 { extra_image_3: "/temp-image.jpg" },
             ],
         },
+        storyFrom: "H. C. Andersen"
     },
     {
         id: "2",
         title: "Cinderella",
         student: "Sam Hoeterickx",
-        theme: "Adventure",
+        genre: "Adventure",
         description: {
             verhaal:`Duimelintje, een piepklein meisje geboren uit een bloem, wordt ontvoerd door een pad die haar wil uithuwelijken aan haar lelijke zoon. Met hulp van vissen en een vlinder ontsnapt ze. Daarna wordt ze meegenomen door een kever, maar verstoten omdat ze geen voelsprieten heeft. <br> <br>
                 Ze overleeft de zomer in het bos, maar als de winter komt, vindt een veldmuis haar en biedt haar onderdak. De veldmuis wil haar uithuwelijken aan een blinde, sombere mol. In de ondergrondse gangen verzorgt Duimelintje in het geheim een zieke zwaluw, die later naar het zuiden vliegt. <br> <br>
@@ -47,12 +48,13 @@ export const DATA_MOCK: FairyTaleType[] = [
                 { extra_image_3: "/temp-image.jpg" },
             ],
         },
+        storyFrom: "H. C. Andersen"
     },
     {
         id: "3",
         title: "Cinderella",
         student: "Voornaam Achternaam",
-        theme: "Adventure",
+        genre: "Adventure",
         description: {
             verhaal:`Duimelintje, een piepklein meisje geboren uit een bloem, wordt ontvoerd door een pad die haar wil uithuwelijken aan haar lelijke zoon. Met hulp van vissen en een vlinder ontsnapt ze. Daarna wordt ze meegenomen door een kever, maar verstoten omdat ze geen voelsprieten heeft. <br> <br>
                 Ze overleeft de zomer in het bos, maar als de winter komt, vindt een veldmuis haar en biedt haar onderdak. De veldmuis wil haar uithuwelijken aan een blinde, sombere mol. In de ondergrondse gangen verzorgt Duimelintje in het geheim een zieke zwaluw, die later naar het zuiden vliegt. <br> <br>
@@ -70,12 +72,13 @@ export const DATA_MOCK: FairyTaleType[] = [
                 { extra_image_3: "/temp-image.jpg" },
             ],
         },
+        storyFrom: "H. C. Andersen"
     },
     {
         id: "4",
         title: "Cinderella",
         student: "Voornaam Achternaam",
-        theme: "Adventure",
+        genre: "Adventure",
         description: {
             verhaal:`Duimelintje, een piepklein meisje geboren uit een bloem, wordt ontvoerd door een pad die haar wil uithuwelijken aan haar lelijke zoon. Met hulp van vissen en een vlinder ontsnapt ze. Daarna wordt ze meegenomen door een kever, maar verstoten omdat ze geen voelsprieten heeft. <br> <br>
                 Ze overleeft de zomer in het bos, maar als de winter komt, vindt een veldmuis haar en biedt haar onderdak. De veldmuis wil haar uithuwelijken aan een blinde, sombere mol. In de ondergrondse gangen verzorgt Duimelintje in het geheim een zieke zwaluw, die later naar het zuiden vliegt. <br> <br>
@@ -93,5 +96,6 @@ export const DATA_MOCK: FairyTaleType[] = [
                 { extra_image_3: "//temp-image.jpg" },
             ],
         },
+        storyFrom: "H. C. Andersen"
     },
 ];

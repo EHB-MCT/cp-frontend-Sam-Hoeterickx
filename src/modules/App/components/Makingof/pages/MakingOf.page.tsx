@@ -21,22 +21,24 @@ export const MakingOf = () => {
 
 
     const [descriptionState, setDescriptionState] = useState<boolean>(false);
+    const [pageStyling, setPageStyling] = useState<string>("");
     const [description, setDescription] = useState<string>(`<strong>Verhaal</strong> <br> ${makingOfData[0]?.description.verhaal}`);
     const [buttonText, setButtonText] = useState<string>("Lees meer");
 
     useEffect(() => {
         const story = makingOfData[0]?.description.verhaal;
         const effect = makingOfData[0]?.description.parallax_effect;
-
-        if(descriptionState){
-            setDescription(`<strong>Verhaal</strong> <br> ${story} <br> <br> <strong>Parallax Effect</strong> <br> ${effect}`);
+    
+        if (descriptionState) {
+            setDescription(`<strong>Verhaal</strong> <br> ${story} <br><br> <strong>Parallax Effect</strong> <br> ${effect}`);
             setButtonText("Lees minder");
-        }else{
+            setPageStyling("full-description"); 
+        } else {
             setDescription(`<strong>Verhaal</strong> <br> ${story}`);
             setButtonText("Lees meer");
+            setPageStyling("");
         }
-       
-    }, [descriptionState])
+    }, [descriptionState, makingOfData]);
 
     const toggleDescriptionState = () => {
         setDescriptionState(!descriptionState);
@@ -60,16 +62,17 @@ export const MakingOf = () => {
                             <p>{makingOfData[0]?.student}</p>
                         </div>
                     </div>
+
                     <section>
-                        <div className={clsx(styles["making-of-wrapper"])}>
+                        <div className={clsx(styles["making-of-wrapper"], styles[pageStyling])}>
                             <div className={clsx(styles["making-of-wrapper--info-wrapper"])}>
                                 <div className={clsx(styles["making-of-wrapper--info-wrapper--info"])}>
                                     <p dangerouslySetInnerHTML={{ __html: description }}></p>
                                 </div>
                                 <div className={clsx(styles["making-of-wrapper--info-wrapper--info"])}>
                                     <h4>Auteur</h4>
-                                    <p>naam, jaar</p>
-                                    <p>thema</p>
+                                    <p>{ makingOfData[0]?.storyFrom }</p>
+                                    <p>{ makingOfData[0]?.genre }</p>
                                 </div>
                                 <div className="button">
                                     <button

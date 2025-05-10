@@ -62,3 +62,14 @@
         }
     }
 }
+
+.full-description{
+    .making-of-wrapper--info-wrapper p{
+        max-width: 100%;
+    }
+
+    .spacer, .making-of-wrapper--image-wrapper{
+        display: none;
+    }
+
+}

@@ -2,7 +2,7 @@ export interface FairyTaleType {
     id: string; 
     title: string;
     student: string;
-    theme: string;
+    genre: string;
     description: {
         verhaal: string,
         parallax_effect: string,
@@ -16,4 +16,5 @@ export interface FairyTaleType {
             extra_image_3?: string;
         }[];
     };
+    storyFrom: string;
 }
