@@ -3,6 +3,10 @@ export interface FairyTaleType {
     title: string;
     student: string;
     theme: string;
+    description: {
+        verhaal: string,
+        parallax_effect: string,
+    };
     images: {
         main_image: string;
         thumbnail: string;

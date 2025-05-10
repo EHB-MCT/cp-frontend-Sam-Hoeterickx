@@ -1,0 +1,64 @@
+@use '../../../../../styles/base/index' as *;
+
+.banner-wrapper{
+
+    &--image{
+        aspect-ratio: 16/4;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: var(--image-box-shadow);
+    }
+
+    &--fairytale-info-wrapper{
+        max-width: 300px;
+        background-color: var(--widget-color);
+        padding: 12px 32px;
+
+        position: relative;
+        top: -106px;
+
+        h3{
+            color: var(--title-font-color);
+        }
+        p{
+            opacity: 0.8;
+        }
+    }
+}
+
+.making-of-wrapper{
+    display: flex;
+    justify-content: space-between;
+    
+    &--info-wrapper{
+        flex: 8;
+
+        &--info{
+
+            p{
+                max-width: 800px;
+            }
+        }
+    }
+    
+    &--spacer{
+        flex: 0.5;
+    }
+
+    &--image-wrapper{
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &--image{
+            width: 500px;
+
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+
+            box-shadow: var(--image-box-shadow);
+            margin-bottom: 24px;
+        }
+    }
+}

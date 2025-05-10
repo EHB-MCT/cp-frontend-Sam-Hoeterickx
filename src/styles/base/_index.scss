@@ -17,6 +17,9 @@
 
     --title-margin: 24px 0;
     --smaller-title-margin: 16px 0;
+
+    --image-box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.236);
+    --widget-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.236);
 }
 
 body{
@@ -45,7 +48,7 @@ section{
 
 
 h1{
-    font-size: 48pt;
+    font-size: 32pt;
     font-family: var(--title-font-family);
     font-weight: var(--title-font-weight);
     color: var(--title-font-color);
@@ -70,10 +73,18 @@ h4{
     font-weight: 600;
     margin: var(--smaller-title-margin);
 }
-
+p{
+    font-size: 14pt;
+    color: var(--main-font-color);
+}
 a{
     color: var(--main-font-color);
     text-decoration: none;
+}
+strong{
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 
@@ -88,6 +99,8 @@ a{
     padding: 32px;
     border-radius: 32px;
     
+    box-shadow: var(--widget-box-shadow);
+
     &--image-wrapper{
         display: flex;
         justify-content: center;
