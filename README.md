@@ -25,6 +25,7 @@ To run this project locally, follow these steps:
 - [Text3D Drei](https://drei.docs.pmnd.rs/abstractions/text3d)
 - [Animate using Framer motion](https://motion.dev/docs/react-use-animate)
 - [dangerouslySetInnerHTML - use html elements in a string ](https://legacy.reactjs.org/docs/dom-elements.html)
+- [isActive state navigation](https://reactrouter.com/api/components/NavLink)
 
 
 
