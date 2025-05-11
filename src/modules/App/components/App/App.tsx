@@ -16,7 +16,11 @@ export const App = () => {
   const NAVIGATE = useNavigate();
 
   useEffect(() => {
-    if(window.location.href === "http://localhost:5173/") {
+    const baseUrl = window.location.href;
+    const splitUrl = baseUrl.split("/");
+    const path = splitUrl[3];
+
+    if(path === "") {
       NAVIGATE(ALL_FAIRY_TALES_ROUTE.path);   
     }
   }, [])
