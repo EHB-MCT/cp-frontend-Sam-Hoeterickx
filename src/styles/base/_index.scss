@@ -38,6 +38,9 @@ body{
     line-height: 1.35;
 
 }
+*:focus {
+    outline: none;
+}
 
 section{
     margin-bottom: 124px;
