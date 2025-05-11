@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { NavLink } from "react-router";
 
 //Components
 import { Trending } from "~modules/shared/Trending/Trending";
@@ -6,8 +7,12 @@ import { Trending } from "~modules/shared/Trending/Trending";
 //Hooks
 import { useFairyTaleData } from "~modules/shared/const/hooks/getFairyTaleData.hook";
 
+//Routes
+import { EXPLORE_ROUTE } from "../../Explore/explore.route";
+
 //Css
 import styles from "./about.module.scss";
+
 
 
 export const About = () =>  {
@@ -29,6 +34,10 @@ export const About = () =>  {
                         <br />
                         Zo leren ze React-componenten, state management en visuele effecten toepassen om hun sprookjeswereld tot leven te brengen.
                     </p>
+
+                    <div className="button-wrapper">
+                        <NavLink to={EXPLORE_ROUTE.path} className="button">Bekijk alle sprookjes</NavLink>
+                    </div>
                 </div>
                 <div className={clsx(styles["about-wrapper--images-wrapper"])}>
                     <img src="/about_image_1.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_1"])} />
