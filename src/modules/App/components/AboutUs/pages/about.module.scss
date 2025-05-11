@@ -1,0 +1,122 @@
+.about-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &--info-wrapper{
+        max-width: 50%;
+    }
+
+    &--images-wrapper{
+        max-width: 50%;
+        width: 50%;
+
+        display: grid;
+        grid-template-columns: .5fr .75fr .5fr;
+        gap: 24px;
+
+        img{
+            margin: 0 auto;
+            max-width: 225px;
+
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        &--about_image_1{
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            padding-top: 24px;
+
+            border-top-left-radius: 150px;
+        }
+
+        &--about_image_2{
+            grid-column-start: 3;
+            grid-column-end: 4;
+
+            width: 125px;
+
+            position: relative;
+            left: -25%;
+
+            border-radius: 35px;
+        }
+
+        &--about_image_3{
+            grid-column-start: 1;
+            grid-column-end: 2;
+
+            width: 115px;
+
+            position: relative;
+            top: 122px;
+            right: -35%;
+
+
+            border-bottom-left-radius: 35px;
+        }
+
+        &--about_image_4{
+            grid-column-start: 2;
+            grid-column-end: 3;
+ 
+            width: 200px;
+
+            border-top-right-radius: 120px;
+        }
+
+        &--about_image_5{
+            grid-column-start: 3;
+            grid-column-end: 4;
+
+            width: 150px;
+
+            position: relative;
+            top: -104px;
+            left: -25%;
+
+            border-top-right-radius: 75px;
+        }
+
+        &--about_image_6{
+            grid-column-start: 1;
+            grid-column-end: 2;
+
+            width: 150px;
+
+            position: relative;
+            top: 50px;
+            right: -35%;
+
+            border-top-left-radius: 75px;
+        }
+
+        &--about_image_7{
+            grid-column-start: 2;
+            grid-column-end: 3;
+
+            width: 150px;
+
+            position: relative;
+            
+
+            border-bottom-right-radius: 75px;
+        }
+
+        &--about_image_8{
+            grid-column-start: 3;
+            grid-column-end: 4;
+
+            width: 150px;
+            
+            position: relative;
+            top: -100px;
+            left: -25%;
+
+
+            border-bottom-right-radius: 75px;
+        }
+    }
+}
