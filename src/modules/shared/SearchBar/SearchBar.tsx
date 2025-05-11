@@ -18,12 +18,15 @@ export const SearchBar = () => {
 
     const nav = useNavigate();
 
-    const handleChange = (event: { target: { value: any; }; }) => {
-        if(location.pathname !== "/explore"){
-            const searchValue = event.target.value;
-            nav(EXPLORE_ROUTE.path);
-            console.log(searchValue);
+    const handleChange = (event: { target: { value: string } }) => {
+        const searchValue = event.target.value;
+
+        if (location.pathname !== "/explore") {
+            nav(`${EXPLORE_ROUTE.path}?search=${encodeURIComponent(searchValue)}`);
+        } else {
+            nav(`?search=${encodeURIComponent(searchValue)}`);
         }
+        
     }
 
     return (

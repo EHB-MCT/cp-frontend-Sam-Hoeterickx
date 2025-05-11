@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import clsx from "clsx";
+import { useLocation } from "react-router";
 
 //Components
 import { Widget } from "~shared/widget";
@@ -17,18 +18,29 @@ export const Explore: FC = () => {
     const [filterValue, setFilterValue] = useState<string | null>("all");
     const [filteredFairyTales, setFilteredFairyTales] = useState(fairyTales || []);
 
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const searchQuery = searchParams.get("search")?.toLowerCase() || "";
+
     useEffect(() => {
         if (!fairyTales) return;
 
-        if (filterValue === "all" || filterValue === null) {
-            setFilteredFairyTales(fairyTales); 
-        } else {
-            const filtered = fairyTales.filter((fairyTale) =>
+        let filtered = fairyTales;
+
+        if (filterValue !== "all" && filterValue !== null) {
+            filtered = filtered.filter((fairyTale) =>
                 fairyTale.genre.toLowerCase() === filterValue.toLowerCase()
             );
-            setFilteredFairyTales(filtered);
         }
-    }, [filterValue, fairyTales]);
+
+        if (searchQuery) {
+            filtered = filtered.filter((fairyTale) =>
+                fairyTale.student.toLowerCase().includes(searchQuery)
+            );
+        }
+
+        setFilteredFairyTales(filtered);
+    }, [filterValue, fairyTales, searchQuery]);
 
     const handleFilter = (event: React.MouseEvent<HTMLButtonElement>) => {
         const clickValue = (event.target as HTMLButtonElement).value;
