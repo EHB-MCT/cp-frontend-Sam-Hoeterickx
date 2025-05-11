@@ -1,6 +1,6 @@
-import { FairytaleType } from "~shared/Services/fairy-tale-data/types/FairyTaleType";
+import { FairyTaleType } from "~shared/Services/fairy-tale-data/types/FairyTaleType";
 
 export interface CompontentType {
-    data: FairytaleType[],
+    data: FairyTaleType[],
     isLoading: boolean
 }

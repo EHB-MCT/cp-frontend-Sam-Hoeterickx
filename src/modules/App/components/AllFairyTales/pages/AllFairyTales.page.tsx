@@ -30,7 +30,7 @@ export const AllFairyTales: FC = () => {
                                         key={fairytale.id}
                                         id={fairytale.id}
                                         title={fairytale.title}
-                                        theme={fairytale.theme}
+                                        theme={fairytale.genre}
                                         image={fairytale.images.main_image}
                                         student={fairytale.student}
                                     />
