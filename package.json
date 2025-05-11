@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "vite build && npx vite-plugin-gh-pages"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.74.8",
@@ -30,7 +29,6 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1",
     "vite": "^6.3.1",
-    "vite-plugin-gh-pages": "^1.0.1",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }
