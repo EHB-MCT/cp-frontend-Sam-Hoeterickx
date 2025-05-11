@@ -1,1 +1,1 @@
-export { Explore } from './pages/Explore'
+export { Explore } from './pages/Explore.page'

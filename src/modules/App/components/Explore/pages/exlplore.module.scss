@@ -1,0 +1,21 @@
+@use '../../../../../styles/base/index' as *;
+
+.story-section{
+
+    &--filter-wrapper{
+        margin: 32px 0;
+        display: flex;
+        gap: 24px;
+
+        &--filter-button{
+            border: none;
+            background-color: var(--widget-color);
+            
+            padding: 15px 60px;
+            border-radius: 12px;
+            // box-shadow: var(--widget-box-shadow);
+
+            font-family: var(--title-font-family);
+        }
+    }
+}
