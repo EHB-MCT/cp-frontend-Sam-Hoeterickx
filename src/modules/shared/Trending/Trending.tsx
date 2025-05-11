@@ -1,13 +1,13 @@
 import { FC } from "react"
 
 //Types
-import { FairytaleType } from "~shared/Services/fairy-tale-data/types/FairyTaleType"
+import { FairyTaleType } from "~shared/Services/fairy-tale-data/types/FairyTaleType"
 
 //Components
 import { LargeWidget } from "~shared/LargeWidget"
 
 interface TrendingProps {
-    data: FairytaleType[]
+    data: FairyTaleType[]
 }
 
 export const Trending:FC<TrendingProps> = ( data ) => {
@@ -25,7 +25,7 @@ export const Trending:FC<TrendingProps> = ( data ) => {
                                 key={ fairytale.id }
                                 id={ fairytale.id }
                                 title={ fairytale.title }
-                                theme={ fairytale.theme }
+                                theme={ fairytale.genre }
                                 student={ fairytale.student }
                                 image={ fairytale.images.main_image }
                             />
