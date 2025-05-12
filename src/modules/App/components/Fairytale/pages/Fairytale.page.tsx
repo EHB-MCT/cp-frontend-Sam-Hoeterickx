@@ -3,13 +3,14 @@ import clsx from 'clsx';
 import { useEffect, useState } from 'react'
 
 // Components
-// import AnimatedText from '../components/AnimatedText.jsx'
+import AnimatedText from '../components/AnimatedText.jsx'
 import CloudScene from '../components/CloudScene'
 import Lights from '../components/Lights'
 // import Scene3 from '../components/Scene3.jsx'
 
 // CSS
 import styles from './fairytale.module.scss';
+
 
 //Type
 interface MousePosition {
@@ -54,6 +55,11 @@ export const Fairytale = () => {
                         <CloudScene mousePosition={ mousePosition } />
                     </Canvas>
                 </div>
+                <div className={clsx(styles["scene"])}>
+                <Canvas id='canvas'>
+                    <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
+                </Canvas>
+            </div>
             </div>
         </>
     );
