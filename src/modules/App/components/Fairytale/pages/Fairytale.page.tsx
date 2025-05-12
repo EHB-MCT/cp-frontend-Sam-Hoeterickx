@@ -11,7 +11,7 @@ import Scene3 from '../components/Scene3'
 import './fairytale.module.scss'
 
 
-export const FairyTale = () => {
+export const Fairytale = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
     const [selectedPig, setSelectedPig] = useState(null);
 
