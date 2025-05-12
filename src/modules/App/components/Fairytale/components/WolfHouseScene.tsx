@@ -4,6 +4,7 @@ import { useThree } from "@react-three/fiber";
 //Components
 import House from "./House"
 import { Wolf } from "./Wolf"
+import { PerspectiveCamera } from "@react-three/drei";
 
 //Type
 interface WolfHouseSceneProps {
@@ -15,6 +16,11 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
 
     return(
         <>
+            <PerspectiveCamera
+                makeDefault
+                position={[0, 0, 7]} 
+                rotation={[0, 0, 0]}
+            />
             <Wolf
                 scale={1}
                 position={[0, 0, 0]}

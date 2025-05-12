@@ -1,6 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx';
-import { useEffect, useState } from 'react'
+import { Html } from '@react-three/drei';
+import { useEffect, useState } from 'react';
 
 // Components
 import AnimatedText from '../components/AnimatedText'
@@ -11,9 +12,6 @@ import { WolfHouseScene } from '../components/WolfHouseScene';
 
 // CSS
 import styles from './fairytale.module.scss';
-
-
-
 
 //Type
 interface MousePosition {
@@ -48,10 +46,18 @@ export const Fairytale = () => {
         };
     }, []);
 
+    useEffect(() => {
+        console.log(isFlashing);
+    }, [isFlashing]);
+
     
 
     return (
         <>
+            <div className={clsx(
+                styles["flash-overlay"],
+                isFlashing && styles["active"]
+            )} />
             <div className={clsx(styles['scroll-wrapper'])}>
                 <div className={clsx(`${styles['opening-scene']} ${styles.scene}`)}>
                     <Canvas id="canvas">
@@ -83,6 +89,8 @@ export const Fairytale = () => {
                                 selectedPig={ selectedPig }
                                 setSelectedPig={ setSelectedPig }
                                 setCurrentScene={ setCurrentScene }
+                                setIsFlashing={ setIsFlashing }
+
                             />
                         )}
                         {currentScene === 'continue' && (

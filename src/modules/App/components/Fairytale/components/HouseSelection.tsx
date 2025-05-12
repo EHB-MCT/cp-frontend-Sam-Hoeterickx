@@ -16,6 +16,7 @@ interface HouseSelectionProps {
     selectedPig: string | null;
     setSelectedPig: (pig: string) => void;
     setCurrentScene: (scene: string) => void;
+    setIsFlashing: (flash: boolean) => void;
 }
 
 interface TreeData {
@@ -26,7 +27,7 @@ interface TreeData {
     rotation: [number, number, number];
 }
 
-const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene }) => {
+const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene, setIsFlashing }) => {
     const center: [number, number, number] = [0, 0, -3];
     const radius = 6;
     const cameraHeight = 0.3;
@@ -101,6 +102,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
     };
 
     const selectPig = () => {
+        setIsFlashing(true)
         setTimeout(() => {
             let pig: string | null;
             if (angleIndex === 0) {
@@ -110,20 +112,9 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
             } else if (angleIndex === 2) {
                 pig = "wooden";
             }
-
-            gsap.to(camera.position, {
-                duration: 1, 
-                x: 0,
-                y: cameraHeight,
-                z: radius,
-                onUpdate: () => {
-                    camera.lookAt(...center);
-                },
-                onComplete: () => {
-                    setSelectedPig(pig);
-                    setCurrentScene("continue");
-                }
-            })
+            setSelectedPig(pig);
+            setCurrentScene("continue");
+            setIsFlashing(false)
         }, 1000);
 
         
