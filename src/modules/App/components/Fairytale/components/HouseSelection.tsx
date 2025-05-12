@@ -1,16 +1,20 @@
+import clsx from "clsx";
+import gsap from "gsap";
 import { Html } from "@react-three/drei";
 import { useEffect, useState } from "react";
-import gsap from "gsap";
 import { useThree } from "@react-three/fiber";
 
 // Component
 import House from "./House.tsx";
 import Tree from "./Tree.tsx";
 
+//Css
+import styles from '../pages/fairytale.module.scss'
+
 //Type
 interface HouseSelectionProps {
-    selectedPig: string | undefined;
-    setSelectedPig: (pig: string | undefined) => void;
+    selectedPig: string | null;
+    setSelectedPig: (pig: string | null) => void;
 }
 
 interface TreeData {
@@ -96,13 +100,15 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
     };
 
     const selectPig = () => {
-        let pig: string | undefined;
+        let pig: string | null;
         if (angleIndex === 0) {
             pig = "Straw";
         } else if (angleIndex === 1) {
             pig = "Stone";
         } else if (angleIndex === 2) {
             pig = "Wooden";
+        }else {
+            pig = null
         }
         setSelectedPig(pig);
     };
@@ -111,8 +117,8 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
         <>
             <primitive object={ camera }>
                 <group position={ [0, 0, -2] }>
-                    <Html className="button-outer-wrapper" fullscreen>
-                        <div className="button-wrapper">
+                    <Html className={clsx(styles["button-outer-wrapper"])} fullscreen>
+                        <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
                             <button onClick={ previous }>Previous</button>
                             <button onClick={ selectPig }>Select</button>
                             <button onClick={ next }>Next</button>

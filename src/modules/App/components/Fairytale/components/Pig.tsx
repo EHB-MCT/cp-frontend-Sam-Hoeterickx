@@ -6,7 +6,7 @@ import { useLoader } from "@react-three/fiber";
 
 //Type
 interface PigProps {
-    scale?: [number, number, number];
+    scale?: [number, number, number] | number;
     position?: [number, number, number];
     rotation?: [number, number, number];
 }

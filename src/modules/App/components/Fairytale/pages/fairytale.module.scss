@@ -55,15 +55,34 @@ Canvas#canvas{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 35vh;
+    margin-top: 40vh;
+
+    &--button-wrapper{
+        /* width: 100dvw; */
+        position: relative;
+        display: flex;
+        gap: 15px;
+        background: rgba(118, 118, 118, 0.548);
+        padding: 10px;
+        border-radius: 10px;
+
+        button{
+            font-family: var(--title-font-family);
+            color: white;
+
+            background-color: #0c88cd;
+            border: none;
+            outline: none;
+
+            padding: 10px 20px;
+            border-radius: 10px;
+            min-width: 115px;
+
+            cursor: pointer;
+        }
+        button:hover{
+            scale: 1.1;
+        }
+    }
 }
 
-.button-wrapper{
-    /* width: 100dvw; */
-    position: relative;
-    display: flex;
-    gap: 10px;
-    background: rgba(255,255,255,0.85);
-    padding: 10px;
-    border-radius: 10px;
-}
