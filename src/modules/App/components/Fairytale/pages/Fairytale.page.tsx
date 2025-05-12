@@ -48,19 +48,6 @@ export const Fairytale = () => {
         };
     }, []);
 
-            // useEffect(() => {
-            //     if (currentScene === 'continue') {
-            //         document.body.style.overflowY = 'hidden';
-            //         document.body.style.overflowX = 'scroll'
-            //     } else {
-            //         document.body.style.overflow = 'auto';
-            //     }
-            
-            //     // Cleanup function to restore scrolling when component unmounts
-            //     return () => {
-            //         document.body.style.overflowY = 'auto';
-            //     };
-            // }, [currentScene]);
     
 
     return (

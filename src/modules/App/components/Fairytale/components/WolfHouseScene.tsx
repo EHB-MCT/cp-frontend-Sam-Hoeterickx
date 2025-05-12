@@ -13,25 +13,6 @@ interface WolfHouseSceneProps {
 export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
 
-    useEffect(() => {
-        const handleScroll = () => {
-            // Calculate new x position based on scroll
-            // You can adjust the division factor (20) to control movement speed
-            const newX = window.scrollY / 20;
-            
-            setWolfPosition(prev => ({
-                ...prev,
-                x: Math.min(Math.max(newX - 10, -10), 15) // Clamp between -10 and 15
-            }));
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     return(
         <>
             <Wolf
