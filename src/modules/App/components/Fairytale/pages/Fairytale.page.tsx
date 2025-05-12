@@ -3,10 +3,10 @@ import clsx from 'clsx';
 import { useEffect, useState } from 'react'
 
 // Components
-import AnimatedText from '../components/AnimatedText.jsx'
+import AnimatedText from '../components/AnimatedText'
 import CloudScene from '../components/CloudScene'
 import Lights from '../components/Lights'
-// import Scene3 from '../components/Scene3.jsx'
+import HouseSelection from '../components/HouseSelection'
 
 // CSS
 import styles from './fairytale.module.scss';
@@ -66,6 +66,15 @@ export const Fairytale = () => {
                     <Canvas id='canvas'>
                         <Lights intensity={1.5} position={[10, 10, 5]} />
                         <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
+                    </Canvas>
+                </div>
+                <div className={clsx(styles["scene"], styles["scene-3"])}>
+                    <Canvas id='canvas'>
+                        <Lights intensity={1.5} position={[10, 10, 5]} />
+                        <HouseSelection
+                            selectedPig={selectedPig}
+                            setSelectedPig={setSelectedPig}
+                        />
                     </Canvas>
                 </div>
             </div>
