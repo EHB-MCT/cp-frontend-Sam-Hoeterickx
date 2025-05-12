@@ -1,10 +1,10 @@
-import { FC, useEffect, useState } from "react";
-import { useThree } from "@react-three/fiber";
+import { FC, useEffect, useState, useRef } from "react";
+import { PerspectiveCamera } from "@react-three/drei";
+import gsap from "gsap";
 
 //Components
 import House from "./House"
 import { Wolf } from "./Wolf"
-import { PerspectiveCamera } from "@react-three/drei";
 
 //Type
 interface WolfHouseSceneProps {
@@ -13,28 +13,83 @@ interface WolfHouseSceneProps {
 
 export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
+    const [isPigJumping, setIsPigJumping] = useState(false);
+    const pigPositionRef = useRef({ y: -1 });
+
+    useEffect(() => {
+        if ( Math.floor(wolfPosition.x ) === -4 && !isPigJumping) {
+            setIsPigJumping(true);
+            
+
+            gsap.to(pigPositionRef.current, {
+                y: -0.5, 
+                duration: 0.5,
+                ease: "power3.inOut",
+                yoyo: false,
+                repeat: 1, 
+                onComplete: () => {
+                    pigPositionRef.current.y = -1;
+                    setIsPigJumping(false);
+                }
+            });
+        }
+    }, [wolfPosition.x, isPigJumping]);
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "ArrowRight") {
+                setWolfPosition((prev) => ({ ...prev, x: prev.x + 0.1 }));
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
+
+    //Als wolfPosition === 2 dan terug een lichtflits en verander scene
+    //Als selectedPig = straw of wooden -> huis kapot op de grond + restart button
+    //Als selectedPig = stone -> gewonnen
+
 
     return(
         <>
             <PerspectiveCamera
                 makeDefault
-                position={[0, 0, 7]} 
+                position={[wolfPosition.x + 2, 0, 7]} 
                 rotation={[0, 0, 0]}
             />
-            <Wolf
-                scale={1}
-                position={[0, 0, 0]}
-                rotation={[0, 0, 0]}
-            /> 
+            <mesh
+                rotation={ [-Math.PI * 0.5, 0, -Math.PI * 0.2] }
+                position={ [0, -1.5, 0] }
+            >
+                <planeGeometry args={ [100, 100] } />
+                <meshStandardMaterial color={ "green" } />
+            </mesh>
 
-            <House
-                path={`/models/${selectedPig}_house.glb`}
-                houseScale={1.5}
-                housePosition={[2.5, 0, -1]}
-                rotation={[0, 0, 0]}
-                pigScale={0.5}
-                pigPosition={[2.2, -1, 0.4]}
-            />
+            <Wolf
+                scale={ .75 }
+                position={ [wolfPosition.x, -.755, 1] }
+                rotation={ [0, Math.PI * 0.3, 0] }
+            /> 
+            
+            {console.log(wolfPosition, isPigJumping)}
+
+            <group
+                rotation={[ 0, - Math.PI * 0.3, 0]}
+            >
+                <House
+                    path={`/models/${selectedPig}_house.glb`}
+                    houseScale={2.5}
+                    housePosition={[2.5, 1, -1]}
+                    rotation={[0, 0, 0]}
+                    pigScale={0.5}
+                    pigPosition={[2.2, pigPositionRef.current.y, 0.4]}
+                />
+            </group>
+
+            {/* <OrbitControls/> */}
         </>
     );
 };

@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx';
-import { Html } from '@react-three/drei';
+import { Perf } from 'r3f-perf'
 import { useEffect, useState } from 'react';
 
 // Components
@@ -20,6 +20,7 @@ interface MousePosition {
 }
 
 export const Fairytale = () => {
+
     document.title = "De wolf en de 3 biggetjes | Sam Hoeterickx";
     document.body.classList.add('fairytale');
 
@@ -54,6 +55,7 @@ export const Fairytale = () => {
 
     return (
         <>
+            {console.log('render')}
             <div className={clsx(
                 styles["flash-overlay"],
                 isFlashing && styles["active"]
@@ -83,6 +85,7 @@ export const Fairytale = () => {
                 </div>
                 <div className={clsx(styles["scene"], styles["scene-3"], { [styles["wolf-house-scene"]]: currentScene === "continue" })}>
                     <Canvas id='canvas'>
+                    <Perf position="top-left" />
                         <Lights intensity={1.5} position={[10, 10, 5]} />
                         {currentScene === 'houseSelection' && (
                             <HouseSelection
