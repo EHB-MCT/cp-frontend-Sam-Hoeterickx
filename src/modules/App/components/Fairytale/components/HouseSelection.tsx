@@ -101,28 +101,30 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
     };
 
     const selectPig = () => {
-        let pig: string | null;
-        if (angleIndex === 0) {
-            pig = "straw";
-        } else if (angleIndex === 1) {
-            pig = "stone";
-        } else if (angleIndex === 2) {
-            pig = "wooden";
-        }
-
-        gsap.to(camera.position, {
-            duration: 1, 
-            x: 0,
-            y: cameraHeight,
-            z: radius,
-            onUpdate: () => {
-                camera.lookAt(...center);
-            },
-            onComplete: () => {
-                setSelectedPig(pig);
-                setCurrentScene("continue");
+        setTimeout(() => {
+            let pig: string | null;
+            if (angleIndex === 0) {
+                pig = "straw";
+            } else if (angleIndex === 1) {
+                pig = "stone";
+            } else if (angleIndex === 2) {
+                pig = "wooden";
             }
-        })
+
+            gsap.to(camera.position, {
+                duration: 1, 
+                x: 0,
+                y: cameraHeight,
+                z: radius,
+                onUpdate: () => {
+                    camera.lookAt(...center);
+                },
+                onComplete: () => {
+                    setSelectedPig(pig);
+                    setCurrentScene("continue");
+                }
+            })
+        }, 1000);
 
         
     };

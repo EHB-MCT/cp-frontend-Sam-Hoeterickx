@@ -22,7 +22,7 @@ export const Navigation = () => {
           <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to={EXPLORE_ROUTE.path}>EXPLORE</NavLink>
           <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to="/making-of/2" > MAKING OF</NavLink>
           <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to={ABOUT_US_ROUTE.path}>ABOUT US</NavLink>
-          <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to={FAIRY_TALE_ROUTE.path}>Fairytale</NavLink>
+          <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to={FAIRY_TALE_ROUTE.path}>FAIRYTALE</NavLink>
           <SearchBar />
         </div>
       </nav>

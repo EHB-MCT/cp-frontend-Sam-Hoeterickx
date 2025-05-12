@@ -6,12 +6,12 @@ import { useEffect, useState } from 'react'
 import AnimatedText from '../components/AnimatedText'
 import CloudScene from '../components/CloudScene'
 import Lights from '../components/Lights'
-import House from '../components/House';
 import HouseSelection from '../components/HouseSelection'
-import { Wolf } from '../components/Wolf';
+import { WolfHouseScene } from '../components/WolfHouseScene';
 
 // CSS
 import styles from './fairytale.module.scss';
+
 
 
 
@@ -47,6 +47,20 @@ export const Fairytale = () => {
             window.removeEventListener('mousemove', handleMouseMovement);
         };
     }, []);
+
+            // useEffect(() => {
+            //     if (currentScene === 'continue') {
+            //         document.body.style.overflowY = 'hidden';
+            //         document.body.style.overflowX = 'scroll'
+            //     } else {
+            //         document.body.style.overflow = 'auto';
+            //     }
+            
+            //     // Cleanup function to restore scrolling when component unmounts
+            //     return () => {
+            //         document.body.style.overflowY = 'auto';
+            //     };
+            // }, [currentScene]);
     
 
     return (
@@ -74,7 +88,7 @@ export const Fairytale = () => {
                         <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
                     </Canvas>
                 </div>
-                <div className={clsx(styles["scene"], styles["scene-3"])}>
+                <div className={clsx(styles["scene"], styles["scene-3"], { [styles["wolf-house-scene"]]: currentScene === "continue" })}>
                     <Canvas id='canvas'>
                         <Lights intensity={1.5} position={[10, 10, 5]} />
                         {currentScene === 'houseSelection' && (
@@ -85,22 +99,9 @@ export const Fairytale = () => {
                             />
                         )}
                         {currentScene === 'continue' && (
-                           <>
-                                <Wolf
-                                    scale={ 1 }
-                                    position={ [0, 0, 0] }
-                                    rotation={ [0, 0, 0] }
-                                /> 
-
-                                <House
-                                    path={ `/models/${selectedPig}_house.glb` }
-                                    houseScale={ 1.5 }
-                                    housePosition={ [0, 0, -1] }
-                                    rotation={ [0, 0, 0] }
-                                    pigScale={ 0.5 }
-                                    pigPosition={ [0.3, -1, 0.4] }
-                                />
-                           </>
+                            <WolfHouseScene 
+                                selectedPig={ selectedPig }
+                            />
                         )
 
                         }
