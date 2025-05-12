@@ -33,10 +33,10 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
 
             gsap.to(pigPositionRef.current, {
                 y: -0.5, 
-                duration: 0.5,
+                duration: .85,
                 ease: "power3.inOut",
                 yoyo: false,
-                repeat: 1, 
+                repeat: 2, 
                 onComplete: () => {
                     pigPositionRef.current.y = -1;
                     setIsPigJumping(false);
@@ -58,31 +58,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
         };
     }, []);
 
-    useEffect(() => {
-        const trees: TreeData[] = [];
-        for (let i = 0; i < 20; i++) {
-            const angle = Math.random() * Math.PI * 2;
-            const distance = 10 + Math.random() * 10;
-            const x = Math.cos(angle) * distance;
-            
 
-            const path =
-                i % 2 === 0
-                    ? "/models/round-tree.glb"
-                    : "/models/tree-1.glb";
-
-            const scale = Math.random() * 2 + 1;
-
-            trees.push({
-                key: i,
-                path: path,
-                scale: scale,
-                position: [x, 0, 0],
-                rotation: [0, Math.random() * Math.PI * 2, 0],
-            });
-        }
-        setForestData(trees);
-    }, []);
 
     //Als wolfPosition === 2 dan terug een lichtflits en verander scene
     //Als selectedPig = straw of wooden -> huis kapot op de grond + restart button
@@ -104,7 +80,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
                 <meshStandardMaterial color={ "green" } />
             </mesh>
             
-            {forestData.map((tree) => (
+            {/* {forestData.map((tree) => (
                 <Tree
                     key={ tree.key }
                     path={ tree.path }
@@ -112,7 +88,14 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
                     position={ tree.position }
                     rotation={ tree.rotation }
                 />
-            ))}
+            ))} */}
+
+            <Tree
+                path="/models/round-tree.glb"
+                scale={ 1.5 }
+                position={[-2, 0, -3]}
+                rotation={[0, 0, 0]}
+            />
 
 
             <Wolf
