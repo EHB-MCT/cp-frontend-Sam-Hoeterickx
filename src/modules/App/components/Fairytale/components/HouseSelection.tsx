@@ -14,7 +14,7 @@ import styles from '../pages/fairytale.module.scss'
 //Type
 interface HouseSelectionProps {
     selectedPig: string | null;
-    setSelectedPig: (pig: string | null) => void;
+    setSelectedPig: (pig: string) => void;
     setCurrentScene: (scene: string) => void;
 }
 
@@ -108,11 +108,23 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
             pig = "stone";
         } else if (angleIndex === 2) {
             pig = "wooden";
-        }else {
-            pig = null
         }
-        setSelectedPig(pig);
-        setCurrentScene("continue");
+
+        gsap.to(camera.position, {
+            duration: 1, 
+            x: 0,
+            y: cameraHeight,
+            z: radius,
+            onUpdate: () => {
+                camera.lookAt(...center);
+            },
+            onComplete: () => {
+                setSelectedPig(pig);
+                setCurrentScene("continue");
+            }
+        })
+
+        
     };
 
     return (

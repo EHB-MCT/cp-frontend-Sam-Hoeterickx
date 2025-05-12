@@ -28,6 +28,7 @@ export const Fairytale = () => {
     const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
     const [selectedPig, setSelectedPig] = useState<string | null>(null);
     const [currentScene, setCurrentScene] = useState<string>('houseSelection');
+    const [isFlashing, setIsFlashing] = useState<boolean>(false);
 
     useEffect(() => {
         console.log(selectedPig);
@@ -46,6 +47,7 @@ export const Fairytale = () => {
             window.removeEventListener('mousemove', handleMouseMovement);
         };
     }, []);
+    
 
     return (
         <>
