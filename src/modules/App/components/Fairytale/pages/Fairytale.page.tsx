@@ -1,24 +1,60 @@
 import { Canvas } from '@react-three/fiber'
+import clsx from 'clsx';
 import { useEffect, useState } from 'react'
 
 // Components
 // import AnimatedText from '../components/AnimatedText.jsx'
-// import CloudScene from '../components/CloudScene.jsx'
-// import Lights from '../components/Lights.jsx'
+import CloudScene from '../components/CloudScene'
+import Lights from '../components/Lights'
 // import Scene3 from '../components/Scene3.jsx'
 
 // CSS
-import './fairytale.module.scss';
+import styles from './fairytale.module.scss';
 
+//Type
+interface MousePosition {
+    x: number;
+    y: number;
+}
 
 export const Fairytale = () => {
+    document.title = "De wolf en de 3 biggetjes | Sam Hoeterickx";
+    document.body.classList.add('fairytale');
 
-    document.title = "De wolf en de 3 biggetjes | Sam Hoeterickx"
+    const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
+    const [selectedPig, setSelectedPig] = useState<string | null>(null);
+
+    useEffect(() => {
+        console.log(selectedPig);
+    }, [selectedPig]);
+
+    useEffect(() => {
+        const handleMouseMovement = (e: MouseEvent) => {
+            const x = (e.clientX / window.innerWidth) * 2 - 1;
+            const y = -(e.clientY / window.innerHeight) * 2 + 1;
+            setMousePosition({ x, y });
+        };
+
+        window.addEventListener('mousemove', handleMouseMovement);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMovement);
+        };
+    }, []);
 
     return (
         <>
-            <h1>Fairytale</h1>
-            <p>Welcome to the Fairytale page!</p>
+            <div className={clsx(styles['scroll-wrapper'])}>
+                <div className={clsx(`${styles['opening-scene']} ${styles.scene}`)}>
+                    <Canvas id="canvas">
+                        <Lights 
+                            intensity={ 1.5 } 
+                            position={ [10, 10, 5] } 
+                        />
+                        <CloudScene mousePosition={ mousePosition } />
+                    </Canvas>
+                </div>
+            </div>
         </>
     );
-}
+};

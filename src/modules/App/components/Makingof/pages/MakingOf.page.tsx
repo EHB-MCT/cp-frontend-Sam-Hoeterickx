@@ -9,6 +9,9 @@ import { useFairyTaleData } from "~shared/const/hooks/getFairyTaleData.hook";
 import styles from "./makingOf.module.scss";
 
 export const MakingOf = () => {
+    
+    document.body.classList.add('main');
+
     const { id } = useParams();
     console.log(id);
 

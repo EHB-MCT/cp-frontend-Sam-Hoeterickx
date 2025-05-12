@@ -12,7 +12,8 @@ import { useFairyTaleData } from "~shared/const/hooks/getFairyTaleData.hook";
 import styles from "./exlplore.module.scss";
 
 export const Explore: FC = () => {
-    document.title = "Explore | Er was eens...";
+    document.title = "Explore | Er was eens...";    
+    document.body.classList.add('main');
 
     const {data: fairyTales, isLoading} = useFairyTaleData();
     const [filterValue, setFilterValue] = useState<string | null>("all");
