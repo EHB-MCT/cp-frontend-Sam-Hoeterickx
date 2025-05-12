@@ -40,14 +40,14 @@ export const About = () =>  {
                     </div>
                 </div>
                 <div className={clsx(styles["about-wrapper--images-wrapper"])}>
-                    <img src="/about_image_1.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_1"])} />
-                    <img src="/about_image_2.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_2"])} />
-                    <img src="/about_image_3.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_3"])} />
-                    <img src="/about_image_4.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_4"])} />
-                    <img src="/about_image_1.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_5"])} />
-                    <img src="/about_image_2.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_6"])} />
-                    <img src="/about_image_3.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_7"])} />
-                    <img src="/about_image_4.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_8"])} />
+                    <img src="/images/about_images/about_image_1.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_1"])} />
+                    <img src="/images/about_images/about_image_2.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_2"])} />
+                    <img src="/images/about_images/about_image_3.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_3"])} />
+                    <img src="/images/about_images/about_image_4.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_4"])} />
+                    <img src="/images/about_images/about_image_1.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_5"])} />
+                    <img src="/images/about_images/about_image_2.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_6"])} />
+                    <img src="/images/about_images/about_image_3.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_7"])} />
+                    <img src="/images/about_images/about_image_4.jpg" alt="image of ehb students" className={clsx(styles["about-wrapper--images-wrapper--about_image_8"])} />
 
                 </div>
             </div>

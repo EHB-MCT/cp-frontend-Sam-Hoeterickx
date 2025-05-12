@@ -1,0 +1,53 @@
+.scroll-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    background: rgb(6,84,171);
+    background: linear-gradient(180deg, rgba(6,84,171,1) 0%, rgba(0,212,255,1) 53%);
+    /* background: rgb(6,84,171);
+    background: linear-gradient(180deg, rgba(6,84,171,1) 0%, rgba(0,212,255,1) 44%, rgba(0,204,47,1) 100%); */
+}
+
+.scene{
+    width: 100%;
+    height: 100dvh;
+    scroll-snap-align: start;
+}
+
+.opening-scene{
+    height: 120vh;
+}
+
+#canvas{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* .scene-3{
+    background-image: url(../../public/forest.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+.button-outer-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35vh;
+}
+
+.button-wrapper{
+    /* width: 100dvw; */
+    position: relative;
+    display: flex;
+    gap: 10px;
+    background: rgba(255,255,255,0.85);
+    padding: 10px;
+    border-radius: 10px;
+}

@@ -20,8 +20,8 @@ export const DATA_MOCK: FairyTaleType[] = [
             thumbnail: "/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
-                { extra_image_2: "/temp-image.jpg" },
-                { extra_image_3: "/temp-image.jpg" },
+                { extra_image_2: "/images/temp_images/temp-image.jpg" },
+                { extra_image_3: "/images/temp_images/temp-image.jpg"  },
             ],
         },
         storyFrom: "H. C. Andersen"
@@ -44,8 +44,8 @@ export const DATA_MOCK: FairyTaleType[] = [
             thumbnail: "/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
-                { extra_image_2: "/temp-image.jpg" },
-                { extra_image_3: "/temp-image.jpg" },
+                { extra_image_2: "/images/temp_images/temp-image.jpg" },
+                { extra_image_3: "/images/temp_images/temp-image.jpg"  },
             ],
         },
         storyFrom: "H. C. Andersen"
@@ -68,8 +68,8 @@ export const DATA_MOCK: FairyTaleType[] = [
             thumbnail: "/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
-                { extra_image_2: "/temp-image.jpg" },
-                { extra_image_3: "/temp-image.jpg" },
+                { extra_image_2: "/images/temp_images/temp-image.jpg" },
+                { extra_image_3: "/images/temp_images/temp-image.jpg"  },
             ],
         },
         storyFrom: "H. C. Andersen"
@@ -92,8 +92,8 @@ export const DATA_MOCK: FairyTaleType[] = [
             thumbnail: "/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
-                { extra_image_2: "//temp-image.jpg" },
-                { extra_image_3: "//temp-image.jpg" },
+                { extra_image_2: "/images/temp_images/temp-image.jpg" },
+                { extra_image_3: "/images/temp_images/temp-image.jpg"  },
             ],
         },
         storyFrom: "H. C. Andersen"
