@@ -55,11 +55,19 @@ export const Fairytale = () => {
                         <CloudScene mousePosition={ mousePosition } />
                     </Canvas>
                 </div>
+
                 <div className={clsx(styles["scene"])}>
-                <Canvas id='canvas'>
-                    <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
-                </Canvas>
-            </div>
+                    <Canvas id='canvas'>
+                        <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
+                    </Canvas>
+                </div>
+
+                <div className={clsx(styles["scene"])}>
+                    <Canvas id='canvas'>
+                        <Lights intensity={1.5} position={[10, 10, 5]} />
+                        <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
+                    </Canvas>
+                </div>
             </div>
         </>
     );
