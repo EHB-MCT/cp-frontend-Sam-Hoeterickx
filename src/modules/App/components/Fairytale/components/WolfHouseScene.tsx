@@ -4,6 +4,7 @@ import gsap from "gsap";
 
 //Components
 import House from "./House"
+import Tree from "./Tree";
 import { Wolf } from "./Wolf"
 
 //Type
@@ -11,7 +12,16 @@ interface WolfHouseSceneProps {
     selectedPig: string | null;
 }
 
+interface TreeData {
+    key: number;
+    path: string;
+    scale: number;
+    position: [number, number, number];
+    rotation: [number, number, number];
+}
+
 export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
+    const [forestData, setForestData] = useState<TreeData[]>([]);
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
     const [isPigJumping, setIsPigJumping] = useState(false);
     const pigPositionRef = useRef({ y: -1 });
@@ -48,6 +58,32 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
         };
     }, []);
 
+    useEffect(() => {
+        const trees: TreeData[] = [];
+        for (let i = 0; i < 20; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 10 + Math.random() * 10;
+            const x = Math.cos(angle) * distance;
+            
+
+            const path =
+                i % 2 === 0
+                    ? "/models/round-tree.glb"
+                    : "/models/tree-1.glb";
+
+            const scale = Math.random() * 2 + 1;
+
+            trees.push({
+                key: i,
+                path: path,
+                scale: scale,
+                position: [x, 0, 0],
+                rotation: [0, Math.random() * Math.PI * 2, 0],
+            });
+        }
+        setForestData(trees);
+    }, []);
+
     //Als wolfPosition === 2 dan terug een lichtflits en verander scene
     //Als selectedPig = straw of wooden -> huis kapot op de grond + restart button
     //Als selectedPig = stone -> gewonnen
@@ -67,6 +103,17 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
                 <planeGeometry args={ [100, 100] } />
                 <meshStandardMaterial color={ "green" } />
             </mesh>
+            
+            {forestData.map((tree) => (
+                <Tree
+                    key={ tree.key }
+                    path={ tree.path }
+                    scale={ tree.scale }
+                    position={ tree.position }
+                    rotation={ tree.rotation }
+                />
+            ))}
+
 
             <Wolf
                 scale={ .75 }
