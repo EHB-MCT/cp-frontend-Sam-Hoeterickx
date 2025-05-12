@@ -10,15 +10,17 @@
     }
 
     &--fairytale-info-wrapper{
-        max-width: 300px;
         background-color: var(--widget-color);
-        padding: 12px 32px;
+        padding: 12px 42px;
 
         position: relative;
-        top: -106px;
+        top: -130px;
+
+        width: fit-content;
 
         h3{
             color: var(--title-font-color);
+            width: fit-content;
         }
         p{
             opacity: 0.8;

@@ -115,7 +115,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
     return (
         <>
-            <primitive object={ camera }>
+            {/* <primitive object={ camera }>
                 <group position={ [0, 0, -2] }>
                     <Html className={clsx(styles["button-outer-wrapper"])} fullscreen>
                         <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
@@ -125,7 +125,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
                         </div>
                     </Html>
                 </group>
-            </primitive>
+            </primitive> */}
             <group>
                 {/* Left house */}
                 <House
