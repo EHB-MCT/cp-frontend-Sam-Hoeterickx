@@ -15,6 +15,7 @@ import styles from '../pages/fairytale.module.scss'
 interface HouseSelectionProps {
     selectedPig: string | null;
     setSelectedPig: (pig: string | null) => void;
+    setCurrentScene: (scene: string) => void;
 }
 
 interface TreeData {
@@ -25,7 +26,7 @@ interface TreeData {
     rotation: [number, number, number];
 }
 
-const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig }) => {
+const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene }) => {
     const center: [number, number, number] = [0, 0, -3];
     const radius = 6;
     const cameraHeight = 0.3;
@@ -63,8 +64,8 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
             const path =
                 i % 2 === 0
-                    ? "../../public/models/round-tree.glb"
-                    : "../../public/models/tree-1.glb";
+                    ? "/models/round-tree.glb"
+                    : "/models/tree-1.glb";
 
             const scale = Math.random() * 2 + 1;
 
@@ -102,20 +103,21 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
     const selectPig = () => {
         let pig: string | null;
         if (angleIndex === 0) {
-            pig = "Straw";
+            pig = "straw";
         } else if (angleIndex === 1) {
-            pig = "Stone";
+            pig = "stone";
         } else if (angleIndex === 2) {
-            pig = "Wooden";
+            pig = "wooden";
         }else {
             pig = null
         }
         setSelectedPig(pig);
+        setCurrentScene("continue");
     };
 
     return (
         <>
-            {/* <primitive object={ camera }>
+            <primitive object={ camera }>
                 <group position={ [0, 0, -2] }>
                     <Html className={clsx(styles["button-outer-wrapper"])} fullscreen>
                         <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
@@ -125,11 +127,11 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
                         </div>
                     </Html>
                 </group>
-            </primitive> */}
+            </primitive>
             <group>
                 {/* Left house */}
                 <House
-                    path={ "../../public/models/wooden_house.glb" }
+                    path={ "/models/wooden_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [-2, 0, -4] }
                     rotation={ [0, -Math.PI * 0.6666666666, 0] }
@@ -139,7 +141,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
                 {/* Middle house */}
                 <House
-                    path={ "../../public/models/straw_house.glb" }
+                    path={ "/models/straw_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [0, 0, -1] }
                     rotation={ [0, 0, 0] }
@@ -149,7 +151,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
                 {/* Right house */}
                 <House
-                    path={ "../../public/models/stone_house.glb" }
+                    path={ "/models/stone_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [2, 0, -4] }
                     rotation={ [0, Math.PI * 0.6666666666, 0] }
@@ -168,25 +170,25 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
                 {/* Forest */}
                 <Tree
-                    path={ "../../public/models/round-tree.glb" }
+                    path={ "/models/round-tree.glb" }
                     scale={ 1.75 }
                     position={ [0, 0.25, -3] }
                     rotation={ [0, 0, 0] }
                 />
                 <Tree
-                    path={ "../../public/models/tree-1.glb" }
+                    path={ "/models/tree-1.glb" }
                     scale={ 1.3 }
                     position={ [0, -0.25, -4.4] }
                     rotation={ [0, 0, 0] }
                 />
                 <Tree
-                    path={ "../../public/models/tree-1.glb" }
+                    path={ "/models/tree-1.glb" }
                     scale={ 1.3 }
                     position={ [1.5, -0.25, -2.2] }
                     rotation={ [0, 0, 0] }
                 />
                 <Tree
-                    path={ "../../public/models/tree-1.glb" }
+                    path={ "/models/tree-1.glb" }
                     scale={ 1.3 }
                     position={ [-1.5, -0.25, -2.2] }
                     rotation={ [0, 0, 0] }

@@ -6,10 +6,13 @@ import { useEffect, useState } from 'react'
 import AnimatedText from '../components/AnimatedText'
 import CloudScene from '../components/CloudScene'
 import Lights from '../components/Lights'
+import House from '../components/House';
 import HouseSelection from '../components/HouseSelection'
+import { Wolf } from '../components/Wolf';
 
 // CSS
 import styles from './fairytale.module.scss';
+
 
 
 //Type
@@ -24,6 +27,7 @@ export const Fairytale = () => {
 
     const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
     const [selectedPig, setSelectedPig] = useState<string | null>(null);
+    const [currentScene, setCurrentScene] = useState<string>('houseSelection');
 
     useEffect(() => {
         console.log(selectedPig);
@@ -71,12 +75,36 @@ export const Fairytale = () => {
                 <div className={clsx(styles["scene"], styles["scene-3"])}>
                     <Canvas id='canvas'>
                         <Lights intensity={1.5} position={[10, 10, 5]} />
-                        <HouseSelection
-                            selectedPig={selectedPig}
-                            setSelectedPig={setSelectedPig}
-                        />
+                        {currentScene === 'houseSelection' && (
+                            <HouseSelection
+                                selectedPig={ selectedPig }
+                                setSelectedPig={ setSelectedPig }
+                                setCurrentScene={ setCurrentScene }
+                            />
+                        )}
+                        {currentScene === 'continue' && (
+                           <>
+                                <Wolf
+                                    scale={ 1 }
+                                    position={ [0, 0, 0] }
+                                    rotation={ [0, 0, 0] }
+                                /> 
+
+                                <House
+                                    path={ `/models/${selectedPig}_house.glb` }
+                                    houseScale={ 1.5 }
+                                    housePosition={ [0, 0, -1] }
+                                    rotation={ [0, 0, 0] }
+                                    pigScale={ 0.5 }
+                                    pigPosition={ [0.3, -1, 0.4] }
+                                />
+                           </>
+                        )
+
+                        }
                     </Canvas>
                 </div>
+                
             </div>
         </>
     );
