@@ -58,8 +58,6 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
         };
     }, []);
 
-
-
     //Als wolfPosition === 2 dan terug een lichtflits en verander scene
     //Als selectedPig = straw of wooden -> huis kapot op de grond + restart button
     //Als selectedPig = stone -> gewonnen
@@ -79,16 +77,6 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
                 <planeGeometry args={ [100, 100] } />
                 <meshStandardMaterial color={ "green" } />
             </mesh>
-            
-            {/* {forestData.map((tree) => (
-                <Tree
-                    key={ tree.key }
-                    path={ tree.path }
-                    scale={ tree.scale }
-                    position={ tree.position }
-                    rotation={ tree.rotation }
-                />
-            ))} */}
 
             <Tree
                 path="/models/round-tree.glb"
