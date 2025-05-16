@@ -24,7 +24,7 @@ export const Fairytale = () => {
     document.title = "De wolf en de 3 biggetjes | Sam Hoeterickx";
     document.body.classList.add('fairytale');
 
-    console.log(scrollY)
+    // console.log(scrollY)
 
     const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
     const [selectedPig, setSelectedPig] = useState<string | null>(null);
@@ -78,7 +78,7 @@ export const Fairytale = () => {
 
     return (
         <>
-            {console.log('render')}
+            {/* {console.log('render')} */}
             <div className={clsx(
                 styles["flash-overlay"],
                 isFlashing && styles["active"]

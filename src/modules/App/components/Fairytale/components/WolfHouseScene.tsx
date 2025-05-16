@@ -1,11 +1,15 @@
 import { FC, useEffect, useState, useRef } from "react";
-import { PerspectiveCamera } from "@react-three/drei";
+import { Html, PerspectiveCamera } from "@react-three/drei";
 import gsap from "gsap";
+import clsx from "clsx";
 
 //Components
 import House from "./House"
 import Tree from "./Tree";
 import { Wolf } from "./Wolf"
+
+//Css 
+import styles from '../pages/fairytale.module.scss'
 
 //Type
 interface WolfHouseSceneProps {
@@ -24,10 +28,11 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
     const [forestData, setForestData] = useState<TreeData[]>([]);
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
     const [isPigJumping, setIsPigJumping] = useState(false);
+    const [buttonState, setButtonState] = useState("hidden");
     const pigPositionRef = useRef({ y: -1 });
 
     useEffect(() => {
-        if ( Math.floor(wolfPosition.x ) === -4 && !isPigJumping) {
+        if (Math.floor(wolfPosition.x) === -4 && !isPigJumping) {
             setIsPigJumping(true);
             
             gsap.to(pigPositionRef.current, {
@@ -42,14 +47,14 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
                 }
             });
         }
+        
     }, [wolfPosition.x, isPigJumping]);
 
-    
     useEffect(() => {
-
         let initialScrollY = window.scrollY;
         const maxScroll = document.body.scrollHeight - window.innerHeight;
-       
+        const maxScrollForWalking = 9317;
+
         const totalWolfDistance = 8; 
         
         const handleScroll = () => {
@@ -60,6 +65,11 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
             const clampedX = Math.min(Math.max(newWolfPositionX, -10), -2);
             
             setWolfPosition((prev) => ({ ...prev, x: clampedX }));
+
+            if(window.scrollY === maxScroll){
+                // console.log("end")
+                setButtonState('inline')
+            }
         };
         
         window.addEventListener("scroll", handleScroll);
@@ -67,6 +77,10 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    const blow = () => {
+        console.log("wind")
+    }
 
     //Als wolfPosition === 2 dan terug een lichtflits en verander scene
     //Als selectedPig = straw of wooden -> huis kapot op de grond + restart button
@@ -95,12 +109,12 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
             />
 
             <Wolf
-                scale={ .75 }
+                scale={ 0.75 }
                 position={ [wolfPosition.x, -.755, 1] }
                 rotation={ [0, Math.PI * 0.3, 0] }
             /> 
             
-            {console.log(wolfPosition, isPigJumping)}
+            {/* {console.log(wolfPosition, isPigJumping, wolfScale)} */}
 
             <group
                 rotation={[ 0, - Math.PI * 0.3, 0]}
@@ -115,7 +129,15 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
                 />
             </group>
 
-            {/* <OrbitControls/> */}
+            {buttonState === 'inline' && (
+                <group position={ [0, 0, -2] }>
+                    <Html className={clsx(styles["button-outer-wrapper"])} fullscreen>
+                        <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
+                            <button onClick={ blow }>Blow</button>
+                        </div>
+                    </Html>
+                </group>
+            )}
         </>
     );
 };
