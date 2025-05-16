@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 // Components
 import AnimatedText from '../components/AnimatedText'
+import { BrokenHouseScene } from '../components/BrokenHouse.scene';
 import CloudScene from '../components/CloudScene'
 import Lights from '../components/Lights'
 import HouseSelection from '../components/HouseSelection'
@@ -12,6 +13,7 @@ import { WolfHouseScene } from '../components/WolfHouseScene';
 
 // CSS
 import styles from './fairytale.module.scss';
+import Pig from '../components/Pig';
 
 //Type
 interface MousePosition {
@@ -24,6 +26,18 @@ export const Fairytale = () => {
     document.title = "De wolf en de 3 biggetjes | Sam Hoeterickx";
     document.body.classList.add('fairytale');
 
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = 'icon';
+        link.href = '/images/temp_images/Wolf.png'; // Replace with the path to your favicon
+        document.head.appendChild(link);
+
+        return () => {
+            document.head.removeChild(link);
+        };
+    }, []);
+    
+
     // console.log(scrollY)
 
     const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
@@ -31,9 +45,9 @@ export const Fairytale = () => {
     const [currentScene, setCurrentScene] = useState<string>('houseSelection');
     const [isFlashing, setIsFlashing] = useState<boolean>(false);
 
-    useEffect(() => {
-        console.log(selectedPig);
-    }, [selectedPig]);
+    // useEffect(() => {
+    //     console.log(selectedPig);
+    // }, [selectedPig]);
 
     useEffect(() => {
         const handleMouseMovement = (e: MouseEvent) => {
@@ -49,13 +63,13 @@ export const Fairytale = () => {
         };
     }, []);
 
-    useEffect(() => {
-        console.log(isFlashing);
-    }, [isFlashing]);
+    // useEffect(() => {
+    //     console.log(isFlashing);
+    // }, [isFlashing]);
 
     
     useEffect(() => {
-      if (currentScene === 'continue') {
+      if (currentScene === 'wolfScene') {
         let lastScrollY = window.scrollY;
         
         const handleScroll = () => {
@@ -85,7 +99,7 @@ export const Fairytale = () => {
             )} />
                 <div className={clsx(
                     styles['scroll-wrapper'],
-                    currentScene === 'continue' && styles['no-snap-scroll']
+                    currentScene === 'wolfScene' && styles['no-snap-scroll']
                 )}>
                 <div className={clsx(`${styles['opening-scene']} ${styles.scene}`)}>
                     <Canvas id="canvas">
@@ -110,7 +124,7 @@ export const Fairytale = () => {
                     </Canvas>
                 </div>
                 
-                <div className={clsx(styles["scene"], styles["scene-3"], { [styles["wolf-house-scene"]]: currentScene === "continue" })}>
+                <div className={clsx(styles["scene"], styles["scene-3"], { [styles["wolf-house-scene"]]: currentScene === "wolfScene" })}>
                     {currentScene === 'houseSelection' && (
                         <Canvas id='canvas'>
                             <Perf position="top-left" />
@@ -124,16 +138,49 @@ export const Fairytale = () => {
                         </Canvas>
                     )}
                     
-                    {currentScene === 'continue' && (
+                    {currentScene === 'wolfScene' && (
                         <>
                             <div className={styles["fixed-canvas-container"]}>
                                 <Canvas id='canvas'>
                                     <Perf position="top-left" />
                                     <Lights intensity={1.5} position={[10, 10, 5]} />
-                                    <WolfHouseScene selectedPig={selectedPig} />
+                                    <WolfHouseScene 
+                                        selectedPig={selectedPig} 
+                                        setCurrentScene={setCurrentScene}
+                                        setIsFlashing={setIsFlashing}
+                                    />
                                 </Canvas>
                             </div>
                             <div className={styles["scroll-content"]}>
+                            </div>
+                        </>
+                    )}
+                    {currentScene === 'afterblow' && (
+                        <>
+                            <div className={styles["fixed-canvas-container"]}>
+                                <Canvas id='canvas'>
+                                    <Perf position="top-left" />
+                                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                                    <BrokenHouseScene
+                                        selectedPig={selectedPig} 
+                                        setCurrentScene={setCurrentScene}
+                                        setIsFlashing={setIsFlashing}
+                                    />
+                                </Canvas>
+
+                            </div>
+                        </>
+                    )}
+
+                    {currentScene === 'finalScene' && (
+                        <>
+                            <div className={styles["fixed-canvas-container"]}>
+                                <Canvas id='canvas'>
+                                    <Perf position="top-left" />
+                                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                                    <Pig />
+                                </Canvas>
+
                             </div>
                         </>
                     )}

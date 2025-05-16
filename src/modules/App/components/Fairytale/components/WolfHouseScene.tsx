@@ -14,6 +14,8 @@ import styles from '../pages/fairytale.module.scss'
 //Type
 interface WolfHouseSceneProps {
     selectedPig: string | null;
+    setCurrentScene: (scene: string) => void;
+    setIsFlashing:  (flash: boolean) => void;
 }
 
 interface TreeData {
@@ -24,7 +26,7 @@ interface TreeData {
     rotation: [number, number, number];
 }
 
-export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
+export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
     const [forestData, setForestData] = useState<TreeData[]>([]);
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
     const [isPigJumping, setIsPigJumping] = useState(false);
@@ -80,6 +82,16 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
 
     const blow = () => {
         console.log("wind")
+        setIsFlashing(true)
+        setTimeout(() => {
+            if(selectedPig === "straw" || selectedPig === "wooden"){
+                setCurrentScene("afterblow");
+            }else{
+                setCurrentScene("finalScene")
+            }
+            
+            setIsFlashing(false)
+        }, 1000);
     }
 
     //Als wolfPosition === 2 dan terug een lichtflits en verander scene
