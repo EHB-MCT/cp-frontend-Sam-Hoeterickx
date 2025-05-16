@@ -24,6 +24,8 @@ export const Fairytale = () => {
     document.title = "De wolf en de 3 biggetjes | Sam Hoeterickx";
     document.body.classList.add('fairytale');
 
+    console.log(scrollY)
+
     const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
     const [selectedPig, setSelectedPig] = useState<string | null>(null);
     const [currentScene, setCurrentScene] = useState<string>('houseSelection');
@@ -52,6 +54,27 @@ export const Fairytale = () => {
     }, [isFlashing]);
 
     
+    useEffect(() => {
+      if (currentScene === 'continue') {
+        let lastScrollY = window.scrollY;
+        
+        const handleScroll = () => {
+          if (window.scrollY < lastScrollY) {
+            window.scrollTo(0, lastScrollY);
+          } else {
+            lastScrollY = window.scrollY;
+          }
+        };
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }
+    }, [currentScene]);
+
+    
 
     return (
         <>
@@ -60,7 +83,10 @@ export const Fairytale = () => {
                 styles["flash-overlay"],
                 isFlashing && styles["active"]
             )} />
-            <div className={clsx(styles['scroll-wrapper'])}>
+                <div className={clsx(
+                    styles['scroll-wrapper'],
+                    currentScene === 'continue' && styles['no-snap-scroll']
+                )}>
                 <div className={clsx(`${styles['opening-scene']} ${styles.scene}`)}>
                     <Canvas id="canvas">
                         <Lights 
@@ -83,27 +109,34 @@ export const Fairytale = () => {
                         <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
                     </Canvas>
                 </div>
+                
                 <div className={clsx(styles["scene"], styles["scene-3"], { [styles["wolf-house-scene"]]: currentScene === "continue" })}>
-                    <Canvas id='canvas'>
-                    <Perf position="top-left" />
-                        <Lights intensity={1.5} position={[10, 10, 5]} />
-                        {currentScene === 'houseSelection' && (
+                    {currentScene === 'houseSelection' && (
+                        <Canvas id='canvas'>
+                            <Perf position="top-left" />
+                            <Lights intensity={1.5} position={[10, 10, 5]} />
                             <HouseSelection
-                                selectedPig={ selectedPig }
-                                setSelectedPig={ setSelectedPig }
-                                setCurrentScene={ setCurrentScene }
-                                setIsFlashing={ setIsFlashing }
-
+                                selectedPig={selectedPig}
+                                setSelectedPig={setSelectedPig}
+                                setCurrentScene={setCurrentScene}
+                                setIsFlashing={setIsFlashing}
                             />
-                        )}
-                        {currentScene === 'continue' && (
-                            <WolfHouseScene 
-                                selectedPig={ selectedPig }
-                            />
-                        )
-
-                        }
-                    </Canvas>
+                        </Canvas>
+                    )}
+                    
+                    {currentScene === 'continue' && (
+                        <>
+                            <div className={styles["fixed-canvas-container"]}>
+                                <Canvas id='canvas'>
+                                    <Perf position="top-left" />
+                                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                                    <WolfHouseScene selectedPig={selectedPig} />
+                                </Canvas>
+                            </div>
+                            <div className={styles["scroll-content"]}>
+                            </div>
+                        </>
+                    )}
                 </div>
                 
             </div>

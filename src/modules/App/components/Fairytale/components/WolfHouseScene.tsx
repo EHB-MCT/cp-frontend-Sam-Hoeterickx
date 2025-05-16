@@ -30,7 +30,6 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
         if ( Math.floor(wolfPosition.x ) === -4 && !isPigJumping) {
             setIsPigJumping(true);
             
-
             gsap.to(pigPositionRef.current, {
                 y: -0.5, 
                 duration: .85,
@@ -45,23 +44,33 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
         }
     }, [wolfPosition.x, isPigJumping]);
 
+    
     useEffect(() => {
-        const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.key === "ArrowRight") {
-                setWolfPosition((prev) => ({ ...prev, x: prev.x + 0.1 }));
-            }
-        };
 
-        window.addEventListener("keydown", handleKeyDown);
+        let initialScrollY = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+       
+        const totalWolfDistance = 8; 
+        
+        const handleScroll = () => {
+            const scrollProgress = (window.scrollY - initialScrollY) / (maxScroll - initialScrollY);
+            
+            const newWolfPositionX = -10 + (scrollProgress * totalWolfDistance);
+            
+            const clampedX = Math.min(Math.max(newWolfPositionX, -10), -2);
+            
+            setWolfPosition((prev) => ({ ...prev, x: clampedX }));
+        };
+        
+        window.addEventListener("scroll", handleScroll);
         return () => {
-            window.removeEventListener("keydown", handleKeyDown);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
     //Als wolfPosition === 2 dan terug een lichtflits en verander scene
     //Als selectedPig = straw of wooden -> huis kapot op de grond + restart button
     //Als selectedPig = stone -> gewonnen
-
 
     return(
         <>
@@ -84,7 +93,6 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig }) => {
                 position={[-2, 0, -3]}
                 rotation={[0, 0, 0]}
             />
-
 
             <Wolf
                 scale={ .75 }
