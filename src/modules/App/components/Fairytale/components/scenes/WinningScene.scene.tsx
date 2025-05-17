@@ -1,10 +1,14 @@
 import * as THREE from "three"
 import { Text3D, PerspectiveCamera, Float } from "@react-three/drei"
 import gsap from "gsap"
-import { House } from "../models/House.model"
-import Pig from "../models/Pig.model"
 import { useFrame } from "@react-three/fiber"
 import { useRef, useEffect, FC } from "react"
+
+//Models
+import { Hill } from "../models/Hill.model"
+import { House } from "../models/House.model"
+import Pig from "../models/Pig.model"
+import Tree from "../models/Tree.model"
 
 //Type
 interface WinningSceneProps {
@@ -127,7 +131,10 @@ export const WinningScene: FC<WinningSceneProps> = () => {
                 </group>
             </Float>
             
-            <group position={[ 0, -.705, 1 ]}>
+            <group 
+                name="Pigs"
+                position={[ 0, -.705, 1 ]}
+            >
                 <group ref={pig1Ref} position={[-1.5, 0, 0]}>
                     <Pig 
                         position={[0, 0, 0]} 
@@ -168,7 +175,43 @@ export const WinningScene: FC<WinningSceneProps> = () => {
                 <meshStandardMaterial color={ "green" } />
             </mesh>
 
-            {/* <OrbitControls /> */}
+           
+            <group name="Hills">
+                <Hill
+                    scale={5}
+                    position={[-9, 1.5, -22]}
+                    rotation={[0, -Math.PI * 0.35, 0]}
+                />
+                <Hill
+                    scale={5}
+                    position={[-2, 1.5, -18]}
+                    rotation={[0, Math.PI * 0.8, 0]}
+                />
+
+                <Hill
+                    scale={7}
+                    position={[8, 2, -30]}
+                    rotation={[0, Math.PI * 0.5, 0]}
+                />
+                <Hill
+                    scale={5}
+                    position={[-20, 1.5, -20]}
+                    rotation={[0, Math.PI * 0.1, 0]}
+                />
+
+                <Hill
+                    scale={12}
+                    position={[12, 4, -55]}
+                    rotation={[0, -Math.PI * 0.25, 0]}
+                />
+                <Hill
+                    scale={7}
+                    position={[29, 2, -30]}
+                    rotation={[0, Math.PI * 0.5, 0]}
+                />
+            </group>
+
+
         </>
     )
 }
