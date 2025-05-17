@@ -38,8 +38,7 @@ export const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentS
                 <meshStandardMaterial color={ "green" } />
             </mesh>
             <BrokenHouse
-                path="/models/BrokenHouse_wooden.glb"
-                // path="/models/BrokenHouse_${selectedPig}.glb"
+                path={`/models/BrokenHouse_${selectedPig}.glb`}
                 scale={ 2.5 }
                 position={[ 1, -1.1, -1 ]}
                 rotation={[ 0, Math.PI * 0.5, 0 ]}
