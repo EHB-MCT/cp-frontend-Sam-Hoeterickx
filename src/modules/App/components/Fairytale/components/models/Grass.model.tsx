@@ -3,15 +3,18 @@ import { GLTFLoader } from "three/examples/jsm/Addons.js"
 import { Object3D } from "three";
 import { useLoader } from "@react-three/fiber"; 
 
-interface HillProps {
+//Type
+interface GrassProps {
+    path: string;
     scale: [number, number, number] | number;
     position: [number, number, number];
-    rotation: [number, number, number]; 
+    rotation: [number, number, number];
 }
 
-export const Hill: FC<HillProps> =  ({ scale, position, rotation}) => {
-    const gltf = useLoader(GLTFLoader, '/models/Hill.glb')
+export const Grass: FC<GrassProps> = ({ path, scale, position, rotation }) => {
 
+    const gltf = useLoader(GLTFLoader, path);
+    
     return(
         <primitive
             object={gltf.scene.clone() as Object3D}
