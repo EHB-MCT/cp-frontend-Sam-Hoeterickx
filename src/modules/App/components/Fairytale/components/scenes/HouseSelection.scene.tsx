@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import { useThree } from "@react-three/fiber";
 
 // Component
-import House from "./House.tsx";
-import Tree from "./Tree.tsx";
+import HouseAndPig from "../HouseAndPig.tsx";
+import Tree from "../models/Tree.model.tsx";
 
 //Css
-import styles from '../pages/fairytale.module.scss'
+import styles from '../../pages/fairytale.module.scss'
 
 //Type
 interface HouseSelectionProps {
@@ -133,7 +133,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
             </primitive>
             <group>
                 {/* Left house */}
-                <House
+                <HouseAndPig
                     path={ "/models/wooden_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [-2, 0, -4] }
@@ -143,7 +143,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
                 />
 
                 {/* Middle house */}
-                <House
+                <HouseAndPig
                     path={ "/models/straw_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [0, 0, -1] }
@@ -153,7 +153,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
                 />
 
                 {/* Right house */}
-                <House
+                <HouseAndPig
                     path={ "/models/stone_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [2, 0, -4] }

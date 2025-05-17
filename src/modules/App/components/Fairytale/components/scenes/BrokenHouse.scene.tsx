@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { BrokenHouse } from "./BrokenHouse.model";
+import { BrokenHouse } from "../models/BrokenHouse.model";
 import { Html, PerspectiveCamera } from "@react-three/drei";
 import clsx from "clsx";
 
 //Css
-import styles from '../pages/fairytale.module.scss'
+import styles from '../../pages/fairytale.module.scss'
 
 //Type
 interface BrokenHouseType {
@@ -38,11 +38,11 @@ export const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentS
                 <meshStandardMaterial color={ "green" } />
             </mesh>
             <BrokenHouse
-                path="/models/BrokenHouse_straw.glb"
+                path="/models/BrokenHouse_wooden.glb"
                 // path="/models/BrokenHouse_${selectedPig}.glb"
                 scale={ 2.5 }
-                position={[ 1, 1, -1 ]}
-                rotation={[ 0, -Math.PI * 0.9, 0 ]}
+                position={[ 1, -1.1, -1 ]}
+                rotation={[ 0, Math.PI * 0.5, 0 ]}
             />
 
             <group position={ [0, 0, -2] }>

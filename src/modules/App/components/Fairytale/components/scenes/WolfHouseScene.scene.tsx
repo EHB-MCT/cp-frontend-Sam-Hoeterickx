@@ -4,12 +4,12 @@ import gsap from "gsap";
 import clsx from "clsx";
 
 //Components
-import House from "./House"
-import Tree from "./Tree";
-import { Wolf } from "./Wolf"
+import House from "../HouseAndPig"
+import Tree from "../models/Tree.model";
+import { Wolf } from "../models/Wolf.model"
 
 //Css 
-import styles from '../pages/fairytale.module.scss'
+import styles from '../../pages/fairytale.module.scss'
 
 //Type
 interface WolfHouseSceneProps {

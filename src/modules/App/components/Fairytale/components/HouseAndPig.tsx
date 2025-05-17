@@ -4,10 +4,11 @@ import { Object3D } from "three";
 import { useLoader } from "@react-three/fiber";
 
 // Components
-import Pig from "./Pig";
+import Pig from "./models/Pig.model";
+import { House } from "./models/House.model";
 
 //Type
-interface HouseProps {
+interface HouseAndPigProps {
     path: string;
     houseScale: [number, number, number] | number;
     housePosition: [number, number, number];
@@ -16,7 +17,7 @@ interface HouseProps {
     pigPosition: [number, number, number];
 }
 
-const House: FC<HouseProps> = ({ path, houseScale, housePosition, rotation, pigScale, pigPosition,}) => {
+const HouseAndPig: FC<HouseAndPigProps> = ({ path, houseScale, housePosition, rotation, pigScale, pigPosition,}) => {
 
     const gltf = useLoader(GLTFLoader, path);
 
@@ -28,16 +29,14 @@ const House: FC<HouseProps> = ({ path, houseScale, housePosition, rotation, pigS
                 rotation={ rotation } 
             />
 
-            <primitive
-                object={gltf.scene.clone() as Object3D}
-                scale={houseScale}
-                position={housePosition}
-                rotation={rotation}
-                receiveShadow
-                castShadow
+            <House
+                path={ path }
+                scale={ houseScale } 
+                position={ housePosition } 
+                rotation={ rotation } 
             />
         </>
     );
 };
 
-export default House;
+export default HouseAndPig;

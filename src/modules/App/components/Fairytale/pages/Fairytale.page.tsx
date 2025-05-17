@@ -5,15 +5,15 @@ import { useEffect, useState } from 'react';
 
 // Components
 import AnimatedText from '../components/AnimatedText'
-import { BrokenHouseScene } from '../components/BrokenHouse.scene';
-import CloudScene from '../components/CloudScene'
+import { BrokenHouseScene } from '../components/scenes/BrokenHouse.scene';
+import CloudScene from '../components/CloudScene.scene'
 import Lights from '../components/Lights'
-import HouseSelection from '../components/HouseSelection'
-import { WolfHouseScene } from '../components/WolfHouseScene';
+import HouseSelection from '../components/scenes/HouseSelection.scene'
+import { WolfHouseScene } from '../components/scenes/WolfHouseScene.scene';
+import { WinningScene } from '../components/scenes/WinningScene.scene';
 
 // CSS
 import styles from './fairytale.module.scss';
-import Pig from '../components/Pig';
 
 //Type
 interface MousePosition {
@@ -43,6 +43,7 @@ export const Fairytale = () => {
     const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
     const [selectedPig, setSelectedPig] = useState<string | null>(null);
     const [currentScene, setCurrentScene] = useState<string>('houseSelection');
+    // const [currentScene, setCurrentScene] = useState<string>('finalScene');
     const [isFlashing, setIsFlashing] = useState<boolean>(false);
 
     // useEffect(() => {
@@ -178,7 +179,7 @@ export const Fairytale = () => {
                                 <Canvas id='canvas'>
                                     <Perf position="top-left" />
                                     <Lights intensity={1.5} position={[10, 10, 5]} />
-                                    <Pig />
+                                    <WinningScene />
                                 </Canvas>
 
                             </div>
