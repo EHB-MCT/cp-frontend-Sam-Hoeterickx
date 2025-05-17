@@ -83,7 +83,7 @@ export const WinningScene: FC<WinningSceneProps> = () => {
         }
     }, []);
     
-    useFrame((state, delta) => {        
+    useFrame((state, delta) => {
         if (textRef.current) {
             textRef.current.position.y = -5 + Math.sin(state.clock.elapsedTime) * 0.2
         }
