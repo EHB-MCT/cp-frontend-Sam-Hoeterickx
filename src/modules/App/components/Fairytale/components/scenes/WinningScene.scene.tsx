@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import { Center, Text3D, PerspectiveCamera, Float, OrbitControls } from "@react-three/drei"
+import { Text3D, PerspectiveCamera, Float } from "@react-three/drei"
 import gsap from "gsap"
 import { House } from "../models/House.model"
 import Pig from "../models/Pig.model"
@@ -85,7 +85,7 @@ export const WinningScene: FC<WinningSceneProps> = () => {
     
     useFrame((state, delta) => {        
         if (textRef.current) {
-            textRef.current.position.y = 8 + Math.sin(state.clock.elapsedTime) * 0.2
+            textRef.current.position.y = -5 + Math.sin(state.clock.elapsedTime) * 0.2
         }
     })
     
@@ -98,19 +98,19 @@ export const WinningScene: FC<WinningSceneProps> = () => {
             
             {/* Animated text */}
             <Float speed={2} rotationIntensity={0.2} floatIntensity={0.5}>
-                <Center>
+                <group position={[0, 6, 0]}>
                     <Text3D 
                         ref={textRef}
                         font="./fonts/luckiest_guy.json"
-                        size={.5}
-                        height={0.4}
+                        size={0.5} 
+                        height={0.2} 
                         curveSegments={8}
                         bevelEnabled
-                        bevelThickness={.1}
+                        bevelThickness={.05} 
                         bevelSize={0.01}
                         bevelOffset={0}
                         bevelSegments={8}
-                        position={[3.1, 8, -18]}
+                        position={[-1.5, 0, 0]}  
                         rotation={[Math.PI * 0.03, 0, 0]}
                     >
                         {`You won!`}
@@ -124,7 +124,7 @@ export const WinningScene: FC<WinningSceneProps> = () => {
                             clearcoatRoughness={0.1}
                         />
                     </Text3D>
-                </Center>
+                </group>
             </Float>
             
             <group position={[ 0, -.705, 1 ]}>
@@ -168,7 +168,7 @@ export const WinningScene: FC<WinningSceneProps> = () => {
                 <meshStandardMaterial color={ "green" } />
             </mesh>
 
-            <OrbitControls />
+            {/* <OrbitControls /> */}
         </>
     )
 }
