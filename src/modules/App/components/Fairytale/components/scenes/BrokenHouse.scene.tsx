@@ -1,10 +1,14 @@
-import { FC } from "react";
+import * as THREE from "three";
+import { FC, useEffect, useRef } from "react";
+import gsap from "gsap";
 import { Html, PerspectiveCamera } from "@react-three/drei";
 import clsx from "clsx";
 
 //Models
 import { BrokenHouse } from "../models/BrokenHouse.model";
 import { Hill } from "../models/Hill.model";
+import { Text } from "../Text";
+import { Wolf } from "../models/Wolf.model";
 
 //Css
 import styles from '../../pages/fairytale.module.scss'
@@ -18,6 +22,8 @@ interface BrokenHouseType {
 
 export const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
 
+    const wolfRef = useRef<THREE.Group>(null)
+
     const restart = () => {
         setIsFlashing(true)
         setTimeout(() => {
@@ -25,6 +31,20 @@ export const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentS
             setIsFlashing(false)
         }, 1000);
     }
+
+    useEffect(() => {
+        if(wolfRef.current){
+            gsap.to(wolfRef.current.position, {
+                y: .5, 
+                duration: 0.6,
+                ease: "power1.out",
+                repeat: -1,
+                yoyo: true,
+                delay: 0.4,
+                repeatDelay: 0.4
+            });
+        }
+    }, [])
 
     return (
         <>
@@ -84,10 +104,22 @@ export const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentS
             </group>
 
             <BrokenHouse
-                path={`/models/BrokenHouse_${selectedPig}.glb`}
+                // path={`/models/BrokenHouse_${selectedPig}.glb`}
+                path={`/models/BrokenHouse_wooden.glb`}
                 scale={ 2.5 }
                 position={[ 1, -1.1, -1 ]}
                 rotation={[ 0, Math.PI * 0.5, 0 ]}
+            />
+            <group ref={wolfRef} >
+                <Wolf
+                    scale={ 0.75 }
+                    position={ [-2, -.755, 1] }
+                    rotation={ [0, Math.PI * 0.2, 0] }
+                /> 
+            </group>
+
+            <Text
+                text="You Lose!"
             />
 
             <group position={ [0, 0, -2] }>
