@@ -18,7 +18,7 @@ export const App = () => {
   useEffect(() => {
     const baseUrl = window.location.href;
     const splitUrl = baseUrl.split("/");
-    const path = splitUrl[3];
+    const path = splitUrl[4];
 
     if(path === "") {
       NAVIGATE(ALL_FAIRY_TALES_ROUTE.path);   
