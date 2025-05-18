@@ -53,9 +53,7 @@ export const Root = () => {
             path: FAIRY_TALE_ROUTE.path,
             element: FAIRY_TALE_ROUTE.element
         }
-    ], {
-        basename: '/cp-frontend-Sam-Hoeterickx'
-    })
+    ])
 
     return (
         <QueryClientProvider client={queryClient}>
