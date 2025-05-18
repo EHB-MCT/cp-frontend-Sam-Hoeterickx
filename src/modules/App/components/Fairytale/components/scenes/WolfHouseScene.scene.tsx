@@ -32,6 +32,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
     const [isPigJumping, setIsPigJumping] = useState(false);
     const [buttonState, setButtonState] = useState("hidden");
     const pigPositionRef = useRef({ y: -1 });
+    const wolfPositionRef = useRef({ y: -.755 });
 
     useEffect(() => {
         if (Math.floor(wolfPosition.x) === -4 && !isPigJumping) {
@@ -55,9 +56,10 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
     useEffect(() => {
         let initialScrollY = window.scrollY;
         const maxScroll = document.body.scrollHeight - window.innerHeight;
-        const maxScrollForWalking = 9317;
 
         const totalWolfDistance = 8; 
+        let lastScrollPosition = window.scrollY;
+        let jumpTimer:any = null;
         
         const handleScroll = () => {
             const scrollProgress = (window.scrollY - initialScrollY) / (maxScroll - initialScrollY);
@@ -68,6 +70,29 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
             
             setWolfPosition((prev) => ({ ...prev, x: clampedX }));
 
+            const isScrollingDown = window.scrollY > lastScrollPosition;
+            
+            if (isScrollingDown && !jumpTimer) {
+                jumpTimer = setTimeout(() => {
+                    jumpTimer = null;
+                }, 300);
+                
+                gsap.to(wolfPositionRef.current, {
+                    y: -0.655, 
+                    duration: 0.15,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        gsap.to(wolfPositionRef.current, {
+                            y: -.755, 
+                            duration: 0.15,
+                            ease: "power2.in"
+                        });
+                    }
+                });
+            }
+            
+            lastScrollPosition = window.scrollY;
+
             if(window.scrollY === maxScroll){
                 // console.log("end")
                 setButtonState('inline')
@@ -77,6 +102,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            if (jumpTimer) clearTimeout(jumpTimer);
         };
     }, []);
 
@@ -157,7 +183,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
 
             <Wolf
                 scale={ 0.75 }
-                position={ [wolfPosition.x, -.755, 1] }
+                position={ [wolfPosition.x, wolfPositionRef.current.y, 1] }
                 rotation={ [0, Math.PI * 0.3, 0] }
             /> 
             
