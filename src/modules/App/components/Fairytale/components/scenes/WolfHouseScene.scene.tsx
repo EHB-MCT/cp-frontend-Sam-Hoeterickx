@@ -1,5 +1,5 @@
 import { FC, useEffect, useState, useRef } from "react";
-import { Html, PerspectiveCamera } from "@react-three/drei";
+import { Html, OrbitControls, PerspectiveCamera, Text3D } from "@react-three/drei";
 import gsap from "gsap";
 import clsx from "clsx";
 
@@ -29,8 +29,8 @@ interface TreeData {
 export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
     const [forestData, setForestData] = useState<TreeData[]>([]);
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
-    const [isPigJumping, setIsPigJumping] = useState(false);
-    const [buttonState, setButtonState] = useState("hidden");
+    const [isPigJumping, setIsPigJumping] = useState<boolean>(false);
+    const [buttonState, setButtonState] = useState<string>("hidden");
     const pigPositionRef = useRef({ y: -1 });
     const wolfPositionRef = useRef({ y: -.755 });
 
@@ -120,6 +120,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
         }, 1000);
     }
 
+
     //Als wolfPosition === 2 dan terug een lichtflits en verander scene
     //Als selectedPig = straw of wooden -> huis kapot op de grond + restart button
     //Als selectedPig = stone -> gewonnen
@@ -202,15 +203,46 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
                 />
             </group>
 
+
+        
+            <Text3D 
+                font="./fonts/luckiest_guy.json"
+                size={0.2} 
+                height={0.2} 
+                curveSegments={8}
+                bevelEnabled
+                bevelThickness={.05} 
+                bevelSize={0.01}
+                bevelOffset={0}
+                bevelSegments={8}
+                position={[-10, 2, 0]}  
+                rotation={[Math.PI * 0.075, 0, 0]}
+            >
+                {`Little pig, little pig
+let me in! Or I'll huff and 
+puff and I'll blow 
+your house in!`}
+                <meshPhysicalMaterial 
+                    color="#FFFFFF"  
+                    metalness={0.5}  
+                    roughness={0.2}
+                    emissive="#000"
+                    emissiveIntensity={0.3}
+                    clearcoat={1}
+                    clearcoatRoughness={0.1}
+                />
+            </Text3D>
+
             {buttonState === 'inline' && (
                 <group position={ [0, 0, -2] }>
-                    <Html className={clsx(styles["button-outer-wrapper"])} fullscreen>
+                    <Html className={clsx(styles["button-outer-wrapper"])}>
                         <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
                             <button onClick={ blow }>Blow</button>
                         </div>
                     </Html>
                 </group>
             )}
+            {/* <OrbitControls /> */}
         </>
     );
 };
