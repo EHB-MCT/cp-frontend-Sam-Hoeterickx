@@ -21,7 +21,7 @@ interface MousePosition {
     y: number;
 }
 
-const Fairytale = () => {
+export const Fairytale = () => {
 
     document.title = "De wolf en de 3 biggetjes | Sam Hoeterickx";
     document.body.classList.add('fairytale');
@@ -131,60 +131,72 @@ const Fairytale = () => {
                     </Canvas>
                 </div>
                 
-                <div className={clsx(
-                    styles["scene"], 
-                    styles["scene-3"], 
-                    { [styles["wolf-house-scene"]]: currentScene === "wolfScene" }
-                )}>
-
-                    {(currentScene === 'wolfScene' || currentScene === 'afterblow' || currentScene === 'finalScene') ? (
-                        <div className={styles["fixed-canvas-container"]}>
-                            <Canvas id='canvas'>
-                                <Perf position="top-left" />
-                                <Lights intensity={1.5} position={[10, 10, 5]} />
-                                <Suspense fallback={null}>
-                                    
-                                    {currentScene === 'wolfScene' && (
-                                        <WolfHouseScene 
-                                            selectedPig={selectedPig} 
-                                            setCurrentScene={setCurrentScene}
-                                            setIsFlashing={setIsFlashing}
-                                        />
-                                    )}
-                                    
-                                    {currentScene === 'afterblow' && (
-                                        <BrokenHouseScene
-                                            selectedPig={selectedPig} 
-                                            setCurrentScene={setCurrentScene}
-                                            setIsFlashing={setIsFlashing}
-                                        />
-                                    )}
-                                    
-                                    {currentScene === 'finalScene' && (
-                                        <WinningScene />
-                                    )}
-                                </Suspense>
-                            </Canvas>
-                        </div>
-                    ) : (
+                <div className={clsx(styles["scene"], styles["scene-3"], { [styles["wolf-house-scene"]]: currentScene === "wolfScene" })}>
+                    {currentScene === 'houseSelection' && (
                         <Canvas id='canvas'>
                             <Perf position="top-left" />
                             <Lights intensity={1.5} position={[10, 10, 5]} />
-                            <Suspense fallback={null}>
+                            <Suspense fallback={ null }>
                                 <HouseSelectionScene
-                                    selectedPig={selectedPig}
-                                    setSelectedPig={setSelectedPig}
-                                    setCurrentScene={setCurrentScene}
-                                    setIsFlashing={setIsFlashing}
+                                    selectedPig={ selectedPig }
+                                    setSelectedPig={ setSelectedPig }
+                                    setCurrentScene={ setCurrentScene }
+                                    setIsFlashing={ setIsFlashing }
                                 />
                             </Suspense>
                         </Canvas>
                     )}
                     
-                    {/* Scroll content only for wolf scene */}
                     {currentScene === 'wolfScene' && (
-                        <div className={styles["scroll-content"]}>
-                        </div>
+                        <>
+                            <div className={styles["fixed-canvas-container"]}>
+                                <Canvas id='canvas'>
+                                    <Perf position="top-left" />
+                                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                                    <Suspense fallback={ null }>
+                                        <WolfHouseScene 
+                                            selectedPig={selectedPig} 
+                                            setCurrentScene={setCurrentScene}
+                                            setIsFlashing={setIsFlashing}
+                                        />
+                                    </Suspense>
+                                </Canvas>
+                            </div>
+                            <div className={styles["scroll-content"]}>
+                            </div>
+                        </>
+                    )}
+                    {currentScene === 'afterblow' && (
+                        <>
+                            <div className={styles["fixed-canvas-container"]}>
+                                <Canvas id='canvas'>
+                                    <Perf position="top-left" />
+                                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                                    <Suspense fallback={ null }>
+                                        <BrokenHouseScene
+                                            selectedPig={selectedPig} 
+                                            setCurrentScene={setCurrentScene}
+                                            setIsFlashing={setIsFlashing}
+                                        />
+                                    </Suspense>
+                                </Canvas>
+
+                            </div>
+                        </>
+                    )}
+
+                    {currentScene === 'finalScene' && (
+                        <>
+                            <div className={styles["fixed-canvas-container"]}>
+                                <Canvas id='canvas'>
+                                    <Perf position="top-left" />
+                                    <Lights intensity={1.5} position={[10, 10, 5]} />
+                                    <Suspense fallback={ null }>
+                                        <WinningScene />
+                                    </Suspense>
+                                </Canvas>
+                            </div>
+                        </>
                     )}
                 </div>
                 
@@ -192,5 +204,3 @@ const Fairytale = () => {
         </>
     );
 };
-
-export default Fairytale
