@@ -16,12 +16,12 @@ export const DATA_MOCK: FairyTaleType[] = [
                 Uiteindelijk eindigt het verhaal in een kleurrijke mouse-parallax waarin bloemen dansen en de bloemenkoning tevoorschijn komt, als afsluiting van haar sprookjesachtige avontuur.`,
         },
         images: {
-            main_image: "./temp-image.jpg",
-            thumbnail: "./temp-image.jpg",
+            main_image: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg",
+            thumbnail: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
-                { extra_image_2: "./temp-image.jpg" },
-                { extra_image_3: "./temp-image.jpg" },
+                { extra_image_2: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg" },
+                { extra_image_3: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg" },
             ],
         },
         storyFrom: "H. C. Andersen"
@@ -40,12 +40,12 @@ export const DATA_MOCK: FairyTaleType[] = [
                 Uiteindelijk eindigt het verhaal in een kleurrijke mouse-parallax waarin bloemen dansen en de bloemenkoning tevoorschijn komt, als afsluiting van haar sprookjesachtige avontuur.`,
         },
         images: {
-            main_image: "./temp-image.jpg",
-            thumbnail: "./temp-image.jpg",
+            main_image: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg",
+            thumbnail: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
-                { extra_image_2: "./temp-image.jpg" },
-                { extra_image_3: "./temp-image.jpg" },
+                { extra_image_2: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg" },
+                { extra_image_3: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg" },
             ],
         },
         storyFrom: "H. C. Andersen"
@@ -64,12 +64,12 @@ export const DATA_MOCK: FairyTaleType[] = [
                 Uiteindelijk eindigt het verhaal in een kleurrijke mouse-parallax waarin bloemen dansen en de bloemenkoning tevoorschijn komt, als afsluiting van haar sprookjesachtige avontuur.`,
         },
         images: {
-            main_image: "./temp-image.jpg",
-            thumbnail: "./temp-image.jpg",
+            main_image: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg",
+            thumbnail: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
-                { extra_image_2: "./temp-image.jpg" },
-                { extra_image_3: "./temp-image.jpg" },
+                { extra_image_2: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg" },
+                { extra_image_3: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg" },
             ],
         },
         storyFrom: "H. C. Andersen"
@@ -88,12 +88,12 @@ export const DATA_MOCK: FairyTaleType[] = [
                 Uiteindelijk eindigt het verhaal in een kleurrijke mouse-parallax waarin bloemen dansen en de bloemenkoning tevoorschijn komt, als afsluiting van haar sprookjesachtige avontuur.`,
         },
         images: {
-            main_image: "./temp-image.jpg",
-            thumbnail: "./temp-image.jpg",
+            main_image: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg",
+            thumbnail: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },
-                { extra_image_2: "./temp-image.jpg" },
-                { extra_image_3: "./temp-image.jpg" },
+                { extra_image_2: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg" },
+                { extra_image_3: "https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/temp-image.jpg" },
             ],
         },
         storyFrom: "H. C. Andersen"
