@@ -1,6 +1,6 @@
 import { Explore } from "./index";
 
 export const EXPLORE_ROUTE = {
-    path: '/explore',
+    path: 'explore',
     element: <Explore />
 }

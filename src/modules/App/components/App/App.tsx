@@ -1,29 +1,29 @@
-import { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router"
+// import { useEffect } from "react";
+import { Outlet } from "react-router"
 
 //Components
 import { Footer } from "../../../shared/Footer";
 import { Navigation } from "../../../shared/Navigation";
 
 //Routes
-import { ALL_FAIRY_TALES_ROUTE } from "../AllFairyTales/allFairyTales.route";
+// import { ALL_FAIRY_TALES_ROUTE } from "../AllFairyTales/allFairyTales.route";
 
 //CSS
 import '../../../../styles/base/_index.scss'
 
 export const App = () => {
 
-  const NAVIGATE = useNavigate();
+  // const NAVIGATE = useNavigate();
 
-  useEffect(() => {
-    const baseUrl = window.location.href;
-    const splitUrl = baseUrl.split("/");
-    const path = splitUrl[3];
+  // useEffect(() => {
+  //   const baseUrl = window.location.href;
+  //   const splitUrl = baseUrl.split("/");
+  //   const path = splitUrl[3];
 
-    if(path === "") {
-      NAVIGATE(ALL_FAIRY_TALES_ROUTE.path);   
-    }
-  }, [])
+  //   if(path === "") {
+  //     NAVIGATE(ALL_FAIRY_TALES_ROUTE.path);   
+  //   }
+  // }, [])
 
   return (
     <>

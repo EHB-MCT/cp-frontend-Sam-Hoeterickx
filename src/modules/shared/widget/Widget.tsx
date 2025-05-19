@@ -16,7 +16,7 @@ import { WidgetType } from "~shared/const/Types/WidgetType"
                     <p>{ title }</p>
                     <p>{ theme }</p>
                 </div>
-                <NavLink to={`/making-of/${id}`}>
+                <NavLink to={`/cp-frontend-Sam-Hoeterickx/making-of/${id}`}>
                     →
                 </NavLink>
             </div>

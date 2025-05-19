@@ -14,7 +14,7 @@ export const Footer = () => {
             <div className="outer-wrapper">
                 <div className={clsx(styles["footer--inner-wrapper"])}>
                     <NavLink to={ALL_FAIRY_TALES_ROUTE.path} >
-                        <img className={clsx(styles["footer--inner-wrapper--logo"])} src="/Logo_cp_front-end.svg" alt="Logo" />
+                        <img className={clsx(styles["footer--inner-wrapper--logo"])} src="./Logo_cp_front-end.svg" alt="Logo" />
                     </NavLink>
                     <div className={clsx(styles["footer--inner-wrapper--info"])}>
                         <p style={{display: "inline-block", marginBottom: "24px", maxWidth: "60%"}}>23 studenten van de opleiding MCT die kozen voor het vak Front-End Design. Met een dosis creativiteit, code en een flinke scheut verbeelding verzamelden ze hier al hun sprookjes. Benieuwd wie wij zijn?</p>

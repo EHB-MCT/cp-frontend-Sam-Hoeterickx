@@ -16,7 +16,7 @@ export const Navigation = () => {
   return (
     <div className="outer-wrapper">
       <nav className={clsx(styles["navigation"])}>
-        <NavLink to={ALL_FAIRY_TALES_ROUTE.path}><img className={clsx(styles["navigation--logo"])} src="/Logo_cp_front-end.svg" alt="Logo" /></NavLink>
+        <NavLink to={ALL_FAIRY_TALES_ROUTE.path}><img className={clsx(styles["navigation--logo"])} src="./Logo_cp_front-end.svg" alt="Logo" /></NavLink>
         <div className={clsx(styles["navigation--links"])}>
           <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to={EXPLORE_ROUTE.path}>EXPLORE</NavLink>
           <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to="/making-of/2" > MAKING OF</NavLink>

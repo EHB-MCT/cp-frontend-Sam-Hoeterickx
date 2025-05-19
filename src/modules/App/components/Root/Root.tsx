@@ -22,7 +22,7 @@ export const Root = () => {
     const ROUTE = createBrowserRouter([
         {
             //ROUTES voor paginas met navigatie
-            path: '/',
+            path: '/cp-frontend-Sam-Hoeterickx/',
             element: <App />,
             children: [
                 {
