@@ -28,7 +28,7 @@ export const DATA_MOCK: FairyTaleType[] = [
     },
     {
         id: "2",
-        title: "Cinderella",
+        title: "3 biggetjes en de wolf",
         student: "Sam Hoeterickx",
         genre: "Adventure",
         description: {
@@ -40,7 +40,7 @@ export const DATA_MOCK: FairyTaleType[] = [
                 Uiteindelijk eindigt het verhaal in een kleurrijke mouse-parallax waarin bloemen dansen en de bloemenkoning tevoorschijn komt, als afsluiting van haar sprookjesachtige avontuur.`,
         },
         images: {
-            main_image: "public//temp-image.jpg",
+            main_image: "public/temp-image.jpg",
             thumbnail: "/temp-image.jpg",
             gallery: [
                 { extra_image_1: "https://www.eftepedia.nl/lemma/images/thumb/f/fd/D6z_ontwerp_aanzicht_links.jpg/160px-D6z_ontwerp_aanzicht_links.jpg" },

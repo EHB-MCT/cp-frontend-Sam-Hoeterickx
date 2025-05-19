@@ -37,6 +37,8 @@ To run this project locally, follow these steps:
 - [Loading Models R3F](https://r3f.docs.pmnd.rs/tutorials/loading-models)
 - [Text3D Drei](https://drei.docs.pmnd.rs/abstractions/text3d)
 - [Animate using Framer motion](https://motion.dev/docs/react-use-animate)
+- [GSAP Animation documentation](https://gsap.com/docs/v3/GSAP/)
+- [React lazy loading](https://react.dev/reference/react/lazy)
   
 
 
