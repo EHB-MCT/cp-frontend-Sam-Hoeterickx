@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { useThree } from "@react-three/fiber";
 
 // Component
-import HouseAndPig from "../HouseAndPig.tsx";
-import Tree from "../models/Tree.model.tsx";
+import { HouseAndPig } from "../HouseAndPig.tsx";
+import { Tree } from "../models/Tree.model.tsx";
 
 //Css
 import styles from '../../pages/fairytale.module.scss'

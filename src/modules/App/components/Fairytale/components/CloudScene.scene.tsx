@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 
 // Components
-import AnimatedText from './AnimatedText';
-import Cloud from './models/Cloud.model';
+import { AnimatedText} from './AnimatedText';
+import { Cloud } from './models/Cloud.model';
 
 // CSS
 import './cloudScene.module.scss';

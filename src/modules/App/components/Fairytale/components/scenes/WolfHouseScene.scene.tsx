@@ -1,11 +1,11 @@
-import { FC, useEffect, useState, useRef } from "react";
-import { Html, OrbitControls, PerspectiveCamera, Text3D } from "@react-three/drei";
-import gsap from "gsap";
 import clsx from "clsx";
+import { FC, useEffect, useState, useRef } from "react";
+import { Html, PerspectiveCamera, Text3D } from "@react-three/drei";
+import gsap from "gsap";
 
 //Models
 import { Hill } from "../models/Hill.model";
-import House from "../HouseAndPig"
+import { HouseAndPig } from "../HouseAndPig"
 import { Wolf } from "../models/Wolf.model"
 
 //Css 
@@ -120,11 +120,6 @@ const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene,
         }, 1000);
     }
 
-
-    //Als wolfPosition === 2 dan terug een lichtflits en verander scene
-    //Als selectedPig = straw of wooden -> huis kapot op de grond + restart button
-    //Als selectedPig = stone -> gewonnen
-
     return(
         <>
             <PerspectiveCamera
@@ -193,7 +188,7 @@ const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene,
             <group
                 rotation={[ 0, - Math.PI * 0.3, 0]}
             >
-                <House
+                <HouseAndPig
                     path={`/models/${selectedPig}_house.glb`}
                     houseScale={2.5}
                     housePosition={[2.5, 1, -1]}

@@ -1,13 +1,12 @@
 import * as THREE from "three"
-import { Text3D, PerspectiveCamera, Float } from "@react-three/drei"
+import { PerspectiveCamera } from "@react-three/drei"
 import gsap from "gsap"
-import { useFrame } from "@react-three/fiber"
 import { useRef, useEffect, FC } from "react"
 
 //Models
 import { Hill } from "../models/Hill.model"
 import { House } from "../models/House.model"
-import Pig from "../models/Pig.model"
+import { Pig } from "../models/Pig.model"
 import { Text } from "../Text"
 
 //Type

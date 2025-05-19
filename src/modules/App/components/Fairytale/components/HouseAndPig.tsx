@@ -17,7 +17,7 @@ interface HouseAndPigProps {
     pigPosition: [number, number, number];
 }
 
-const HouseAndPig: FC<HouseAndPigProps> = ({ path, houseScale, housePosition, rotation, pigScale, pigPosition,}) => {
+export const HouseAndPig: FC<HouseAndPigProps> = ({ path, houseScale, housePosition, rotation, pigScale, pigPosition,}) => {
 
     const gltf = useLoader(GLTFLoader, path);
 
@@ -38,5 +38,3 @@ const HouseAndPig: FC<HouseAndPigProps> = ({ path, houseScale, housePosition, ro
         </>
     );
 };
-
-export default HouseAndPig;

@@ -1,5 +1,5 @@
-import { Center, Html } from '@react-three/drei'
 import clsx from 'clsx';
+import { Html } from '@react-three/drei'
 import { motion } from 'framer-motion'
 
 //Css
@@ -10,7 +10,7 @@ interface AnimatedTextProps {
     Text: string;
 }
 
-const AnimatedText: React.FC<AnimatedTextProps> = ({ Text }) => {
+export const AnimatedText: React.FC<AnimatedTextProps> = ({ Text }) => {
     const textVariants = {
         initial: { opacity: 0, y: 500 },
         animate: { opacity: 1, y: 0 },
@@ -39,5 +39,3 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ Text }) => {
         </>
     )
 }
-
-export default AnimatedText

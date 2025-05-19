@@ -7,7 +7,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 const AnimatedText = lazy(() => import('../components/AnimatedText'))
 const BrokenHouseScene = lazy(() => import('../components/scenes/BrokenHouse.scene'))
 const CloudScene = lazy(() => import('../components/CloudScene.scene'))
-import Lights from '../components/Lights';
+import { Lights } from '../components/Lights';
 const HouseSelectionScene = lazy(() => import('../components/scenes/HouseSelection.scene'));
 const WolfHouseScene = lazy(() => import('../components/scenes/WolfHouseScene.scene'));
 const WinningScene = lazy(() => import('../components/scenes/WinningScene.scene'))

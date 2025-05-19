@@ -10,7 +10,7 @@ interface TreeProps {
     path: string;
 }
 
-const Tree: React.FC<TreeProps> = ({ scale, position, rotation, path }) => {
+export const Tree: React.FC<TreeProps> = ({ scale, position, rotation, path }) => {
     const gltf = useLoader(GLTFLoader, path);
 
     return (
@@ -24,5 +24,3 @@ const Tree: React.FC<TreeProps> = ({ scale, position, rotation, path }) => {
         />
     );
 };
-
-export default Tree;

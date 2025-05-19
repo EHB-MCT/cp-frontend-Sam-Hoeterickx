@@ -11,7 +11,7 @@ interface PigProps {
     rotation?: [number, number, number];
 }
 
-const Pig: FC<PigProps> = ({ scale, position, rotation }) => {
+export const Pig: FC<PigProps> = ({ scale, position, rotation }) => {
     const gltf = useLoader(GLTFLoader, "/models/pig.glb");
 
     if (!gltf) console.log("gltf is not loaded");
@@ -30,5 +30,3 @@ const Pig: FC<PigProps> = ({ scale, position, rotation }) => {
         </>
     );
 };
-
-export default Pig;
