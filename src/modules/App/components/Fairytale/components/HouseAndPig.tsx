@@ -1,10 +1,7 @@
 import { FC } from "react";
-import { GLTFLoader } from "three/examples/jsm/Addons.js"
-import { Object3D } from "three";
-import { useLoader } from "@react-three/fiber";
 
 // Components
-import Pig from "./models/Pig.model";
+import { Pig } from "./models/Pig.model";
 import { House } from "./models/House.model";
 
 //Type
@@ -18,8 +15,6 @@ interface HouseAndPigProps {
 }
 
 export const HouseAndPig: FC<HouseAndPigProps> = ({ path, houseScale, housePosition, rotation, pigScale, pigPosition,}) => {
-
-    const gltf = useLoader(GLTFLoader, path);
 
     return (
         <>

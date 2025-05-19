@@ -25,7 +25,6 @@ export const Wolf: FC<WolfProps> = ({ scale, position, rotation }) => {
                 receiveShadow
                 castShadow
             />
-            <meshStandardMaterial color={"red"} />
         </>
     )
 }
