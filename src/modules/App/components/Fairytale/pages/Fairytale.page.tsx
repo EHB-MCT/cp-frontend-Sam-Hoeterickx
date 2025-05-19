@@ -1,16 +1,16 @@
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx';
 import { Perf } from 'r3f-perf'
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 
 // Components
-import AnimatedText from '../components/AnimatedText'
-import { BrokenHouseScene } from '../components/scenes/BrokenHouse.scene';
-import CloudScene from '../components/CloudScene.scene'
-import Lights from '../components/Lights'
-import HouseSelection from '../components/scenes/HouseSelection.scene'
-import { WolfHouseScene } from '../components/scenes/WolfHouseScene.scene';
-import { WinningScene } from '../components/scenes/WinningScene.scene';
+const AnimatedText = lazy(() => import('../components/AnimatedText'))
+const BrokenHouseScene = lazy(() => import('../components/scenes/BrokenHouse.scene'))
+const CloudScene = lazy(() => import('../components/CloudScene.scene'))
+import Lights from '../components/Lights';
+const HouseSelectionScene = lazy(() => import('../components/scenes/HouseSelection.scene'));
+const WolfHouseScene = lazy(() => import('../components/scenes/WolfHouseScene.scene'));
+const WinningScene = lazy(() => import('../components/scenes/WinningScene.scene'))
 
 // CSS
 import styles from './fairytale.module.scss';
@@ -108,34 +108,42 @@ export const Fairytale = () => {
                             intensity={ 1.5 } 
                             position={ [10, 10, 5] } 
                         />
-                        <CloudScene mousePosition={ mousePosition } />
+                        <Suspense fallback={ null }>
+                            <CloudScene mousePosition={ mousePosition } />
+                        </Suspense>
                     </Canvas>
                 </div>
 
                 <div className={clsx(styles["scene"])}>
                     <Canvas id='canvas'>
-                        <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
+                        <Suspense fallback={ null }>
+                            <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
+                        </Suspense>
                     </Canvas>
                 </div>
 
                 <div className={clsx(styles["scene"])}>
                     <Canvas id='canvas'>
                         <Lights intensity={1.5} position={[10, 10, 5]} />
-                        <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
+                        <Suspense fallback={ null }>
+                            <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
+                        </Suspense>
                     </Canvas>
                 </div>
                 
                 <div className={clsx(styles["scene"], styles["scene-3"], { [styles["wolf-house-scene"]]: currentScene === "wolfScene" })}>
                     {currentScene === 'houseSelection' && (
                         <Canvas id='canvas'>
-                            {/* <Perf position="top-left" /> */}
+                            <Perf position="top-left" />
                             <Lights intensity={1.5} position={[10, 10, 5]} />
-                            <HouseSelection
-                                selectedPig={selectedPig}
-                                setSelectedPig={setSelectedPig}
-                                setCurrentScene={setCurrentScene}
-                                setIsFlashing={setIsFlashing}
-                            />
+                            <Suspense fallback={ null }>
+                                <HouseSelectionScene
+                                    selectedPig={ selectedPig }
+                                    setSelectedPig={ setSelectedPig }
+                                    setCurrentScene={ setCurrentScene }
+                                    setIsFlashing={ setIsFlashing }
+                                />
+                            </Suspense>
                         </Canvas>
                     )}
                     
@@ -143,13 +151,15 @@ export const Fairytale = () => {
                         <>
                             <div className={styles["fixed-canvas-container"]}>
                                 <Canvas id='canvas'>
-                                    {/* <Perf position="top-left" /> */}
+                                    <Perf position="top-left" />
                                     <Lights intensity={1.5} position={[10, 10, 5]} />
-                                    <WolfHouseScene 
-                                        selectedPig={selectedPig} 
-                                        setCurrentScene={setCurrentScene}
-                                        setIsFlashing={setIsFlashing}
-                                    />
+                                    <Suspense fallback={ null }>
+                                        <WolfHouseScene 
+                                            selectedPig={selectedPig} 
+                                            setCurrentScene={setCurrentScene}
+                                            setIsFlashing={setIsFlashing}
+                                        />
+                                    </Suspense>
                                 </Canvas>
                             </div>
                             <div className={styles["scroll-content"]}>
@@ -160,13 +170,15 @@ export const Fairytale = () => {
                         <>
                             <div className={styles["fixed-canvas-container"]}>
                                 <Canvas id='canvas'>
-                                    {/* <Perf position="top-left" /> */}
+                                    <Perf position="top-left" />
                                     <Lights intensity={1.5} position={[10, 10, 5]} />
-                                    <BrokenHouseScene
-                                        selectedPig={selectedPig} 
-                                        setCurrentScene={setCurrentScene}
-                                        setIsFlashing={setIsFlashing}
-                                    />
+                                    <Suspense fallback={ null }>
+                                        <BrokenHouseScene
+                                            selectedPig={selectedPig} 
+                                            setCurrentScene={setCurrentScene}
+                                            setIsFlashing={setIsFlashing}
+                                        />
+                                    </Suspense>
                                 </Canvas>
 
                             </div>
@@ -177,11 +189,12 @@ export const Fairytale = () => {
                         <>
                             <div className={styles["fixed-canvas-container"]}>
                                 <Canvas id='canvas'>
-                                    {/* <Perf position="top-left" /> */}
+                                    <Perf position="top-left" />
                                     <Lights intensity={1.5} position={[10, 10, 5]} />
-                                    <WinningScene />
+                                    <Suspense fallback={ null }>
+                                        <WinningScene />
+                                    </Suspense>
                                 </Canvas>
-
                             </div>
                         </>
                     )}

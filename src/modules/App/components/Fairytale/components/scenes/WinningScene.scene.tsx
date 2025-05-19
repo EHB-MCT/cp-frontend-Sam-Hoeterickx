@@ -15,7 +15,7 @@ interface WinningSceneProps {
     //
 }
 
-export const WinningScene: FC<WinningSceneProps> = () => {
+const WinningScene: FC<WinningSceneProps> = () => {
     const textRef = useRef<THREE.Mesh>(null)
     
     const pig1Ref = useRef<THREE.Group>(null)
@@ -188,3 +188,5 @@ export const WinningScene: FC<WinningSceneProps> = () => {
         </>
     )
 }
+
+export default WinningScene

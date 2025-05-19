@@ -26,7 +26,7 @@ interface TreeData {
     rotation: [number, number, number];
 }
 
-export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
+const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
     const [forestData, setForestData] = useState<TreeData[]>([]);
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
     const [isPigJumping, setIsPigJumping] = useState<boolean>(false);
@@ -246,3 +246,5 @@ your house in!`}
         </>
     );
 };
+
+export default WolfHouseScene
