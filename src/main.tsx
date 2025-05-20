@@ -6,6 +6,7 @@ import { Root } from './modules/App/components/Root'
 import './index.scss'
 import './styles/main.scss'
 
+console.log("Hello World!");
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
