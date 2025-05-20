@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router"
+import { createHashRouter, RouterProvider } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 //Routes
@@ -19,10 +19,10 @@ import '../../../../styles/main.scss'
 export const Root = () => {
     const queryClient = new QueryClient();
 
-    const ROUTE = createBrowserRouter([
+    const ROUTE = createHashRouter([
         {
             //ROUTES voor paginas met navigatie
-            path: '/cp-frontend-Sam-Hoeterickx/',
+            path: '/',
             element: <App />,
             children: [
                 {

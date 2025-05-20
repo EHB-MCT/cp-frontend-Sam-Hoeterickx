@@ -16,7 +16,7 @@ export const LargeWidget: FC<WidgetType> = ({ id, title, theme, image, student }
                     <p>{ title }</p>
                     <p>{ theme }</p>
                 </div>
-                <NavLink to={`/cp-frontend-Sam-Hoeterickx/making-of/${id}`}>
+                <NavLink to={`/making-of/${id}`}>
                     →
                 </NavLink>
             </div>
