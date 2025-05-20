@@ -5,9 +5,9 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 
 // Components
 import { AnimatedText } from '../components/AnimatedText';
+import { Lights } from '../components/Lights';
 const BrokenHouseScene = lazy(() => import('../components/scenes/BrokenHouse.scene'))
 const CloudScene = lazy(() => import('../components/CloudScene.scene'))
-import { Lights } from '../components/Lights';
 const HouseSelectionScene = lazy(() => import('../components/scenes/HouseSelection.scene'));
 const WolfHouseScene = lazy(() => import('../components/scenes/WolfHouseScene.scene'));
 const WinningScene = lazy(() => import('../components/scenes/WinningScene.scene'))
@@ -29,7 +29,7 @@ const Fairytale = () => {
     useEffect(() => {
         const link = document.createElement('link');
         link.rel = 'icon';
-        link.href = '/images/temp_images/Wolf.png'; // Replace with the path to your favicon
+        link.href = '/images/temp_images/Wolf.png';
         document.head.appendChild(link);
 
         return () => {
@@ -64,13 +64,9 @@ const Fairytale = () => {
         };
     }, []);
 
-    // useEffect(() => {
-    //     console.log(isFlashing);
-    // }, [isFlashing]);
-
-    
+    //Disbale scrolling to top
     useEffect(() => {
-      if (currentScene === 'wolfScene') {
+      if (currentScene === 'wolfScene' || currentScene === 'afterblow' || currentScene === 'finalScene') {
         let lastScrollY = window.scrollY;
         
         const handleScroll = () => {
@@ -93,7 +89,6 @@ const Fairytale = () => {
 
     return (
         <>
-            {/* {console.log('render')} */}
             <div className={clsx(
                 styles["flash-overlay"],
                 isFlashing && styles["active"]
@@ -182,7 +177,7 @@ const Fairytale = () => {
                     )}
                     
                     {/* Scroll content only for wolf scene */}
-                    {currentScene === 'wolfScene' && (
+                    {currentScene === 'wolfScene'  && (
                         <div className={styles["scroll-content"]}>
                         </div>
                     )}
