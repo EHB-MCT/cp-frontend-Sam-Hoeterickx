@@ -56,7 +56,7 @@ export const MakingOf = () => {
                     <h1>Making Of</h1>
                     <div className="banner-wrapper">
                         <img
-                            src={`${makingOfData[0]?.images.thumbnail}`}
+                            src={`${makingOfData[0]?.images.main_image}`}
                             alt="banner image of fairytale"
                             className={clsx(styles["banner-wrapper--image"])}
                         />
@@ -88,7 +88,7 @@ export const MakingOf = () => {
                             <div className={clsx(styles["making-of-wrapper--image-wrapper"])}>
                                 <img
                                     className={clsx(styles["making-of-wrapper--image-wrapper--image"])}
-                                    src={`${makingOfData[0]?.images.main_image}`}
+                                    src={`${makingOfData[0]?.images.thumbnail}`}
                                     alt="making of image"
                                 />
                                 <a href="#" target="_blank" className="secundary-button" > View website</a>

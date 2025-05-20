@@ -32,7 +32,7 @@ export const Home: FC = () => {
                                         id={fairytale.id}
                                         title={fairytale.title}
                                         theme={fairytale.genre}
-                                        image={fairytale.images.main_image}
+                                        image={fairytale.images.thumbnail}
                                         student={fairytale.student}
                                     />
                                 ))

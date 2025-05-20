@@ -98,7 +98,7 @@ export const Explore: FC = () => {
                                         id={fairyTale.id}
                                         title={fairyTale.title}
                                         theme={fairyTale.genre}
-                                        image={fairyTale.images.main_image}
+                                        image={fairyTale.images.thumbnail}
                                         student={fairyTale.student}
                                     />
                                 ))

@@ -27,7 +27,7 @@ export const Trending:FC<TrendingProps> = ( data ) => {
                                 title={ fairytale.title }
                                 theme={ fairytale.genre }
                                 student={ fairytale.student }
-                                image={ fairytale.images.main_image }
+                                image={ fairytale.images.thumbnail }
                             />
                         )
                     })}
