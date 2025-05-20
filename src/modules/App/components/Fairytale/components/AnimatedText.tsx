@@ -1,16 +1,18 @@
 import clsx from 'clsx';
+import { FC } from 'react';
 import { Html } from '@react-three/drei'
 import { motion } from 'framer-motion'
 
 //Css
 import styles from './cloudScene.module.scss'
 
+
 //Type
 interface AnimatedTextProps {
     Text: string;
 }
 
-export const AnimatedText: React.FC<AnimatedTextProps> = ({ Text }) => {
+export const AnimatedText: FC<AnimatedTextProps> = ({ Text }) => {
     const textVariants = {
         initial: { opacity: 0, y: 500 },
         animate: { opacity: 1, y: 0 },

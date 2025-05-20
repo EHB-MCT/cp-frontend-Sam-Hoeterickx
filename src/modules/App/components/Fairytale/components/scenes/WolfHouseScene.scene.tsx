@@ -18,16 +18,7 @@ interface WolfHouseSceneProps {
     setIsFlashing:  (flash: boolean) => void;
 }
 
-interface TreeData {
-    key: number;
-    path: string;
-    scale: number;
-    position: [number, number, number];
-    rotation: [number, number, number];
-}
-
 const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
-    const [forestData, setForestData] = useState<TreeData[]>([]);
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
     const [isPigJumping, setIsPigJumping] = useState<boolean>(false);
     const [buttonState, setButtonState] = useState<string>("hidden");
@@ -210,20 +201,19 @@ const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene,
                 bevelSize={0.01}
                 bevelOffset={0}
                 bevelSegments={8}
-                position={[-10, 2, 0]}  
+                position={[-9.9, 2.5, 0]}  
                 rotation={[Math.PI * 0.075, 0, 0]}
             >
-                {`Little pig, little pig
-let me in! Or I'll huff and 
-puff and I'll blow 
-your house in!`}
+                {`Little pig, little pig let me in! 
+    Or I'll huff and puff and I'll  
+            blow your house in!`}
                 <meshPhysicalMaterial 
                     color="#FFFFFF"  
-                    metalness={0.5}  
-                    roughness={0.2}
+                    metalness={0.1}  
+                    roughness={0.4}
                     emissive="#000"
                     emissiveIntensity={0.3}
-                    clearcoat={1}
+                    clearcoat={0.5}
                     clearcoatRoughness={0.1}
                 />
             </Text3D>

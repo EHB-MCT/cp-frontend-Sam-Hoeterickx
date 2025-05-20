@@ -4,7 +4,7 @@ import { Perf } from 'r3f-perf'
 import { lazy, Suspense, useEffect, useState } from 'react';
 
 // Components
-const AnimatedText = lazy(() => import('../components/AnimatedText'))
+import { AnimatedText } from '../components/AnimatedText';
 const BrokenHouseScene = lazy(() => import('../components/scenes/BrokenHouse.scene'))
 const CloudScene = lazy(() => import('../components/CloudScene.scene'))
 import { Lights } from '../components/Lights';
