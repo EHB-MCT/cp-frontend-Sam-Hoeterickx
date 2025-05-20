@@ -8,7 +8,7 @@ import { useFairyTaleData } from '~shared/const/hooks/getFairyTaleData.hook'
 
 //Types
 
-export const AllFairyTales: FC = () => {
+export const Home: FC = () => {
     document.title = "Explore | Er was eens...";
     document.body.classList.add('main');
 
@@ -17,7 +17,7 @@ export const AllFairyTales: FC = () => {
     return (
         <div className="outer-wrapper">
             {isLoading ? (
-                <p>Loading...</p> // Show a loading message while data is being fetched
+                <p>Loading...</p> 
             ) : (
                 <>
                     <Trending data={fairyTales || []} />
@@ -37,7 +37,7 @@ export const AllFairyTales: FC = () => {
                                     />
                                 ))
                             ) : (
-                                <p>No fairy tales available.</p> // Handle empty data gracefully
+                                <p>No fairy tales available.</p> 
                             )}
                         </div>
                     </section>

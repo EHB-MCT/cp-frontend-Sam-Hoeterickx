@@ -3,7 +3,7 @@ import clsx from "clsx"
 
 //Route
 import { ABOUT_US_ROUTE } from "~app/components/AboutUs/about.route";
-import { ALL_FAIRY_TALES_ROUTE } from "~app/components/AllFairyTales/allFairyTales.route";
+import { HOME_ROUTE } from "~modules/App/components/Home/home.route";
 
 //Css
 import styles from './footer.module.scss';
@@ -13,7 +13,7 @@ export const Footer = () => {
         <footer className={clsx(styles["footer"])}>
             <div className="outer-wrapper">
                 <div className={clsx(styles["footer--inner-wrapper"])}>
-                    <NavLink to={ALL_FAIRY_TALES_ROUTE.path} >
+                    <NavLink to={HOME_ROUTE.path} >
                         <img className={clsx(styles["footer--inner-wrapper--logo"])} src="./images/logo/Logo_cp_front-end.svg" alt="Logo" />
                     </NavLink>
                     <div className={clsx(styles["footer--inner-wrapper--info"])}>
