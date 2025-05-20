@@ -22,7 +22,7 @@
     --widget-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.236);
 }
 
-body{
+body.main{
     font-family: var(--main-font-family);
     font-weight: var(--main-font-weight);
     font-style: var(--main-font-style);
@@ -105,6 +105,8 @@ strong{
     border-radius: 100px;
 
    font-size: 14pt;
+
+   cursor: pointer;
 
 }
 

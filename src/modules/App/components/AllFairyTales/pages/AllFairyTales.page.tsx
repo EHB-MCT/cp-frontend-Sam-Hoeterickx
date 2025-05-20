@@ -10,6 +10,7 @@ import { useFairyTaleData } from '~shared/const/hooks/getFairyTaleData.hook'
 
 export const AllFairyTales: FC = () => {
     document.title = "Explore | Er was eens...";
+    document.body.classList.add('main');
 
     const {data: fairyTales, isLoading} = useFairyTaleData();
 

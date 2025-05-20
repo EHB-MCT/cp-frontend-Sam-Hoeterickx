@@ -18,6 +18,8 @@ import styles from "./about.module.scss";
 export const About = () =>  {
 
     document.title = "About us | Er was eens...";
+    document.body.classList.add('main');
+
 
     const { data: fairyTales, isLoading } = useFairyTaleData();
 
