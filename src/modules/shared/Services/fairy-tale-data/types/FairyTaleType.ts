@@ -3,6 +3,7 @@ export interface FairyTaleType {
     title: string;
     student: string;
     genre: string;
+    fairytaleLink: string
     description: {
         verhaal: string,
         parallax_effect: string,

@@ -91,7 +91,7 @@ export const MakingOf = () => {
                                     src={`${makingOfData[0]?.images.thumbnail}`}
                                     alt="making of image"
                                 />
-                                <a href="#" target="_blank" className="secundary-button" > View website</a>
+                                <a href={makingOfData[0]?.fairytaleLink} target="_blank" className="secundary-button" >View website</a>
                             </div>
                         </div>
                     </section>
