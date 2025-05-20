@@ -40,7 +40,7 @@ export const About = () =>  {
                     </p>
 
                     <div className="button-wrapper">
-                        <NavLink to={EXPLORE_ROUTE.path} className="button">Bekijk alle sprookjes</NavLink>
+                        <NavLink to="/explore" className="button">Bekijk alle sprookjes</NavLink>
                     </div>
                 </div>
                 <div className={clsx(styles["about-wrapper--images-wrapper"])}>

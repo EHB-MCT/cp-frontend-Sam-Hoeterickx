@@ -1,6 +1,7 @@
 @use '../../../../../styles/base/index' as *;
 
 .story-section{
+    min-height: 50dvh;
 
     &--filter-wrapper{
         margin: 32px 0;
