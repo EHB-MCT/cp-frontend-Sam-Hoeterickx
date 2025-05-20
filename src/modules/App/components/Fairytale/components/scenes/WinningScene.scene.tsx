@@ -14,9 +14,7 @@ interface WinningSceneProps {
     //
 }
 
-const WinningScene: FC<WinningSceneProps> = () => {
-    const textRef = useRef<THREE.Mesh>(null)
-    
+const WinningScene: FC<WinningSceneProps> = () => {    
     const pig1Ref = useRef<THREE.Group>(null)
     const pig2Ref = useRef<THREE.Group>(null)
     const pig3Ref = useRef<THREE.Group>(null)

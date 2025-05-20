@@ -10,7 +10,7 @@ interface TextProps {
 export const Text: FC<TextProps> = ({ text }) => {
     const textRef = useRef<THREE.Mesh | null>(null)
 
-    useFrame((state, delta) => {
+    useFrame((state) => {
         if (textRef.current) {
             textRef.current.position.y = -5 + Math.sin(state.clock.elapsedTime) * 0.2
         }

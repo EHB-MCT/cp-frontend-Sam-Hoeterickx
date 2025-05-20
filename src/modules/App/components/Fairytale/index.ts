@@ -1,1 +1,1 @@
-import Fairytale from './pages/fairytale.page';
+export { Fairytale} from './pages/Fairytale.page'

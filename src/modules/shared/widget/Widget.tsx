@@ -8,7 +8,7 @@ import { WidgetType } from "~shared/const/Types/WidgetType"
     return (
         <div className="widget" id={ id }>
             <div className="widget--image-wrapper">
-                <img src={`/images/temp_images/${image}`} alt={`picture of fairytale: ${title}`} />
+                <img src={image} alt={`picture of fairytale: ${title}`} />
             </div>
             <div className="widget--info">
                 <div className="widget--info--wrapper">

@@ -38,6 +38,8 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
     const { camera } = useThree();
     const [angleIndex, setAngleIndex] = useState<number>(0);
     const [forestData, setForestData] = useState<TreeData[]>([]);
+    
+    console.log(selectedPig)
 
     useEffect(() => {
         const angle = angleIndex * angleIncrease;
@@ -104,12 +106,12 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
     const selectPig = () => {
         setIsFlashing(true)
         setTimeout(() => {
-            let pig: string | null;
+            let pig: string;
             if (angleIndex === 0) {
                 pig = "straw";
             } else if (angleIndex === 1) {
                 pig = "stone";
-            } else if (angleIndex === 2) {
+            } else {
                 pig = "wooden";
             }
             setSelectedPig(pig);

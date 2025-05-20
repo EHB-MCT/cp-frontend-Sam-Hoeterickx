@@ -22,7 +22,8 @@ interface BrokenHouseType {
 
 const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
 
-    const wolfRef = useRef<THREE.Group>(null)
+    const wolfRef = useRef<THREE.Group>(null);
+    console.log(selectedPig)
 
     const restart = () => {
         setIsFlashing(true)

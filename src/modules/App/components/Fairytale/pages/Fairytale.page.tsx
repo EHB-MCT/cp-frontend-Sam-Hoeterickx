@@ -21,7 +21,7 @@ interface MousePosition {
     y: number;
 }
 
-const Fairytale = () => {
+export const Fairytale = () => {
 
     document.title = "De wolf en de 3 biggetjes | Sam Hoeterickx";
     document.body.classList.add('fairytale');
@@ -180,5 +180,3 @@ const Fairytale = () => {
         </>
     );
 };
-
-export default Fairytale
