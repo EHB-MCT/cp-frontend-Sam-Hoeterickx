@@ -9,7 +9,7 @@ type LightsProps = {
 export const Lights: React.FC<LightsProps> = ({ position, intensity }) => {
     return (
         <>
-            <ambientLight intensity={0.5} />
+            <ambientLight intensity={0.4} />
             <directionalLight position={position} intensity={intensity} />
         </>
     );

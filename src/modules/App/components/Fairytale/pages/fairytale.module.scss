@@ -23,9 +23,7 @@ Canvas#canvas{
     scroll-behavior: smooth;
 
     background: rgb(6,84,171);
-    background: linear-gradient(180deg, rgba(6,84,171,1) 0%, rgba(0,212,255,1) 53%);
-    /* background: rgb(6,84,171);
-    background: linear-gradient(180deg, rgba(6,84,171,1) 0%, rgba(0,212,255,1) 44%, rgba(0,204,47,1) 100%); */
+    background: linear-gradient(180deg, #0654ab 0%, #00d4ff 80%);
 }
 
 .scene{
