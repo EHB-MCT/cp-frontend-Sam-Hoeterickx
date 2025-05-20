@@ -115,7 +115,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
             setSelectedPig(pig);
             setCurrentScene("wolfScene");
             setIsFlashing(false)
-        }, 1000);
+        }, 2000);
     };
 
     return (
