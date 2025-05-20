@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx';
-import { Perf } from 'r3f-perf'
+// import { Perf } from 'r3f-perf'
 import { lazy, Suspense, useEffect, useState } from 'react';
 
 // Components
@@ -128,7 +128,7 @@ export const Fairytale = () => {
                     {(currentScene === 'wolfScene' || currentScene === 'afterblow' || currentScene === 'finalScene') ? (
                         <div className={styles["fixed-canvas-container"]}>
                             <Canvas id='canvas'>
-                                <Perf position="top-left" />
+                                {/* <Perf position="top-left" /> */}
                                 <Lights intensity={1.5} position={[10, 10, 5]} />
                                 <Suspense fallback={null}>
                                     
@@ -156,7 +156,7 @@ export const Fairytale = () => {
                         </div>
                     ) : (
                         <Canvas id='canvas'>
-                            <Perf position="top-left" />
+                            {/* <Perf position="top-left" /> */}
                             <Lights intensity={1.5} position={[10, 10, 5]} />
                             <Suspense fallback={null}>
                                 <HouseSelectionScene
