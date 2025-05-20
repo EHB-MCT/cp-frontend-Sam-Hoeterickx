@@ -7,7 +7,7 @@ export const DATA_MOCK: FairyTaleType[] = [
         title: "The Little Mermaid",
         student: "John Doo",
         genre: "Sea",
-        fairytaleLink: "http://localhost:5174/cp-frontend-Sam-Hoeterickx/#/fairy-tale",
+        fairytaleLink: " https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/#/fairy-tale",
         description: {
             verhaal:`Duimelintje, een piepklein meisje geboren uit een bloem, wordt ontvoerd door een pad die haar wil uithuwelijken aan haar lelijke zoon. Met hulp van vissen en een vlinder ontsnapt ze. Daarna wordt ze meegenomen door een kever, maar verstoten omdat ze geen voelsprieten heeft. <br> <br>
                 Ze overleeft de zomer in het bos, maar als de winter komt, vindt een veldmuis haar en biedt haar onderdak. De veldmuis wil haar uithuwelijken aan een blinde, sombere mol. In de ondergrondse gangen verzorgt Duimelintje in het geheim een zieke zwaluw, die later naar het zuiden vliegt. <br> <br>
@@ -32,7 +32,7 @@ export const DATA_MOCK: FairyTaleType[] = [
         title: "3 biggetjes en de wolf",
         student: "Sam Hoeterickx",
         genre: "Adventure",
-        fairytaleLink: "http://localhost:5174/cp-frontend-Sam-Hoeterickx/#/fairy-tale",
+        fairytaleLink: " https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/#/fairy-tale",
         description: {
             verhaal:`Duimelintje, een piepklein meisje geboren uit een bloem, wordt ontvoerd door een pad die haar wil uithuwelijken aan haar lelijke zoon. Met hulp van vissen en een vlinder ontsnapt ze. Daarna wordt ze meegenomen door een kever, maar verstoten omdat ze geen voelsprieten heeft. <br> <br>
                 Ze overleeft de zomer in het bos, maar als de winter komt, vindt een veldmuis haar en biedt haar onderdak. De veldmuis wil haar uithuwelijken aan een blinde, sombere mol. In de ondergrondse gangen verzorgt Duimelintje in het geheim een zieke zwaluw, die later naar het zuiden vliegt. <br> <br>
@@ -57,7 +57,7 @@ export const DATA_MOCK: FairyTaleType[] = [
         title: "Cinderella",
         student: "Voornaam Achternaam",
         genre: "Adventure",
-        fairytaleLink: "http://localhost:5174/cp-frontend-Sam-Hoeterickx/#/fairy-tale",
+        fairytaleLink: " https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/#/fairy-tale",
         description: {
             verhaal:`Duimelintje, een piepklein meisje geboren uit een bloem, wordt ontvoerd door een pad die haar wil uithuwelijken aan haar lelijke zoon. Met hulp van vissen en een vlinder ontsnapt ze. Daarna wordt ze meegenomen door een kever, maar verstoten omdat ze geen voelsprieten heeft. <br> <br>
                 Ze overleeft de zomer in het bos, maar als de winter komt, vindt een veldmuis haar en biedt haar onderdak. De veldmuis wil haar uithuwelijken aan een blinde, sombere mol. In de ondergrondse gangen verzorgt Duimelintje in het geheim een zieke zwaluw, die later naar het zuiden vliegt. <br> <br>
@@ -82,7 +82,7 @@ export const DATA_MOCK: FairyTaleType[] = [
         title: "Cinderella",
         student: "Voornaam Achternaam",
         genre: "Adventure",
-        fairytaleLink: "http://localhost:5174/cp-frontend-Sam-Hoeterickx/#/fairy-tale",
+        fairytaleLink: " https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/#/fairy-tale",
         description: {
             verhaal:`Duimelintje, een piepklein meisje geboren uit een bloem, wordt ontvoerd door een pad die haar wil uithuwelijken aan haar lelijke zoon. Met hulp van vissen en een vlinder ontsnapt ze. Daarna wordt ze meegenomen door een kever, maar verstoten omdat ze geen voelsprieten heeft. <br> <br>
                 Ze overleeft de zomer in het bos, maar als de winter komt, vindt een veldmuis haar en biedt haar onderdak. De veldmuis wil haar uithuwelijken aan een blinde, sombere mol. In de ondergrondse gangen verzorgt Duimelintje in het geheim een zieke zwaluw, die later naar het zuiden vliegt. <br> <br>

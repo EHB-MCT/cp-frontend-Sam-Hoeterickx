@@ -29,7 +29,7 @@ export const Fairytale = () => {
     useEffect(() => {
         const link = document.createElement('link');
         link.rel = 'icon';
-        link.href = '/images/temp_images/Wolf.png';
+        link.href = './images/temp_images/Wolf.png';
         document.head.appendChild(link);
 
         return () => {
