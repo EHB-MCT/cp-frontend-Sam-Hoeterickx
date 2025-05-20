@@ -1,0 +1,1 @@
+import{j as s}from"./index-Ch7haLY_.js";import{P as a,H as m}from"./House.model-DClLpMjk.js";const j=({path:e,houseScale:i,housePosition:r,rotation:o,pigScale:t,pigPosition:n})=>s.jsxs(s.Fragment,{children:[s.jsx(a,{scale:t,position:n,rotation:o}),s.jsx(m,{path:e,scale:i,position:r,rotation:o})]});export{j as H};
