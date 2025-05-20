@@ -9,9 +9,6 @@ import { Trending } from "~modules/shared/Trending/Trending";
 //Hooks
 import { useFairyTaleData } from "~modules/shared/const/hooks/getFairyTaleData.hook";
 
-//Routes
-import { EXPLORE_ROUTE } from "../../Explore/explore.route";
-
 //Css
 import styles from "./about.module.scss";
 

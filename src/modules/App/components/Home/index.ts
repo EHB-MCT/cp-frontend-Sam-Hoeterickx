@@ -1,1 +1,1 @@
-export { AllFairyTales } from './pages/Home.page.tsx'
+export { Home } from './pages/Home.page.tsx'
