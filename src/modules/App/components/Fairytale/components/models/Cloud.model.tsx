@@ -11,7 +11,7 @@ interface CloudProps {
 }
 
 export const Cloud: FC<CloudProps> = ({ scale, position, rotation }) => {
-    const gltf = useLoader(GLTFLoader, '/models/cloud.glb') as { scene: Group };
+    const gltf = useLoader(GLTFLoader, './models/cloud.glb') as { scene: Group };
 
     if (!gltf) {
         console.log('gltf is not loaded');

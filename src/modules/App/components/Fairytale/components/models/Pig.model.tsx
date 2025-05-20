@@ -12,7 +12,7 @@ interface PigProps {
 }
 
 export const Pig: FC<PigProps> = ({ scale, position, rotation }) => {
-    const gltf = useLoader(GLTFLoader, "/models/pig.glb");
+    const gltf = useLoader(GLTFLoader, "./models/pig.glb");
 
     if (!gltf) console.log("gltf is not loaded");
 

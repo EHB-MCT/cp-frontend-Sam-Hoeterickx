@@ -11,7 +11,7 @@ interface WolfProps {
 }
 
 export const Wolf: FC<WolfProps> = ({ scale, position, rotation }) => {
-    const gltf = useLoader(GLTFLoader, "/models/Wolfie_Joy_0512115612_texture.glb");
+    const gltf = useLoader(GLTFLoader, "./models/Wolfie_Joy_0512115612_texture.glb");
 
     if(!gltf) console.log("gltf is not loaded");
 

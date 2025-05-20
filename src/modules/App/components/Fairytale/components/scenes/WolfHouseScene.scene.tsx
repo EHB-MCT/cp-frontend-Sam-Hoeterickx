@@ -180,7 +180,7 @@ const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene,
                 rotation={[ 0, - Math.PI * 0.3, 0]}
             >
                 <HouseAndPig
-                    path={`/models/${selectedPig}_house.glb`}
+                    path={`./models/${selectedPig}_house.glb`}
                     houseScale={2.5}
                     housePosition={[2.5, 1, -1]}
                     rotation={[0, 0, 0]}

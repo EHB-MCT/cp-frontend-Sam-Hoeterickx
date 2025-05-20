@@ -10,7 +10,7 @@ interface HillProps {
 }
 
 export const Hill: FC<HillProps> =  ({ scale, position, rotation}) => {
-    const gltf = useLoader(GLTFLoader, '/models/Hill.glb')
+    const gltf = useLoader(GLTFLoader, './models/Hill.glb')
 
     return(
         <primitive

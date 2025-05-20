@@ -65,8 +65,8 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
             const path =
                 i % 2 === 0
-                    ? "/models/round-tree.glb"
-                    : "/models/tree-1.glb";
+                    ? "./models/round-tree.glb"
+                    : "./models/tree-1.glb";
 
             const scale = Math.random() * 2 + 1;
 
@@ -134,7 +134,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
             <group>
                 {/* Left house */}
                 <HouseAndPig
-                    path={ "/models/wooden_house.glb" }
+                    path={ "./models/wooden_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [-2, 0, -4] }
                     rotation={ [0, -Math.PI * 0.6666666666, 0] }
@@ -144,7 +144,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
                 {/* Middle house */}
                 <HouseAndPig
-                    path={ "/models/straw_house.glb" }
+                    path={ "./models/straw_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [0, 0, -1] }
                     rotation={ [0, 0, 0] }
@@ -154,7 +154,7 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
                 {/* Right house */}
                 <HouseAndPig
-                    path={ "/models/stone_house.glb" }
+                    path={ "./models/stone_house.glb" }
                     houseScale={ 1.5 }
                     housePosition={ [2, 0, -4] }
                     rotation={ [0, Math.PI * 0.6666666666, 0] }
@@ -173,25 +173,25 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
 
                 {/* Forest */}
                 <Tree
-                    path={ "/models/round-tree.glb" }
+                    path={ "./models/round-tree.glb" }
                     scale={ 1.75 }
                     position={ [0, 0.25, -3] }
                     rotation={ [0, 0, 0] }
                 />
                 <Tree
-                    path={ "/models/tree-1.glb" }
+                    path={ "./models/tree-1.glb" }
                     scale={ 1.3 }
                     position={ [0, -0.25, -4.4] }
                     rotation={ [0, 0, 0] }
                 />
                 <Tree
-                    path={ "/models/tree-1.glb" }
+                    path={ "./models/tree-1.glb" }
                     scale={ 1.3 }
                     position={ [1.5, -0.25, -2.2] }
                     rotation={ [0, 0, 0] }
                 />
                 <Tree
-                    path={ "/models/tree-1.glb" }
+                    path={ "./models/tree-1.glb" }
                     scale={ 1.3 }
                     position={ [-1.5, -0.25, -2.2] }
                     rotation={ [0, 0, 0] }

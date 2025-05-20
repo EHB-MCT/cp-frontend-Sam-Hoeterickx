@@ -128,7 +128,7 @@ const WinningScene: FC<WinningSceneProps> = () => {
             </group>
 
             <House
-                path="/models/stone_house.glb"
+                path="./models/stone_house.glb"
                 scale={ 1 }
                 position={[ 0, -0.04, 0 ]}
                 rotation={[ 0, Math.PI * 0.1, 0 ]}

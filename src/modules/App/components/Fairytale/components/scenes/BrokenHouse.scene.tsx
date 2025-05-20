@@ -104,8 +104,7 @@ const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentScene, s
             </group>
 
             <BrokenHouse
-                // path={`/models/BrokenHouse_${selectedPig}.glb`}
-                path={`/models/BrokenHouse_wooden.glb`}
+                path={`./models/BrokenHouse_wooden.glb`}
                 scale={ 2.5 }
                 position={[ 1, -1.1, -1 ]}
                 rotation={[ 0, Math.PI * 0.5, 0 ]}
