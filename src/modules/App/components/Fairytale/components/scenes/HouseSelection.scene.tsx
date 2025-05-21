@@ -36,9 +36,7 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
     const angleIncrease = (2 * Math.PI) / numberOfHouses;
 
     const { camera } = useThree();
-    const [angleIndex, setAngleIndex] = useState<number>(0);
-    const [forestData, setForestData] = useState<TreeData[]>([]);
-    
+    const [angleIndex, setAngleIndex] = useState<number>(0);    
 
     useEffect(() => {
         const angle = angleIndex * angleIncrease;
@@ -55,32 +53,6 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
             },
         });
     }, [angleIndex, camera, center]);
-
-    useEffect(() => {
-        const trees: TreeData[] = [];
-        for (let i = 0; i < 150; i++) {
-            const angle = Math.random() * Math.PI * 2;
-            const distance = 10 + Math.random() * 10;
-            const x = Math.cos(angle) * distance;
-            const z = Math.sin(angle) * distance;
-
-            const path =
-                i % 2 === 0
-                    ? "./models/round-tree.glb"
-                    : "./models/tree-1.glb";
-
-            const scale = Math.random() * 2 + 1;
-
-            trees.push({
-                key: i,
-                path: path,
-                scale: scale,
-                position: [x, 0, z],
-                rotation: [0, Math.random() * Math.PI * 2, 0],
-            });
-        }
-        setForestData(trees);
-    }, []);
 
     const next = () => {
         setAngleIndex((previousAngle) => {
@@ -202,19 +174,6 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     position={ [-1.5, -0.25, -2.2] }
                     rotation={ [0, 0, 0] }
                 />
-            </group>
-
-            <group>
-                {/* Forest */}
-                {forestData.map((tree) => (
-                    <Tree
-                        key={ tree.key }
-                        path={ tree.path }
-                        scale={ tree.scale }
-                        position={ tree.position }
-                        rotation={ tree.rotation }
-                    />
-                ))}
             </group>
         </>
     );
