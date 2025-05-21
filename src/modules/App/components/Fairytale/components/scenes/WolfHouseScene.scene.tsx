@@ -222,7 +222,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
             </Text3D>
 
             {buttonState === 'inline' && (
-                <group position={ [-1, 1, -2] }>
+                <group position={ [-0.35, 0, -2] }>
                     <Html className={clsx(styles["button-outer-wrapper"])}>
                         <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
                             <button onClick={ blow }>Blow</button>
