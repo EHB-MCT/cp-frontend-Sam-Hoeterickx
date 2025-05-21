@@ -16,7 +16,7 @@ interface CloudSceneProps {
     };
 }
 
-const CloudScene: React.FC<CloudSceneProps> = ({ mousePosition }) => {
+export const CloudScene: React.FC<CloudSceneProps> = ({ mousePosition }) => {
     const smoothMousePosition = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
     const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -78,5 +78,3 @@ const CloudScene: React.FC<CloudSceneProps> = ({ mousePosition }) => {
         </>
     );
 };
-
-export default CloudScene;

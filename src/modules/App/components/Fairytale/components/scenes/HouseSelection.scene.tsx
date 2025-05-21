@@ -27,7 +27,7 @@ interface TreeData {
     rotation: [number, number, number];
 }
 
-const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene, setIsFlashing }) => {
+export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene, setIsFlashing }) => {
     const center: [number, number, number] = [0, 0, -3];
     const radius = 6;
     const cameraHeight = 0.3;
@@ -215,5 +215,3 @@ const HouseSelection: React.FC<HouseSelectionProps> = ({ selectedPig, setSelecte
         </>
     );
 };
-
-export default HouseSelection

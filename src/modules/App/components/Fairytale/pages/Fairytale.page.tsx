@@ -6,11 +6,12 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 // Components
 import { AnimatedText } from '../components/AnimatedText';
 import { Lights } from '../components/Lights';
-const BrokenHouseScene = lazy(() => import('../components/scenes/BrokenHouse.scene'))
-const CloudScene = lazy(() => import('../components/CloudScene.scene'))
-const HouseSelectionScene = lazy(() => import('../components/scenes/HouseSelection.scene'));
-const WolfHouseScene = lazy(() => import('../components/scenes/WolfHouseScene.scene'));
-const WinningScene = lazy(() => import('../components/scenes/WinningScene.scene'))
+import { BrokenHouseScene } from '../components/scenes/BrokenHouse.scene';
+import { CloudScene } from '../components/CloudScene.scene';
+import { HouseSelectionScene } from '../components/scenes/HouseSelection.scene';
+import { WolfHouseScene } from '../components/scenes/WolfHouseScene.scene';
+import { WinningScene } from '../components/scenes/WinningScene.scene';
+
 
 // CSS
 import styles from './fairytale.module.scss';
