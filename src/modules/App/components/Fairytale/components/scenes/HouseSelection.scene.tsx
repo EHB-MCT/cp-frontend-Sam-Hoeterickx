@@ -39,7 +39,6 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
     const [angleIndex, setAngleIndex] = useState<number>(0);
     const [forestData, setForestData] = useState<TreeData[]>([]);
     
-    console.log(selectedPig)
 
     useEffect(() => {
         const angle = angleIndex * angleIncrease;
@@ -114,11 +113,14 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
             pig = "wooden";
         }
         setSelectedPig(pig);
+        
         setTimeout(() => {
             setCurrentScene("wolfScene");
         }, 500)
+        
         setTimeout(() => {
             setIsFlashing(false)
+            console.log(selectedPig)
         }, 1500);
     };
 

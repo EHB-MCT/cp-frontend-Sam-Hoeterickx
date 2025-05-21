@@ -7,11 +7,12 @@ import styles from './preloader.module.scss'
 
 export const Preloader: FC = () => {
     const { progress, isLoaded } = usePreload();
-    
+
     return (
         <div className={`${styles.preloader} ${isLoaded ? styles.hidden : ''}`}>
             <div className={styles.content}>
-                <h2>Loading "The Wolf and the Three Little Pigs"</h2>
+                <h2>Loading...</h2>
+                <h2>The Wolf and the Three Little Pigs</h2>
                 <div className={styles.progressBar}>
                 <div 
                     className={styles.progressFill} 

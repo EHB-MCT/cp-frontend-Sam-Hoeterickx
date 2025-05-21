@@ -89,7 +89,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
                 // console.log("end")
                 setButtonState('inline')
             }
-            console.log(window.scrollY, maxScrollForButton)
+            // console.log(window.scrollY, maxScrollForButton)
         };
         
         window.addEventListener("scroll", handleScroll);
@@ -222,7 +222,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
             </Text3D>
 
             {buttonState === 'inline' && (
-                <group position={ [-0.35, 0, -2] }>
+                <group position={ [-0.4, 0.25, -2] }>
                     <Html className={clsx(styles["button-outer-wrapper"])}>
                         <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
                             <button onClick={ blow }>Blow</button>
