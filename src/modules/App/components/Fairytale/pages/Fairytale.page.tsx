@@ -96,26 +96,20 @@ export const Fairytale = () => {
                             intensity={ 1.5 } 
                             position={ [10, 10, 5] } 
                         />
-                        <Suspense fallback={ null }>
                             <CloudScene mousePosition={ mousePosition } />
-                        </Suspense>
                     </Canvas>
                 </div>
 
                 <div className={clsx(styles["scene"])}>
                     <Canvas id='canvas'>
-                        <Suspense fallback={ null }>
                             <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
-                        </Suspense>
                     </Canvas>
                 </div>
 
                 <div className={clsx(styles["scene"])}>
                     <Canvas id='canvas'>
                         <Lights intensity={1.5} position={[10, 10, 5]} />
-                        <Suspense fallback={ null }>
                             <AnimatedText Text={"Each one has a plan, a dream… and a very different idea of what makes a strong house"} />
-                        </Suspense>
                     </Canvas>
                 </div>
                 
@@ -130,7 +124,6 @@ export const Fairytale = () => {
                             <Canvas id='canvas'>
                                 {/* <Perf position="top-left" /> */}
                                 <Lights intensity={1.5} position={[10, 10, 5]} />
-                                <Suspense fallback={null}>
                                     
                                     {currentScene === 'wolfScene' && (
                                         <WolfHouseScene 
@@ -151,21 +144,18 @@ export const Fairytale = () => {
                                     {currentScene === 'finalScene' && (
                                         <WinningScene />
                                     )}
-                                </Suspense>
                             </Canvas>
                         </div>
                     ) : (
                         <Canvas id='canvas'>
                             {/* <Perf position="top-left" /> */}
                             <Lights intensity={1.5} position={[10, 10, 5]} />
-                            <Suspense fallback={null}>
                                 <HouseSelectionScene
                                     selectedPig={selectedPig}
                                     setSelectedPig={setSelectedPig}
                                     setCurrentScene={setCurrentScene}
                                     setIsFlashing={setIsFlashing}
                                 />
-                            </Suspense>
                         </Canvas>
                     )}
                     
