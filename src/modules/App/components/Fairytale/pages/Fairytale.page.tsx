@@ -1,15 +1,17 @@
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx';
-import { Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 
 // Components
 import { AnimatedText } from '../components/AnimatedText';
 import { Lights } from '../components/Lights';
-import { BrokenHouseScene } from '../components/scenes/BrokenHouse.scene';
 import { CloudScene } from '../components/CloudScene.scene';
 import { HouseSelectionScene } from '../components/scenes/HouseSelection.scene';
 import { WolfHouseScene } from '../components/scenes/WolfHouseScene.scene';
-import { WinningScene } from '../components/scenes/WinningScene.scene';
+
+//Lazy import components
+const BrokenHouseScene = lazy(() => import('../components/scenes/BrokenHouse.scene'))
+const WinningScene = lazy(() => import('../components/scenes/WinningScene.scene'))
 
 // PreLoaders
 import { AssetPreloader } from '../AssetPreloader';
@@ -190,7 +192,7 @@ export const Fairytale = () => {
             {/* This canvas is hidden but used to preload all assets and scenes */}
             <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', opacity: 0 }}>
                 <Canvas>
-                    <Suspense fallback={null}>
+                    <Suspense fallback={<Preloader />}>
                         <AssetPreloader />
                         <Lights intensity={1.5} position={[10, 10, 5]} />
                         
@@ -209,12 +211,12 @@ export const Fairytale = () => {
                                 setCurrentScene={() => {}}
                                 setIsFlashing={() => {}}  
                             />
-                            <BrokenHouseScene 
+                            {/* <BrokenHouseScene 
                                 selectedPig={null}
                                 setCurrentScene={() => {}}
                                 setIsFlashing={() => {}}  
                             />
-                            <WinningScene />
+                            <WinningScene /> */}
                         </group>
                     </Suspense>
                 </Canvas>

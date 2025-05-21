@@ -95,6 +95,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
             window.removeEventListener("scroll", handleScroll);
             if (jumpTimer) clearTimeout(jumpTimer);
         };
+
     }, []);
 
     const blow = () => {
@@ -218,15 +219,13 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
                 />
             </Text3D>
 
-            {buttonState === 'inline' && (
-                <group position={ [0, 0, -2] }>
-                    <Html className={clsx(styles["button-outer-wrapper"])}>
-                        <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
-                            <button onClick={ blow }>Blow</button>
-                        </div>
-                    </Html>
-                </group>
-            )}
+            <group position={ [-1, 1, -2] }>
+                <Html className={clsx(styles["button-outer-wrapper"])}>
+                    <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
+                        <button onClick={ blow }>Blow</button>
+                    </div>
+                </Html>
+            </group>
             {/* <OrbitControls /> */}
         </>
     );
