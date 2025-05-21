@@ -19,13 +19,6 @@ interface HouseSelectionProps {
     setIsFlashing: (flash: boolean) => void;
 }
 
-interface TreeData {
-    key: number;
-    path: string;
-    scale: number;
-    position: [number, number, number];
-    rotation: [number, number, number];
-}
 
 export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene, setIsFlashing }) => {
     const center: [number, number, number] = [0, 0, -3];
