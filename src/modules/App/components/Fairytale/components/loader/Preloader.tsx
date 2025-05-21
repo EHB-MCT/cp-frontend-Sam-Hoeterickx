@@ -20,10 +20,6 @@ export const Preloader: FC = () => {
                 />
                 </div>
                 <h2>{Math.round(progress)}%</h2>
-                
-                <div className={styles.loadingHint}>
-                 <p>Once upon a time, there were three little pigs...</p>
-                </div>
 
                 <motion.div 
                     className={styles.wolfImageWrapper}
