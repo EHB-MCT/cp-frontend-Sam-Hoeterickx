@@ -47,6 +47,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
     useEffect(() => {
         let initialScrollY = window.scrollY;
         const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const maxScrollForButton = maxScroll - 20
 
         const totalWolfDistance = 8; 
         let lastScrollPosition = window.scrollY;
@@ -84,7 +85,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
             
             lastScrollPosition = window.scrollY;
 
-            if(window.scrollY === maxScroll){
+            if(window.scrollY === maxScrollForButton){
                 // console.log("end")
                 setButtonState('inline')
             }
