@@ -181,7 +181,6 @@ const WinningScene: FC<WinningSceneProps> = () => {
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
             </group>
-
         </>
     )
 }
