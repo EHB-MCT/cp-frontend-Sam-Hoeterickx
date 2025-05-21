@@ -1,27 +1,29 @@
 import { FC } from "react";
 import { usePreload } from "./PreLoadProvider";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 //CSS 
 import styles from './preloader.module.scss'
 
-
 export const Preloader: FC = () => {
     const { progress, isLoaded } = usePreload();
-
+    
     return (
-       
-        <div className={clsx(styles.preloader, { [styles.hidden]: isLoaded })}>
-        <div className={clsx(styles['content'])}>
-            <h2>Loading "The Wolf and the Three Little Pigs"</h2>
-            <div className={clsx(styles['progressBar'])}>
+        <div className={`${styles.preloader} ${isLoaded ? styles.hidden : ''}`}>
+            <div className={styles.content}>
+                <h2>Loading "The Wolf and the Three Little Pigs"</h2>
+                <div className={styles.progressBar}>
                 <div 
-                    className={clsx(styles['progressFill'])} 
+                    className={styles.progressFill} 
                     style={{ width: `${progress}%` }}
-                ></div>
+                />
+                </div>
+                <p>{Math.round(progress)}% loaded</p>
+                
+                <div className={styles.loadingHint}>
+                <p>Once upon a time, there were three little pigs...</p>
+                </div>
             </div>
-            <p>{Math.round(progress)}%</p>
         </div>
-    </div>
-    )
-}
+    );
+  };

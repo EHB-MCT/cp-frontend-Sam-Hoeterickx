@@ -29,8 +29,10 @@ export const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentS
         setIsFlashing(true)
         setTimeout(() => {
             setCurrentScene("houseSelection");
+        }, 500)
+        setTimeout(() => {
             setIsFlashing(false)
-        }, 1000);
+        }, 1500);
     }
 
     useEffect(() => {

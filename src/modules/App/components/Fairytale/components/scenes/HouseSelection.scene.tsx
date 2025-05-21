@@ -105,19 +105,21 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
 
     const selectPig = () => {
         setIsFlashing(true)
+        let pig: string;
+        if (angleIndex === 0) {
+            pig = "straw";
+        } else if (angleIndex === 1) {
+            pig = "stone";
+        } else {
+            pig = "wooden";
+        }
+        setSelectedPig(pig);
         setTimeout(() => {
-            let pig: string;
-            if (angleIndex === 0) {
-                pig = "straw";
-            } else if (angleIndex === 1) {
-                pig = "stone";
-            } else {
-                pig = "wooden";
-            }
-            setSelectedPig(pig);
             setCurrentScene("wolfScene");
+        }, 500)
+        setTimeout(() => {
             setIsFlashing(false)
-        }, 2000);
+        }, 1500);
     };
 
     return (
