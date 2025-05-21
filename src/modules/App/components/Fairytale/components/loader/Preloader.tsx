@@ -1,10 +1,9 @@
 import { FC } from "react";
+import { motion } from "framer-motion";
 import { usePreload } from "./PreLoadProvider";
-// import clsx from "clsx";
 
 //CSS 
 import styles from './preloader.module.scss'
-import { motion } from "framer-motion";
 
 export const Preloader: FC = () => {
     const { progress, isLoaded } = usePreload();
