@@ -18,7 +18,7 @@ interface WolfHouseSceneProps {
     setIsFlashing:  (flash: boolean) => void;
 }
 
-const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
+export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
     const [wolfPosition, setWolfPosition] = useState({ x: -10, z: -5 });
     const [isPigJumping, setIsPigJumping] = useState<boolean>(false);
     const [buttonState, setButtonState] = useState<string>("hidden");
@@ -231,5 +231,3 @@ const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurrentScene,
         </>
     );
 };
-
-export default WolfHouseScene

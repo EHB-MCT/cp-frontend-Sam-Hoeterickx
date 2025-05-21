@@ -20,7 +20,7 @@ interface BrokenHouseType {
     setIsFlashing:  (flash: boolean) => void;
 }
 
-const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
+export const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentScene, setIsFlashing }) => {
 
     const wolfRef = useRef<THREE.Group>(null);
     console.log(selectedPig)
@@ -132,5 +132,3 @@ const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentScene, s
         </>
     )
 }
-
-export default BrokenHouseScene
