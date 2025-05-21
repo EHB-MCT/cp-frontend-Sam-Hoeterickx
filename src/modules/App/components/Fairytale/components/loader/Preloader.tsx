@@ -4,6 +4,7 @@ import { usePreload } from "./PreLoadProvider";
 
 //CSS 
 import styles from './preloader.module.scss'
+import { motion } from "framer-motion";
 
 export const Preloader: FC = () => {
     const { progress, isLoaded } = usePreload();
@@ -24,6 +25,14 @@ export const Preloader: FC = () => {
                 <div className={styles.loadingHint}>
                  <p>Once upon a time, there were three little pigs...</p>
                 </div>
+
+                <motion.div 
+                    className={styles.wolfImageWrapper}
+                    initial={{ y: 800 }}
+                    animate={{ y: 0}}
+                >
+                    <img src="./images/fairytale/Wolf_cutout.png" alt="image of the wolf" />
+                </motion.div>
             </div>
         </div>
     );
