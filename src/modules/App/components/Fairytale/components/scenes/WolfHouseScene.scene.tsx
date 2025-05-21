@@ -88,6 +88,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
                 // console.log("end")
                 setButtonState('inline')
             }
+            console.log(window.scrollY, maxScroll)
         };
         
         window.addEventListener("scroll", handleScroll);
