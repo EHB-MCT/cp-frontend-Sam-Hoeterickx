@@ -8,8 +8,9 @@ import { useThree } from "@react-three/fiber";
 import { HouseAndPig } from "../HouseAndPig.tsx";
 
 //Models
-import { Tree } from "../models/Tree.model.tsx";
 import { Hill } from "../models/Hill.model.tsx";
+import { Tree } from "../models/Tree.model.tsx";
+import { Wolf } from "../models/Wolf.model.tsx";
 
 
 //Css
@@ -136,6 +137,12 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     pigScale={ 0.5 }
                     pigPosition={ [3.3, -1, -4] }
                 />
+
+                <Wolf
+                    scale={ 0.75 }
+                    position={[ -25, 0, -40 ]}
+                    rotation={ [0, Math.PI * 0.3, 0] }
+                /> 
 
                 {/* Floor */}
                 <mesh

@@ -14,9 +14,9 @@ const BrokenHouseScene = lazy(() => import('../components/scenes/BrokenHouse.sce
 const WinningScene = lazy(() => import('../components/scenes/WinningScene.scene'))
 
 // PreLoaders
-import { AssetPreloader } from '../AssetPreloader';
-import { Preloader } from '../Preloader';
-import { PreloadProvider, usePreload } from '../PreLoadProvider';
+import { AssetPreloader } from '../components/loader/AssetPreloader';
+import { Preloader } from '../components/loader/Preloader';
+import { PreloadProvider, usePreload } from '../components/loader/PreLoadProvider';
 
 // CSS
 import styles from './fairytale.module.scss';

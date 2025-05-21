@@ -19,10 +19,10 @@ export const Preloader: FC = () => {
                     style={{ width: `${progress}%` }}
                 />
                 </div>
-                <p>{Math.round(progress)}% loaded</p>
+                <h2>{Math.round(progress)}%</h2>
                 
                 <div className={styles.loadingHint}>
-                <p>Once upon a time, there were three little pigs...</p>
+                 <p>Once upon a time, there were three little pigs...</p>
                 </div>
             </div>
         </div>
