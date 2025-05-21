@@ -1,7 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import clsx from 'clsx';
-// import { Perf } from 'r3f-perf'
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // Components
 import { AnimatedText } from '../components/AnimatedText';

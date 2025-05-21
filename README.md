@@ -38,6 +38,7 @@ To run this project locally, follow these steps:
 - [GSAP Animation documentation](https://gsap.com/docs/v3/GSAP/)
 - [React lazy loading](https://react.dev/reference/react/lazy)
 - [Chat GPT, how to optimize my fairytale](https://chatgpt.com/share/682ae8c3-5fac-8004-bbf0-0a68bbb8390e)
+- [Claude AI, smooth scene rendering](https://claude.ai/chat/76c54e79-2351-4ce0-8bc0-145f2aea7ce8)
 
 ### Github pages
 - [Get github pages live, Chat GPT (Wout van Impe](https://chatgpt.com/share/682b3eeb-8054-8003-ab2b-8ca273860191)
