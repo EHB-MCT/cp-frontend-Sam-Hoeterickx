@@ -85,7 +85,7 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
             
             lastScrollPosition = window.scrollY;
 
-            if(window.scrollY === maxScrollForButton){
+            if(window.scrollY >= maxScrollForButton){
                 // console.log("end")
                 setButtonState('inline')
             }
