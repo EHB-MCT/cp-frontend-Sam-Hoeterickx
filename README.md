@@ -1,3 +1,5 @@
+![Three Little Pigs and the Wolf](https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/images/fairytale/Banner_image.png)
+
 # 3 biggetjes en de wolf
 
 ## Up and Running
