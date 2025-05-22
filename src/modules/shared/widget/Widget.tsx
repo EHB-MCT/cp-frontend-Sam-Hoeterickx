@@ -8,7 +8,9 @@ import { WidgetType } from "~shared/const/Types/WidgetType"
     return (
         <div className="widget" id={ id }>
             <div className="widget--image-wrapper">
-                <img src={image} alt={`picture of fairytale: ${title}`} />
+                {
+                    image !== '' ? (<img src={image} alt={`picture of fairytale: ${title}`} />) : <img src="https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/images/temp_images/temp-image.jpg" alt={`picture of fairytale: ${title}`} />
+                }
             </div>
             <div className="widget--info">
                 <div className="widget--info--wrapper">

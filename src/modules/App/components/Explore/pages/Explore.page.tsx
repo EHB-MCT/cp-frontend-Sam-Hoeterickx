@@ -36,7 +36,7 @@ export const Explore: FC = () => {
 
         if (searchQuery) {
             filtered = filtered.filter((fairyTale) =>
-                fairyTale.student.toLowerCase().includes(searchQuery)
+                fairyTale.nameStudent.toLowerCase().includes(searchQuery)
             );
         }
 
@@ -66,29 +66,34 @@ export const Explore: FC = () => {
                             >ALL</button>
                             <button
                                 className={clsx(styles["story-section--filter-wrapper--filter-button"])}
-                                value={"adventure"}
+                                value={"avontuur"}
                                 onClick={handleFilter}
-                            >ADVENTURE</button>
+                            >Avontuur</button>
                             <button
                                 className={clsx(styles["story-section--filter-wrapper--filter-button"])}
-                                value={"sea"}
+                                value={"horror"}
                                 onClick={handleFilter}
-                            >SEA</button>
+                            >Horror</button>
                             <button
                                 className={clsx(styles["story-section--filter-wrapper--filter-button"])}
-                                value={"sea"}
+                                value={"fantasie"}
                                 onClick={handleFilter}
-                            >Genre 3</button>
+                            >Fantasie</button>
                             <button
                                 className={clsx(styles["story-section--filter-wrapper--filter-button"])}
-                                value={"sea"}
+                                value={"mythologie"}
                                 onClick={handleFilter}
-                            >Genre 4</button>
+                            >Mythologie</button>
                             <button
                                 className={clsx(styles["story-section--filter-wrapper--filter-button"])}
-                                value={"sea"}
+                                value={"dierenverhaal"}
                                 onClick={handleFilter}
-                            >Genre 5</button>
+                            >Dierenverhaal</button>
+                             <button
+                                className={clsx(styles["story-section--filter-wrapper--filter-button"])}
+                                value={"romantiek"}
+                                onClick={handleFilter}
+                            >Romantiek</button>
                         </div>
                         <div className="widget-wrapper">
                             {filteredFairyTales && filteredFairyTales.length > 0 ? (
@@ -96,10 +101,10 @@ export const Explore: FC = () => {
                                     <Widget
                                         key={fairyTale.id}
                                         id={fairyTale.id}
-                                        title={fairyTale.title}
+                                        title={fairyTale.fairytale}
                                         theme={fairyTale.genre}
-                                        image={fairyTale.images.thumbnail}
-                                        student={fairyTale.student}
+                                        image={fairyTale.imgThumbnail}
+                                        student={fairyTale.nameStudent}
                                     />
                                 ))
                             ) : (

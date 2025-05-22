@@ -24,10 +24,10 @@ export const Trending:FC<TrendingProps> = ( data ) => {
                             <LargeWidget
                                 key={ fairytale.id }
                                 id={ fairytale.id }
-                                title={ fairytale.title }
+                                title={ fairytale.fairytale }
                                 theme={ fairytale.genre }
-                                student={ fairytale.student }
-                                image={ fairytale.images.thumbnail }
+                                student={ fairytale.nameStudent }
+                                image={ fairytale.imgThumbnail }
                             />
                         )
                     })}

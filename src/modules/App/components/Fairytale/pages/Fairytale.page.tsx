@@ -164,6 +164,9 @@ export const FairytaleContent = () => {
                 </div>
                 
             </div>
+            <audio 
+                src='./audio/Up_maried_life.mp3' 
+            />
         </>
     )
 }
@@ -211,12 +214,6 @@ export const Fairytale = () => {
                                 setCurrentScene={() => {}}
                                 setIsFlashing={() => {}}  
                             />
-                            {/* <BrokenHouseScene 
-                                selectedPig={null}
-                                setCurrentScene={() => {}}
-                                setIsFlashing={() => {}}  
-                            />
-                            <WinningScene /> */}
                         </group>
                     </Suspense>
                 </Canvas>

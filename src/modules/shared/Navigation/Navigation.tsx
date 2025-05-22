@@ -21,7 +21,7 @@ export const Navigation = () => {
         <NavLink to={HOME_ROUTE.path}><img className={clsx(styles["navigation--logo"])} src="./images/logo/Logo_cp_front-end.svg" alt="Logo" /></NavLink>
         <div className={clsx(styles["navigation--links"])}>
           <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to={EXPLORE_ROUTE.path}>EXPLORE</NavLink>
-          <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to="/making-of/2" > MAKING OF</NavLink>
+          <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to="/making-of/sam-hoeterickx-de-wolf-en-de-3-biggetjes" > MAKING OF</NavLink>
           <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to={ABOUT_US_ROUTE.path}>ABOUT US</NavLink>
           <NavLink className={({ isActive }) => clsx({ [styles.active]: isActive })} to={FAIRY_TALE_ROUTE.path}>FAIRYTALE</NavLink>
           <SearchBar />

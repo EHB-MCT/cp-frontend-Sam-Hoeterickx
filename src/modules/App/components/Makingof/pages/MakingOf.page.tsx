@@ -8,6 +8,8 @@ import { useFairyTaleData } from "~shared/const/hooks/getFairyTaleData.hook";
 //Css 
 import styles from "./makingOf.module.scss";
 
+// ...existing imports...
+
 export const MakingOf = () => {
     
     document.body.classList.add('main');
@@ -19,25 +21,28 @@ export const MakingOf = () => {
 
     const makingOfData = fairyTales?.filter((fairytale) => fairytale.id === id) || [];
 
-    const student = makingOfData[0]?.student;
+    const student = makingOfData[0]?.nameStudent;
     document.title = `Making of ${student} | Er was eens...`;
-
 
     const [descriptionState, setDescriptionState] = useState<boolean>(false);
     const [pageStyling, setPageStyling] = useState<string>("");
-    const [description, setDescription] = useState<string>(`<strong>Verhaal</strong> <br> ${makingOfData[0]?.description.verhaal}`);
+    const [description, setDescription] = useState<string>(makingOfData[0]?.description || "");
     const [buttonText, setButtonText] = useState<string>("Lees meer");
 
     useEffect(() => {
-        const story = makingOfData[0]?.description.verhaal;
-        const effect = makingOfData[0]?.description.parallax_effect;
-    
+        const fullDescription = makingOfData[0]?.description || "";
+        
         if (descriptionState) {
-            setDescription(`<strong>Verhaal</strong> <br> ${story} <br><br> <strong>Parallax Effect</strong> <br> ${effect}`);
+            setDescription(fullDescription);
             setButtonText("Lees minder");
             setPageStyling("full-description"); 
         } else {
-            setDescription(`<strong>Verhaal</strong> <br> ${story}`);
+            
+            const shortDiscription = fullDescription.length > 600 
+                ? fullDescription.substring(0, 600) + "..." 
+                : fullDescription;
+            
+            setDescription(shortDiscription);
             setButtonText("Lees meer");
             setPageStyling("");
         }
@@ -56,13 +61,13 @@ export const MakingOf = () => {
                     <h1>Making Of</h1>
                     <div className="banner-wrapper">
                         <img
-                            src={`${makingOfData[0]?.images.main_image}`}
+                            src={makingOfData[0]?.imgBanner}
                             alt="banner image of fairytale"
                             className={clsx(styles["banner-wrapper--image"])}
                         />
                         <div className={clsx(styles["banner-wrapper--fairytale-info-wrapper"])}>
-                            <h3>{makingOfData[0]?.title}</h3>
-                            <p>{makingOfData[0]?.student}</p>
+                            <h3>{makingOfData[0]?.fairytale}</h3>
+                            <p>{makingOfData[0]?.nameStudent}</p>
                         </div>
                     </div>
 
@@ -74,24 +79,28 @@ export const MakingOf = () => {
                                 </div>
                                 <div className={clsx(styles["making-of-wrapper--info-wrapper--info"])}>
                                     <h4>Auteur</h4>
-                                    <p>{ makingOfData[0]?.storyFrom }</p>
-                                    <p>{ makingOfData[0]?.genre }</p>
+                                    <p>{makingOfData[0]?.storyFrom}</p>
+                                    <p>{makingOfData[0]?.genre}</p>
                                 </div>
                                 <div className="button-wrapper">
                                     <button
                                         className="button"
-                                        onClick={ toggleDescriptionState }
-                                    >{ buttonText } </button>
+                                        onClick={toggleDescriptionState}
+                                    >{buttonText}</button>
                                 </div>
                             </div>
                             <div className={clsx(styles["making-of-wrapper--spacer"])}></div>
                             <div className={clsx(styles["making-of-wrapper--image-wrapper"])}>
                                 <img
                                     className={clsx(styles["making-of-wrapper--image-wrapper--image"])}
-                                    src={`${makingOfData[0]?.images.thumbnail}`}
+                                    src={makingOfData[0]?.imgThumbnail}
                                     alt="making of image"
                                 />
-                                <a href={makingOfData[0]?.fairytaleLink} target="_blank" className="secundary-button" >View website</a>
+                                {makingOfData[0]?.fairytaleLink && (
+                                    <a href={makingOfData[0]?.fairytaleLink} target="_blank" className="secundary-button">
+                                        View website
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </section>
@@ -99,17 +108,21 @@ export const MakingOf = () => {
                     <section className={clsx(styles["extra-info"])}>
                         <h1>Extra informatie</h1>
                         <div className={clsx(styles["extra-info-image-wrapper"])}>
-                            {makingOfData[0]?.images.gallery.map((image: { [key: string]: string }, index: number) => (
-                                <img
-                                    key={index}
-                                    src={`${image[`extra_image_${index + 1}`]}`}
-                                    alt={`extra image ${index + 1}`}
-                                />
-                            ))}
+                            {makingOfData[0]?.imgsExtra
+                                .slice(0, 3)
+                                .map((imageUrl: string, index: number) => (
+                                    imageUrl !== '' ? (
+                                        <img
+                                            key={index}
+                                            src={imageUrl}
+                                            alt={`extra image ${index + 1}`}
+                                        />
+                                    ) : (
+                                        <p key={index}>Image not found</p>
+                                    )
+                                ))}
                         </div>
-                        <p>
-                        Deze illustratie heb ik gemaakt met behulp van Adobe Firefly. Ik vond deze stijl heel passend bij de sfeer van klassieke sprookjes, zoals het verhaal van Duimelintje. Het zachte kleurgebruik, de dromerige details en de magische uitstraling van het kleine elfje sluiten perfect aan bij die betoverende wereld vol wonderlijke wezentjes en kleine avonturen.
-                        </p>
+
                     </section>
                 </>
             )}

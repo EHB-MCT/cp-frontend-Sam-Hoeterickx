@@ -1,12 +1,11 @@
-//Components
-import { Trending } from "~shared/Trending/Trending";
-import { Widget } from "~shared/widget";
 import { FC } from "react";
+
+//Components
+import { StorySection } from "~modules/shared/StorySection";
+import { Trending } from "~shared/Trending/Trending";
 
 //Hooks
 import { useFairyTaleData } from '~shared/const/hooks/getFairyTaleData.hook'
-
-//Types
 
 export const Home: FC = () => {
     document.title = "Explore | Er was eens...";
@@ -22,25 +21,9 @@ export const Home: FC = () => {
                 <>
                     <Trending data={fairyTales || []} />
 
-                    <section className="story-section">
-                        <h2>Storys</h2>
-                        <div className="widget-wrapper">
-                            {fairyTales && fairyTales.length > 0 ? (
-                                fairyTales.map((fairytale) => (
-                                    <Widget
-                                        key={fairytale.id}
-                                        id={fairytale.id}
-                                        title={fairytale.title}
-                                        theme={fairytale.genre}
-                                        image={fairytale.images.thumbnail}
-                                        student={fairytale.student}
-                                    />
-                                ))
-                            ) : (
-                                <p>No fairy tales available.</p> 
-                            )}
-                        </div>
-                    </section>
+                    <StorySection
+                        fairyTales={ fairyTales || [] }
+                    />
                 </>
             )}
         </div>
