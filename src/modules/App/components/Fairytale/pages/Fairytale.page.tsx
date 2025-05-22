@@ -99,7 +99,7 @@ export const FairytaleContent = () => {
 
                 <div className={clsx(styles["scene"])}>
                     <Canvas id='canvas'>
-                        <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure."} />
+                        <AnimatedText Text={"Now that the skies have cleared, The three little pigs set off on their own adventure"} />
                     </Canvas>
                 </div>
 
