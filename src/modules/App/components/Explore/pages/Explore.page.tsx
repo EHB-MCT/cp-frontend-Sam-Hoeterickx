@@ -36,7 +36,7 @@ export const Explore: FC = () => {
 
         if (searchQuery) {
             filtered = filtered.filter((fairyTale) =>
-                fairyTale.nameStudent.toLowerCase().includes(searchQuery)
+                fairyTale.nameStudent.toLowerCase().includes(searchQuery) || fairyTale.fairytale.toLowerCase().includes(searchQuery)
             );
         }
 
