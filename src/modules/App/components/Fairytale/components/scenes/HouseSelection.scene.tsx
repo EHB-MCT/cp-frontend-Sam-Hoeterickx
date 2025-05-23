@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import gsap from "gsap";
-import { Html } from "@react-three/drei";
+import { Html, OrbitControls } from "@react-three/drei";
 import { useEffect, useState } from "react";
 import { useThree } from "@react-three/fiber";
 
@@ -98,19 +98,21 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
         }, 1500);
     };
 
-    const moveCameraToWolfHouse = () => {
-        setViewWolfHouseState(true)
-        const wolfHousePosition: [number, number, number] = [-36, 2, -45];
-        console.log("click house");
-    
+        const moveCameraToWolfHouse = () => {
+        setViewWolfHouseState(true);
+
+        const cameraStopPosition: [number, number, number] = [ -35, -.5, -50 ];        
+        const lookAtPoint: [number, number, number] = [-33, 0, -47];
+        
         gsap.to(camera.position, {
             duration: 2,
-            x: wolfHousePosition[0],
-            y: wolfHousePosition[1],
-            z: wolfHousePosition[2],
+            x: cameraStopPosition[0],
+            y: cameraStopPosition[1],
+            z: cameraStopPosition[2],
+            ease: "power2.inOut",
             onUpdate: () => {
-                camera.lookAt(-36, 0, -50);
-            }
+                camera.lookAt(...lookAtPoint);
+            },
         });
     };
 
@@ -168,13 +170,6 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     pigPosition={ [3.3, -1, -4] }
                 />
 
-                {/* Wolf */}
-                <ModelLoader
-                    path={ "./models/Wolfie_Joy_0512115612_texture.glb" }
-                    scale={ 0.75 }
-                    position={[ -25, 0, -40 ]}
-                    rotation={ [0, Math.PI * 0.3, 0] }
-                /> 
 
                 {/* Floor */}
                 <mesh
@@ -215,13 +210,23 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
             </group>
 
             {/* Wolfs House */}
-            <group position={[ -33, -.5, -47 ]} rotation={[ 0,0, 0 ]}>
+            <group position={[ -34, -.5, -47 ]} rotation={[ 0,0, 0 ]}>
                 <ModelLoader
                     path={ "./models/wolf_house.glb" }
                     scale={ 1 }
                     position={[ 0, 0, 0 ]}
                     rotation={[ 0, - Math.PI * .9, 0 ]}
                 />
+
+                {/* Wolf */}
+                <ModelLoader
+                    path={ "./models/Wolfie_Joy_0512115612_texture.glb" }
+                    scale={ 0.5 }
+                    position={[ 1.5, -0.51, -1 ]}
+                    rotation={ [0, - Math.PI * 0.7, 0] }
+                /> 
+                {/* <OrbitControls /> */}
+
                 
                 <mesh 
                     onClick={(e) => {
@@ -388,6 +393,8 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
             </group>
+
+            {/* <OrbitControls /> */}
         </>
     );
 };
