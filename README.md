@@ -3,6 +3,8 @@
 # The Three Little Pigs and the Wolf – Interactive Fairytale
 An interactive web-based story experience of “The Three Little Pigs”, built with modern web technologies including React, React Three Fiber, Framer Motion, and GSAP. This project blends storytelling with immersive 3D visuals to create a playful and engaging web experience.
 
+Link to website: https://ehb-mct.github.io/cp-frontend-Sam-Hoeterickx/#/fairy-tale
+
 <br>
 
 ## Up and Running
