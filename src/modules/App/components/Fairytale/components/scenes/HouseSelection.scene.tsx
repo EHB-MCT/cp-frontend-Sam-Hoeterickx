@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import gsap from "gsap";
-import { Html, OrbitControls } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import { useEffect, useState } from "react";
 import { useThree } from "@react-three/fiber";
 
@@ -23,10 +23,12 @@ interface HouseSelectionProps {
     setSelectedPig: (pig: string) => void;
     setCurrentScene: (scene: string) => void;
     setIsFlashing: (flash: boolean) => void;
+    setLightIntensity: (lightIntensity: number) => void;
+    setBackgroundColor: (backgroundColor: string) => void;
 }
 
 
-export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene, setIsFlashing }) => {
+export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene, setIsFlashing, setLightIntensity, setBackgroundColor }) => {
     const center: [number, number, number] = [0, 0, -3];
     const radius = 6;
     const cameraHeight = 0.3;
@@ -98,11 +100,15 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
         }, 1500);
     };
 
-        const moveCameraToWolfHouse = () => {
+    const moveCameraToWolfHouse = () => {
         setViewWolfHouseState(true);
 
         const cameraStopPosition: [number, number, number] = [ -35, -.5, -50 ];        
         const lookAtPoint: [number, number, number] = [-33, 0, -47];
+
+        setLightIntensity(0
+        )
+        setBackgroundColor("#1b2d3f")
         
         gsap.to(camera.position, {
             duration: 2,
@@ -225,9 +231,7 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     position={[ 1.5, -0.51, -1 ]}
                     rotation={ [0, - Math.PI * 0.7, 0] }
                 /> 
-                {/* <OrbitControls /> */}
 
-                
                 <mesh 
                     onClick={(e) => {
                         e.stopPropagation();

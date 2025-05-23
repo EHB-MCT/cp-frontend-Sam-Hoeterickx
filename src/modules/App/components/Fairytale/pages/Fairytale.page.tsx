@@ -34,6 +34,8 @@ export const FairytaleContent = () => {
     const [selectedPig, setSelectedPig] = useState<string | null>(null);
     const [currentScene, setCurrentScene] = useState<string>('houseSelection');
     const [isFlashing, setIsFlashing] = useState<boolean>(false);
+    const [lightIntensity, setLightIntensity] = useState<number>(1.5);
+    const [backgroundColor, setBackgroundColor] = useState<string>("linear-gradient(180deg, #0654ab 0%, #00d4ff 80%)")
 
     // Mouse parallax effect 
     useEffect(() => {
@@ -83,10 +85,13 @@ export const FairytaleContent = () => {
                 styles["flash-overlay"],
                 isFlashing && styles["active"]
             )} />
-                <div className={clsx(
-                    styles['scroll-wrapper'],
-                    currentScene === 'wolfScene' && styles['no-snap-scroll']
-                )}>
+                <div 
+                    className={clsx(
+                        styles['scroll-wrapper'],
+                        currentScene === 'wolfScene' && styles['no-snap-scroll']
+                    )}
+                    style={{ background: backgroundColor}}
+                >
                 <div className={clsx(`${styles['opening-scene']} ${styles.scene}`)}>
                     <Canvas id="canvas">
                         <Lights 
@@ -146,12 +151,14 @@ export const FairytaleContent = () => {
                     ) : (
                         <Canvas id='canvas'>
                             {/* <Perf position="top-left" /> */}
-                            <Lights intensity={1.5} position={[10, 10, 5]} />
+                            <Lights intensity={ lightIntensity } position={[ 10, 10, 5 ]} />
                                 <HouseSelectionScene
-                                    selectedPig={selectedPig}
-                                    setSelectedPig={setSelectedPig}
-                                    setCurrentScene={setCurrentScene}
-                                    setIsFlashing={setIsFlashing}
+                                    selectedPig={ selectedPig }
+                                    setSelectedPig={ setSelectedPig }
+                                    setCurrentScene={ setCurrentScene }
+                                    setIsFlashing={ setIsFlashing }
+                                    setLightIntensity={ setLightIntensity }
+                                    setBackgroundColor={ setBackgroundColor }
                                 />
                         </Canvas>
                     )}
