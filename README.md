@@ -58,6 +58,9 @@ To run this project locally, follow these steps:
 - [Animate using Framer motion](https://motion.dev/docs/react-use-animate)
 - [GSAP Animation documentation](https://gsap.com/docs/v3/GSAP/)
 - [Chat GPT, how to optimize my fairytale](https://chatgpt.com/share/682ae8c3-5fac-8004-bbf0-0a68bbb8390e)
+- [React onPointer events](https://legacy.reactjs.org/blog/2018/05/23/react-v-16-4.html)
+- [Chat GPT, Help with cursor not registering the whole mesh](https://chatgpt.com/share/6830d704-bbe0-8001-975b-991f24cbc37c)
+- [Event.stopPropagation - Stop the event from reaching higher-level components](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
 
 #### Preloading and Optimization
 - [Claude AI, smooth scene rendering](https://claude.ai/chat/76c54e79-2351-4ce0-8bc0-145f2aea7ce8)
@@ -72,7 +75,7 @@ To run this project locally, follow these steps:
 - [Summary](https://docs.google.com/document/d/1VYd1E3FJrZlbASwVFwzkn_31dFntZmwJ30DnFA_uWLo/edit?usp=sharing)
 
 ### Deployment
-- [Get github pages live, Chat GPT (Wout van Impe](https://chatgpt.com/share/682b3eeb-8054-8003-ab2b-8ca273860191)
+- [Get github pages live, Chat GPT (Wout van Impe)](https://chatgpt.com/share/682b3eeb-8054-8003-ab2b-8ca273860191)
 
 <br>
 
