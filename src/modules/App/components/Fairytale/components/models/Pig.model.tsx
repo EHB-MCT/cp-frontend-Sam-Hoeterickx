@@ -26,7 +26,6 @@ export const Pig: FC<PigProps> = ({ scale, position, rotation }) => {
                 receiveShadow
                 castShadow
             />
-            <meshStandardMaterial color={"red"} />
         </>
     );
 };

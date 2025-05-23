@@ -24,7 +24,6 @@ export const BrokenHouse: FC<BrokenHouseProps> = ({ path, scale, position, rotat
                 receiveShadow
                 castShadow
             />
-            <meshStandardMaterial color={"red"} />
         </>
     );
 }

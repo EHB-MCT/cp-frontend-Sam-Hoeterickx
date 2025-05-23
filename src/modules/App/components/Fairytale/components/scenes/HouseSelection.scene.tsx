@@ -12,6 +12,7 @@ import { Hill } from "../models/Hill.model.tsx";
 import { Tree } from "../models/Tree.model.tsx";
 import { Wolf } from "../models/Wolf.model.tsx";
 
+import { ModelLoader } from "../ModelLoader.tsx";
 
 //Css
 import styles from '../../pages/fairytale.module.scss'
@@ -35,22 +36,25 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
 
     const { camera } = useThree();
     const [angleIndex, setAngleIndex] = useState<number>(0);    
+    const [viewWolfHouseState, setViewWolfHouseState] = useState<boolean>(false);
 
     useEffect(() => {
-        const angle = angleIndex * angleIncrease;
-        const x = center[0] + radius * Math.sin(angle);
-        const z = center[2] + radius * Math.cos(angle);
+        if(!viewWolfHouseState){
+            const angle = angleIndex * angleIncrease;
+            const x = center[0] + radius * Math.sin(angle);
+            const z = center[2] + radius * Math.cos(angle);
 
-        gsap.to(camera.position, {
-            duration: 1.5,
-            x: x,
-            y: cameraHeight,
-            z: z,
-            onUpdate: () => {
-                camera.lookAt(...center);
-            },
-        });
-    }, [angleIndex, camera, center]);
+            gsap.to(camera.position, {
+                duration: 1.5,
+                x: x,
+                y: cameraHeight,
+                z: z,
+                onUpdate: () => {
+                    camera.lookAt(...center);
+                },
+            });
+        }
+    }, [angleIndex, camera, center, viewWolfHouseState]);
 
     const next = () => {
         setAngleIndex((previousAngle) => {
@@ -94,19 +98,45 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
         }, 1500);
     };
 
+    const moveCameraToWolfHouse = () => {
+        setViewWolfHouseState(true)
+        const wolfHousePosition: [number, number, number] = [-36, 2, -45];
+        console.log("click house");
+    
+        gsap.to(camera.position, {
+            duration: 2,
+            x: wolfHousePosition[0],
+            y: wolfHousePosition[1],
+            z: wolfHousePosition[2],
+            onUpdate: () => {
+                camera.lookAt(-36, 0, -50);
+            }
+        });
+    };
+
     return (
         <>
             <primitive object={ camera }>
                 <group position={ [0, 0, -2] }>
                     <Html className={clsx(styles["button-outer-wrapper"])} fullscreen>
                         <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
-                            <button onClick={ previous }>Previous</button>
-                            <button onClick={ selectPig }>Select</button>
-                            <button onClick={ next }>Next</button>
+                            <button onClick={ (e) => {
+                                e.stopPropagation();
+                                previous()
+                            }}>Previous</button>
+                            <button onClick={ (e) => {
+                                e.stopPropagation();
+                                selectPig()
+                            }}>Select</button>
+                            <button onClick={ (e) => {
+                                e.stopPropagation();
+                                next();
+                            }}>Next</button>
                         </div>
                     </Html>
                 </group>
             </primitive>
+
             <group name="mid of the scene">
                 {/* Left house */}
                 <HouseAndPig
@@ -138,7 +168,9 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     pigPosition={ [3.3, -1, -4] }
                 />
 
-                <Wolf
+                {/* Wolf */}
+                <ModelLoader
+                    path={ "./models/Wolfie_Joy_0512115612_texture.glb" }
                     scale={ 0.75 }
                     position={[ -25, 0, -40 ]}
                     rotation={ [0, Math.PI * 0.3, 0] }
@@ -149,154 +181,208 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     rotation={ [-Math.PI * 0.5, 0, -Math.PI * 0.2] }
                     position={ [0, -1.5, 0] }
                 >
-                    <planeGeometry args={ [100, 100] } />
+                    <planeGeometry args={ [200, 200] } />
                     <meshStandardMaterial color={ "green" } />
                 </mesh>
 
                 {/* Forest */}
-                <Tree
-                    path={ "./models/round-tree.glb" }
-                    scale={ 1.75 }
-                    position={ [0, 0.25, -3] }
-                    rotation={ [0, 0, 0] }
-                />
-                <Tree
-                    path={ "./models/tree-1.glb" }
-                    scale={ 1.3 }
-                    position={ [0, -0.25, -4.4] }
-                    rotation={ [0, 0, 0] }
-                />
-                <Tree
-                    path={ "./models/tree-1.glb" }
-                    scale={ 1.3 }
-                    position={ [1.5, -0.25, -2.2] }
-                    rotation={ [0, 0, 0] }
-                />
-                <Tree
-                    path={ "./models/tree-1.glb" }
-                    scale={ 1.3 }
-                    position={ [-1.5, -0.25, -2.2] }
-                    rotation={ [0, 0, 0] }
-                />
+                <group name="Forest">
+                    <ModelLoader
+                        path={ "./models/round-tree.glb" }
+                        scale={ 1.75 }
+                        position={ [0, 0.25, -3] }
+                        rotation={ [0, 0, 0] }
+                    />
+                    <ModelLoader
+                        path={ "./models/tree-1.glb" }
+                        scale={ 1.3 }
+                        position={ [0, -0.25, -4.4] }
+                        rotation={ [0, 0, 0] }
+                    />
+                    <ModelLoader
+                        path={ "./models/tree-1.glb" }
+                        scale={ 1.3 }
+                        position={ [1.5, -0.25, -2.2] }
+                        rotation={ [0, 0, 0] }
+                    />
+                    <ModelLoader
+                        path={ "./models/tree-1.glb" }
+                        scale={ 1.3 }
+                        position={ [-1.5, -0.25, -2.2] }
+                        rotation={ [0, 0, 0] }
+                    />
+                </group>
             </group>
-             <group name="Hills">
-                <Hill
+
+            {/* Wolfs House */}
+            <group position={[ -33, -.5, -47 ]} rotation={[ 0,0, 0 ]}>
+                <ModelLoader
+                    path={ "./models/wolf_house.glb" }
+                    scale={ 1 }
+                    position={[ 0, 0, 0 ]}
+                    rotation={[ 0, - Math.PI * .9, 0 ]}
+                />
+                
+                <mesh 
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        moveCameraToWolfHouse();
+                    }}
+                    position={[ 0, 20, 0 ]}
+                    onPointerOver={(e) => {
+                        document.body.style.cursor = 'pointer';
+                        e.stopPropagation();
+                    }}
+                    onPointerOut={() => {
+                        document.body.style.cursor = 'auto';
+                    }}
+                >
+                    <boxGeometry args={[ 20, 40, 20 ]}/>
+                    <meshBasicMaterial visible={false} />
+                </mesh>
+            </group>
+
+            <group name="Hills">
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 5 }
                     position={[ -35, 1, -25]}
                     rotation={[ 0, 0, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 7 }
                     position={[ -24, 2, -45]}
                     rotation={[ 0, Math.PI * 0.1, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 4 }
                     position={[ -18.5, .7, -55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 12 }
                     position={[ 0, 4, -100]}
                     rotation={[ 0, Math.PI * 0.4, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 8 }
                     position={[ 18.5, 2.5, -55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 10 }
                     position={[ 20, 3, -45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 8 }
                     position={[ 50, 2.25, -45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
             </group>
+
             <group name="Hills" position={[ 0, 0, 0]} rotation={[ 0, Math.PI * 2.3, 0]}>
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 5 }
                     position={[ -35, 1, 25]}
                     rotation={[ 0, 0, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 7 }
-                    position={[ -24, 2, 45]}
+                    position={[ -24, 1.8, 45]}
                     rotation={[ 0, Math.PI * 0.1, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 4 }
                     position={[ -18.5, .7, 55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 12 }
                     position={[ 0, 4, 100]}
                     rotation={[ 0, Math.PI * 0.4, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 8 }
                     position={[ 18.5, 2.5, 55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 10 }
                     position={[ 20, 3, 45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 8 }
                     position={[ 50, 2.25, 45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
             </group>
+
             <group name="Hills" position={[ 0, 0, 0]} rotation={[ 0, Math.PI * 1.7, 0]}>
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 5 }
                     position={[ -35, 1, 25]}
                     rotation={[ 0, 0, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 7 }
                     position={[ -24, 2, 45]}
                     rotation={[ 0, Math.PI * 0.1, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 4 }
                     position={[ -18.5, .7, 55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 12 }
                     position={[ 0, 4, 100]}
                     rotation={[ 0, Math.PI * 0.4, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 8 }
                     position={[ 18.5, 2.5, 55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 10 }
                     position={[ 20, 3, 45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ "./models/Hill.glb" }
                     scale={ 8 }
                     position={[ 50, 2.25, 45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}

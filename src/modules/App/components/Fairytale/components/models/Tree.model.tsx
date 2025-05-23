@@ -14,13 +14,15 @@ export const Tree: React.FC<TreeProps> = ({ scale, position, rotation, path }) =
     const gltf = useLoader(GLTFLoader, path);
 
     return (
-        <primitive
-            object={gltf.scene.clone() as Object3D}
-            scale={scale}
-            position={position}
-            rotation={rotation}
-            receiveShadow
-            castShadow
-        />
+        <>
+            <primitive
+                object={gltf.scene.clone() as Object3D}
+                scale={scale}
+                position={position}
+                rotation={rotation}
+                receiveShadow
+                castShadow
+            />
+        </>
     );
 };
