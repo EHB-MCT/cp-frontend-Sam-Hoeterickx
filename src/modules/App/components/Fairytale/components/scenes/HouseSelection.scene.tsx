@@ -6,12 +6,6 @@ import { useThree } from "@react-three/fiber";
 
 // Component
 import { HouseAndPig } from "../HouseAndPig.tsx";
-
-//Models
-import { Hill } from "../models/Hill.model.tsx";
-import { Tree } from "../models/Tree.model.tsx";
-import { Wolf } from "../models/Wolf.model.tsx";
-
 import { ModelLoader } from "../ModelLoader.tsx";
 
 //Css
@@ -106,8 +100,7 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
         const cameraStopPosition: [number, number, number] = [ -35, -.5, -50 ];        
         const lookAtPoint: [number, number, number] = [-33, 0, -47];
 
-        setLightIntensity(0
-        )
+        setLightIntensity(0)
         setBackgroundColor("#1b2d3f")
         
         gsap.to(camera.position, {
@@ -397,8 +390,6 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
             </group>
-
-            {/* <OrbitControls /> */}
         </>
     );
 };

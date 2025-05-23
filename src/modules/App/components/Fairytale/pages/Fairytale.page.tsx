@@ -215,6 +215,8 @@ export const Fairytale = () => {
                                 setSelectedPig={() => {}} 
                                 setCurrentScene={() => {}}
                                 setIsFlashing={() => {}} 
+                                setLightIntensity={ () => {} }
+                                setBackgroundColor={ () => {} }
                             />
                             <WolfHouseScene 
                                 selectedPig={null}

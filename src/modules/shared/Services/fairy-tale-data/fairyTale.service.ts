@@ -1,4 +1,3 @@
-import { DATA_MOCK } from "./data";
 import { FairyTaleType } from "./types/FairyTaleType";
 
 const URL = 'https://raw.githubusercontent.com/EHB-MCT/cp-frontend-MaximWesterbeek/refs/heads/main/course-project/public/api/fairytaleList.json'
