@@ -122,7 +122,7 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
             setTimeout(() => {
                 setLightningState(false);
             }, 250)
-        }, 900)
+        }, 500)
 
         
         gsap.to(camera.position, {
