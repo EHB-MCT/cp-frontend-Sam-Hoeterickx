@@ -33,6 +33,7 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
     const { camera } = useThree();
     const [angleIndex, setAngleIndex] = useState<number>(0);    
     const [viewWolfHouseState, setViewWolfHouseState] = useState<boolean>(false);
+    const [displayState, setDisplayState] = useState<boolean>(true)
 
     useEffect(() => {
         if(!viewWolfHouseState){
@@ -96,12 +97,13 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
 
     const moveCameraToWolfHouse = () => {
         setViewWolfHouseState(true);
+        setDisplayState(false);
 
         const cameraStopPosition: [number, number, number] = [ -35, -.5, -50 ];        
         const lookAtPoint: [number, number, number] = [-33, 0, -47];
 
-        setLightIntensity(0)
-        setBackgroundColor("#1b2d3f")
+        setLightIntensity(0);
+        setBackgroundColor("#1b2d3f");
         
         gsap.to(camera.position, {
             duration: 2,
@@ -115,25 +117,47 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
         });
     };
 
+    const moveCameraBackToPigs = () => {
+        setViewWolfHouseState(false);
+        setDisplayState(true);
+
+        setLightIntensity(1.5);
+        setBackgroundColor("linear-gradient(180deg, #0654ab 0%, #00d4ff 80%)");
+    } 
+
     return (
         <>
             <primitive object={ camera }>
                 <group position={ [0, 0, -2] }>
-                    <Html className={clsx(styles["button-outer-wrapper"])} fullscreen>
-                        <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
-                            <button onClick={ (e) => {
-                                e.stopPropagation();
-                                previous()
-                            }}>Previous</button>
-                            <button onClick={ (e) => {
-                                e.stopPropagation();
-                                selectPig()
-                            }}>Select</button>
-                            <button onClick={ (e) => {
-                                e.stopPropagation();
-                                next();
-                            }}>Next</button>
-                        </div>
+                    <Html 
+                        className={clsx(styles["button-outer-wrapper"])} 
+                        fullscreen
+                    >
+                        {
+                            displayState ? (
+                                <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
+                                    <button onClick={ (e) => {
+                                        e.stopPropagation();
+                                        previous()
+                                    }}>Previous</button>
+                                    <button onClick={ (e) => {
+                                        e.stopPropagation();
+                                        selectPig()
+                                    }}>Select</button>
+                                    <button onClick={ (e) => {
+                                        e.stopPropagation();
+                                        next();
+                                    }}>Next</button>
+                                </div>
+                            ) : (
+                                <div className={clsx(styles["button-outer-wrapper--button-wrapper"])}>
+                                    <button onClick={ (e) => {
+                                        e.stopPropagation();
+                                        moveCameraBackToPigs();
+                                    }}>Return</button>
+                                </div>
+                            )
+                        }
                     </Html>
                 </group>
             </primitive>
