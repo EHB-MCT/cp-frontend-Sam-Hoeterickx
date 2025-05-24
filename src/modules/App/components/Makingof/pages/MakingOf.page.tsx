@@ -97,7 +97,7 @@ export const MakingOf = () => {
                                     alt="making of image"
                                 />
                                 {makingOfData[0]?.fairytaleLink && (
-                                    <a href={makingOfData[0]?.fairytaleLink} target="_blank" className="secundary-button">
+                                    <a href={makingOfData[0]?.fairytaleLink} target="_blank" className="button">
                                         View website
                                     </a>
                                 )}
