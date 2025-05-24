@@ -33,7 +33,8 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
     const { camera } = useThree();
     const [angleIndex, setAngleIndex] = useState<number>(0);    
     const [viewWolfHouseState, setViewWolfHouseState] = useState<boolean>(false);
-    const [displayState, setDisplayState] = useState<boolean>(true)
+    const [spotlighVisibilityState, setSpotlighVisibilityState] = useState<boolean>(false)
+    const [displayState, setDisplayState] = useState<boolean>(true);
 
     useEffect(() => {
         if(!viewWolfHouseState){
@@ -98,11 +99,12 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
     const moveCameraToWolfHouse = () => {
         setViewWolfHouseState(true);
         setDisplayState(false);
+        setSpotlighVisibilityState(true)
 
         const cameraStopPosition: [number, number, number] = [ -35, -.5, -50 ];        
         const lookAtPoint: [number, number, number] = [-33, 0, -47];
 
-        setLightIntensity(0);
+        setLightIntensity(-0.3);
         setBackgroundColor("#1b2d3f");
         
         gsap.to(camera.position, {
@@ -120,6 +122,7 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
     const moveCameraBackToPigs = () => {
         setViewWolfHouseState(false);
         setDisplayState(true);
+        setSpotlighVisibilityState(false)
 
         setLightIntensity(1.5);
         setBackgroundColor("linear-gradient(180deg, #0654ab 0%, #00d4ff 80%)");
@@ -267,6 +270,18 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     <meshBasicMaterial visible={false} />
                 </mesh>
             </group>
+
+            <rectAreaLight
+                width={ 3 }
+                height={ 3 }
+                intensity={ 1.5 }
+                color={ "#ffee00" }
+                position={[ -36, 1, -48 ]}
+                rotation={[ Math.PI * 0.3, -Math.PI * 0.5, 0 ]}
+                lookAt={[ 0, 0, 0 ]}
+                castShadow
+                visible={ spotlighVisibilityState }
+            />
 
             <group name="Hills">
                 <ModelLoader
