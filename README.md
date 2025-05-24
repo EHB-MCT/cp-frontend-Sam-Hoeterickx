@@ -63,6 +63,7 @@ To run this project locally, follow these steps:
 - [React onPointer events](https://legacy.reactjs.org/blog/2018/05/23/react-v-16-4.html)
 - [Chat GPT, Help with cursor not registering the whole mesh](https://chatgpt.com/share/6830d704-bbe0-8001-975b-991f24cbc37c)
 - [Event.stopPropagation - Stop the event from reaching higher-level components](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
+- [HTML Audio element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio)
 
 #### Preloading and Optimization
 - [Claude AI, smooth scene rendering](https://claude.ai/chat/76c54e79-2351-4ce0-8bc0-145f2aea7ce8)

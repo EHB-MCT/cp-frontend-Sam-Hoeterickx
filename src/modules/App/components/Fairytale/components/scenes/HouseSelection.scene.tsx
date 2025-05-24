@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import gsap from "gsap";
-import { Html } from "@react-three/drei";
+import { Html, SpotLight } from "@react-three/drei";
 import { useEffect, useState } from "react";
 import { useThree } from "@react-three/fiber";
 
@@ -10,6 +10,7 @@ import { ModelLoader } from "../ModelLoader.tsx";
 
 //Css
 import styles from '../../pages/fairytale.module.scss'
+import { Lights } from "../Lights.tsx";
 
 //Type
 interface HouseSelectionProps {
@@ -29,6 +30,7 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
     const [spotlighVisibilityState, setSpotlighVisibilityState] = useState<boolean>(false)
     const [displayState, setDisplayState] = useState<boolean>(true);
     const [tensionAudio, setTensionAudio] = useState<HTMLAudioElement>(new Audio('./audio/Jaws_theme_song.mp3'));
+    const [lightingState, setLightningState] = useState<boolean>(false)
     
     const center: [number, number, number] = [0, 0, -3];
     const radius = 6;
@@ -110,11 +112,17 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
         tensionAudio.volume = 0.5;
         tensionAudio.play();
 
-        lightningAudio.play()
+        lightningAudio.play();
+
         setTimeout(() => {
-            setLightIntensity(-0.3);
             setBackgroundColor("#1b2d3f");
-        }, 500)
+            setLightningState(true);
+            setLightIntensity(-0.3);
+
+            setTimeout(() => {
+                setLightningState(false);
+            }, 250)
+        }, 900)
 
         
         gsap.to(camera.position, {
@@ -126,8 +134,11 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
             onUpdate: () => {
                 camera.lookAt(...lookAtPoint);
             },
+
         });
     };
+
+    
 
     const moveCameraBackToPigs = () => {
         setViewWolfHouseState(false);
@@ -283,18 +294,27 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
                     <meshBasicMaterial visible={false} />
                 </mesh>
             </group>
-
+                    
             <rectAreaLight
-                width={ 3 }
-                height={ 3 }
-                intensity={ 1.5 }
-                color={ "#ffee00" }
-                position={[ -36, 1, -48 ]}
-                rotation={[ Math.PI * 0.3, -Math.PI * 0.5, 0 ]}
-                lookAt={[ 0, 0, 0 ]}
+                width={3}
+                height={3}
+                intensity={lightingState ? 50 : 1.5}
+                color={lightingState ? "#ffffff" : "#ffee00"}
+                position={[-36, 1, -48]}
+                rotation={[Math.PI * 0.3, -Math.PI * 0.5, 0]}
+                lookAt={[0, 0, 0]}
                 castShadow
-                visible={ spotlighVisibilityState }
+                visible={spotlighVisibilityState}
             />
+
+            {lightingState && (
+
+                <ambientLight
+                    intensity={ 55 }
+                    color={ "#96a8b3" }
+                />
+
+            )}
 
             <group name="Hills">
                 <ModelLoader
