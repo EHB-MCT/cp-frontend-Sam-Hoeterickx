@@ -23,18 +23,19 @@ interface HouseSelectionProps {
 
 
 export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig, setSelectedPig, setCurrentScene, setIsFlashing, setLightIntensity, setBackgroundColor }) => {
+    const { camera } = useThree();
+    const [angleIndex, setAngleIndex] = useState<number>(0);    
+    const [viewWolfHouseState, setViewWolfHouseState] = useState<boolean>(false);
+    const [spotlighVisibilityState, setSpotlighVisibilityState] = useState<boolean>(false)
+    const [displayState, setDisplayState] = useState<boolean>(true);
+    const [tensionAudio, setTensionAudio] = useState<HTMLAudioElement>(new Audio('./audio/Jaws_theme_song.mp3'));
+    
     const center: [number, number, number] = [0, 0, -3];
     const radius = 6;
     const cameraHeight = 0.3;
 
     const numberOfHouses = 3;
     const angleIncrease = (2 * Math.PI) / numberOfHouses;
-
-    const { camera } = useThree();
-    const [angleIndex, setAngleIndex] = useState<number>(0);    
-    const [viewWolfHouseState, setViewWolfHouseState] = useState<boolean>(false);
-    const [spotlighVisibilityState, setSpotlighVisibilityState] = useState<boolean>(false)
-    const [displayState, setDisplayState] = useState<boolean>(true);
 
     useEffect(() => {
         if(!viewWolfHouseState){
@@ -91,21 +92,30 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
         }, 500)
         
         setTimeout(() => {
-            setIsFlashing(false)
-            console.log(selectedPig)
+            setIsFlashing(false);
+            console.log(selectedPig);
         }, 1500);
     };
 
     const moveCameraToWolfHouse = () => {
-        setViewWolfHouseState(true);
-        setDisplayState(false);
-        setSpotlighVisibilityState(true)
 
         const cameraStopPosition: [number, number, number] = [ -35, -.5, -50 ];        
         const lookAtPoint: [number, number, number] = [-33, 0, -47];
+        const lightningAudio = new Audio('./audio/Lightning.mp3');
 
-        setLightIntensity(-0.3);
-        setBackgroundColor("#1b2d3f");
+        setViewWolfHouseState(true);
+        setDisplayState(false);
+        setSpotlighVisibilityState(true);
+
+        tensionAudio.volume = 0.5;
+        tensionAudio.play();
+
+        lightningAudio.play()
+        setTimeout(() => {
+            setLightIntensity(-0.3);
+            setBackgroundColor("#1b2d3f");
+        }, 500)
+
         
         gsap.to(camera.position, {
             duration: 2,
@@ -122,7 +132,10 @@ export const HouseSelectionScene: React.FC<HouseSelectionProps> = ({ selectedPig
     const moveCameraBackToPigs = () => {
         setViewWolfHouseState(false);
         setDisplayState(true);
-        setSpotlighVisibilityState(false)
+        setSpotlighVisibilityState(false);
+
+        tensionAudio.pause();
+        setTensionAudio(new Audio('./audio/Jaws_theme_song.mp3'));
 
         setLightIntensity(1.5);
         setBackgroundColor("linear-gradient(180deg, #0654ab 0%, #00d4ff 80%)");

@@ -76,6 +76,10 @@ To run this project locally, follow these steps:
 - [React lazy loading](https://react.dev/reference/react/lazy)
 - [Summary](https://docs.google.com/document/d/1VYd1E3FJrZlbASwVFwzkn_31dFntZmwJ30DnFA_uWLo/edit?usp=sharing)
 
+### Audio
+- [Jaws theme song](https://www.youtube.com/watch?v=GfQu5po6USo)
+- [Lighting sound effect](https://pixabay.com/sound-effects/lightning-strike-27463/)
+
 ### Deployment
 - [Get github pages live, Chat GPT (Wout van Impe)](https://chatgpt.com/share/682b3eeb-8054-8003-ab2b-8ca273860191)
 
