@@ -5,13 +5,12 @@ import { Html, PerspectiveCamera } from "@react-three/drei";
 import clsx from "clsx";
 
 //Models
-import { BrokenHouse } from "../models/BrokenHouse.model";
-import { Hill } from "../models/Hill.model";
+import { ModelLoader } from "../ModelLoader";
 import { Text } from "../Text";
-import { Wolf } from "../models/Wolf.model";
 
 //Css
 import styles from '../../pages/fairytale.module.scss'
+
 
 //Type
 interface BrokenHouseType {
@@ -65,55 +64,63 @@ const BrokenHouseScene: FC<BrokenHouseType> = ({ selectedPig, setCurrentScene, s
             </mesh>
             
             <group name="Hills">
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 5 }
                     position={[ -35, 1, -25]}
                     rotation={[ 0, 0, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 7 }
                     position={[ -24, 2, -45]}
                     rotation={[ 0, Math.PI * 0.1, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 4 }
                     position={[ -18.5, .7, -55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 12 }
                     position={[ 0, 4, -100]}
                     rotation={[ 0, Math.PI * 0.4, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 8 }
                     position={[ 18.5, 2.5, -55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 10 }
                     position={[ 20, 3, -45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 8 }
                     position={[ 50, 2.25, -45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
             </group>
 
-            <BrokenHouse
+            <ModelLoader
                 path={`./models/BrokenHouse_wooden.glb`}
                 scale={ 2.5 }
                 position={[ 1, -1.1, -1 ]}
                 rotation={[ 0, Math.PI * 0.5, 0 ]}
             />
             <group ref={wolfRef} >
-                <Wolf
+                <ModelLoader
+                    path={' ./models/Wolfie_Joy_0512115612_texture.glb' }
                     scale={ 0.75 }
                     position={ [-2, -.755, 1] }
                     rotation={ [0, Math.PI * 0.2, 0] }

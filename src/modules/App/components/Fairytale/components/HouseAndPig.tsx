@@ -1,8 +1,7 @@
 import { FC } from "react";
 
 // Components
-import { Pig } from "./models/Pig.model";
-import { House } from "./models/House.model";
+import { ModelLoader } from "./ModelLoader";
 
 //Type
 interface HouseAndPigProps {
@@ -18,13 +17,14 @@ export const HouseAndPig: FC<HouseAndPigProps> = ({ path, houseScale, housePosit
 
     return (
         <>
-            <Pig 
+            <ModelLoader 
+                path={ './models/pig.glb' }
                 scale={ pigScale } 
                 position={ pigPosition } 
                 rotation={ rotation } 
             />
 
-            <House
+            <ModelLoader
                 path={ path }
                 scale={ houseScale } 
                 position={ housePosition } 

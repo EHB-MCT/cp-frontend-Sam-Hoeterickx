@@ -4,9 +4,7 @@ import gsap from "gsap"
 import { useRef, useEffect, FC } from "react"
 
 //Models
-import { Hill } from "../models/Hill.model"
-import { House } from "../models/House.model"
-import { Pig } from "../models/Pig.model"
+import { ModelLoader } from "../ModelLoader"
 import { Text } from "../Text"
 
 //Type
@@ -101,7 +99,8 @@ const WinningScene: FC<WinningSceneProps> = () => {
                 position={[ 0, -.705, 1 ]}
             >
                 <group ref={pig1Ref} position={[-1.5, 0, 0]}>
-                    <Pig 
+                    <ModelLoader
+                        path={ './models/pig.glb' } 
                         position={[0, 0, 0]} 
                         scale={.3}
                         rotation={[0, Math.PI / 8, 0]} 
@@ -109,7 +108,8 @@ const WinningScene: FC<WinningSceneProps> = () => {
                 </group>
 
                 <group ref={pig2Ref} position={[0, 0, 0]}>
-                    <Pig 
+                    <ModelLoader
+                        path={ './models/pig.glb' } 
                         position={[0, 0, 0]} 
                         scale={.3}
                         rotation={[0, 0, 0]} 
@@ -117,7 +117,8 @@ const WinningScene: FC<WinningSceneProps> = () => {
                 </group>
 
                 <group ref={pig3Ref} position={[1.5, 0, 0]}>
-                    <Pig 
+                    <ModelLoader
+                        path={ './models/pig.glb' } 
                         position={[0, 0, 0]} 
                         scale={.3}
                         rotation={[0, -Math.PI / 8, 0]} 
@@ -125,7 +126,7 @@ const WinningScene: FC<WinningSceneProps> = () => {
                 </group>
             </group>
 
-            <House
+            <ModelLoader
                 path="./models/stone_house.glb"
                 scale={ 1 }
                 position={[ 0, -0.04, 0 ]}
@@ -141,41 +142,48 @@ const WinningScene: FC<WinningSceneProps> = () => {
             </mesh>
 
             <group name="Hills">
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 5 }
                     position={[ -35, 1, -25]}
                     rotation={[ 0, 0, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 7 }
                     position={[ -24, 2, -45]}
                     rotation={[ 0, Math.PI * 0.1, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 4 }
                     position={[ -18.5, .7, -55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 12 }
                     position={[ 0, 4, -100]}
                     rotation={[ 0, Math.PI * 0.4, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 8 }
                     position={[ 18.5, 2.5, -55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 10 }
                     position={[ 20, 3, -45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 8 }
                     position={[ 50, 2.25, -45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}

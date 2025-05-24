@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 
 // Components
 import { AnimatedText} from './AnimatedText';
-import { Cloud } from './models/Cloud.model';
+import { ModelLoader } from './ModelLoader';
 
 // CSS
 import './cloudScene.module.scss';
@@ -41,7 +41,8 @@ export const CloudScene: React.FC<CloudSceneProps> = ({ mousePosition }) => {
     return (
         <>
             <AnimatedText Text="Once upon a time three little pigs lived in a house" />
-            <Cloud
+            <ModelLoader
+                path={ './models/cloud.glb' }
                 scale={ isMobile ? 0.5 : 1.5 }
                 position={[
                     isMobile ? -1.3 : -5.75 - smoothMousePosition.current.x * 0.45,
@@ -50,7 +51,8 @@ export const CloudScene: React.FC<CloudSceneProps> = ({ mousePosition }) => {
                 ]}
                 rotation={[ 0, Math.PI * 0.05, 0 ]}
             />
-            <Cloud
+            <ModelLoader
+                path={ './models/cloud.glb' }
                 scale={ 1 }
                 position={[
                     isMobile ? 2 : 5 - smoothMousePosition.current.x * 0.45,
@@ -59,21 +61,25 @@ export const CloudScene: React.FC<CloudSceneProps> = ({ mousePosition }) => {
                 ]}
                 rotation={[ 0, -Math.PI * 0.3, 0 ]}
             />
-            <Cloud
+            <ModelLoader
+                path={ './models/cloud.glb' }
                 scale={ 2 }
                 position={[
                     isMobile ? -2 : -6 - smoothMousePosition.current.x * 0.45,
                     4.5 - smoothMousePosition.current.y * 0.45,
                     -4,
                 ]}
+                rotation={[ 0, 0, 0 ]}
             />
-            <Cloud
+            <ModelLoader
+                path={ './models/cloud.glb' }
                 scale={ isMobile ? 2 : 4 }
                 position={[
                     isMobile ? 1 : 4.25 - smoothMousePosition.current.x * 0.45,
                     -5 - smoothMousePosition.current.y * 0.45,
                     -6,
                 ]}
+                rotation={[ 0, 0, 0 ]}
             />
         </>
     );

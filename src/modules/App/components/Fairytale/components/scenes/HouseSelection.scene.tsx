@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import gsap from "gsap";
-import { Html, SpotLight } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import { useEffect, useState } from "react";
 import { useThree } from "@react-three/fiber";
 
@@ -10,7 +10,6 @@ import { ModelLoader } from "../ModelLoader.tsx";
 
 //Css
 import styles from '../../pages/fairytale.module.scss'
-import { Lights } from "../Lights.tsx";
 
 //Type
 interface HouseSelectionProps {

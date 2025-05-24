@@ -4,9 +4,8 @@ import { Html, PerspectiveCamera, Text3D } from "@react-three/drei";
 import gsap from "gsap";
 
 //Models
-import { Hill } from "../models/Hill.model";
 import { HouseAndPig } from "../HouseAndPig"
-import { Wolf } from "../models/Wolf.model"
+import { ModelLoader } from "../ModelLoader";
 
 //Css 
 import styles from '../../pages/fairytale.module.scss'
@@ -130,48 +129,56 @@ export const WolfHouseScene: FC<WolfHouseSceneProps> = ({ selectedPig, setCurren
             </mesh>
             
             <group name="Hills">
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 5 }
                     position={[ -35, 1, -25]}
                     rotation={[ 0, 0, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 7 }
                     position={[ -24, 2, -45]}
                     rotation={[ 0, Math.PI * 0.1, 0 ]}
                 />
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 4 }
                     position={[ -18.5, .7, -55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 12 }
                     position={[ 0, 4, -100]}
                     rotation={[ 0, Math.PI * 0.4, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 8 }
                     position={[ 18.5, 2.5, -55]}
                     rotation={[ 0, -Math.PI * 0.7, 0 ]}
                 />
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 10 }
                     position={[ 20, 3, -45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
 
-                <Hill
+                <ModelLoader
+                    path={ './models/Hill.glb' }
                     scale={ 8 }
                     position={[ 50, 2.25, -45]}
                     rotation={[ 0, Math.PI * 0.7, 0 ]}
                 />  
             </group>
 
-            <Wolf
+            <ModelLoader
+                path={ './models/Wolfie_Joy_0512115612_texture.glb' }
                 scale={ 0.75 }
                 position={ [wolfPosition.x, wolfPositionRef.current.y, 1] }
                 rotation={ [0, Math.PI * 0.3, 0] }

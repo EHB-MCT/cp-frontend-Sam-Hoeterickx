@@ -12,7 +12,8 @@ const modelPaths = [
   './models/cloud.glb',
   './models/Hill.glb',
   './models/round-tree.glb',
-  './models/tree-1.glb'
+  './models/tree-1.glb',
+  './models/wolf_house.glb'
 ];
 
 
