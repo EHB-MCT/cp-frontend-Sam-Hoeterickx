@@ -81,7 +81,7 @@ export const MakingOf = () => {
                         <div className={clsx(styles["making-of-wrapper"], styles[pageStyling])}>
                             <div className={clsx(styles["making-of-wrapper--info-wrapper"])}>
                                 <div className={clsx(styles["making-of-wrapper--info-wrapper--info"])}>
-                                    <strong>Verhaal</strong>
+                                    <p><strong>Verhaal</strong></p>
                                     <p dangerouslySetInnerHTML={{ __html: description }}></p>
                                 </div>
                                 <div className={clsx(styles["making-of-wrapper--info-wrapper--info"])}>
