@@ -48,9 +48,11 @@ To run this project locally, follow these steps:
 - [URLSearchParams -  beheren van URL-queryparameters](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
 - [useLocation - returns current location](https://api.reactrouter.com/v7/functions/react_router.useLocation.html)
 - [React-router-dom | createHashRouter](https://reactrouter.com/6.30.0/routers/create-hash-router)
+- [State management - Tanstack query](https://tanstack.com/query/latest)
 
 ### Fairytale
 - [Three.js Jounrey](https://threejs-journey.com/#)
+- [Three.js](https://threejs.org/docs/)
 - [3D models](https://www.meshy.ai/workspace)
 - [Docs React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction)
 - [Docs DREI](https://docs.pmnd.rs/)
