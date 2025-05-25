@@ -29,20 +29,26 @@ export const MakingOf = () => {
     const [description, setDescription] = useState<string>(makingOfData[0]?.description || "");
     const [buttonText, setButtonText] = useState<string>("Lees meer");
 
-    useEffect(() => {
-        const fullDescription = makingOfData[0]?.description || "";
-        
+    useEffect(() => {       
         if (descriptionState) {
+            let fullDescription = `
+                ${makingOfData[0]?.description} 
+            `
+            if(makingOfData[0]?.parallaxInfo !== ""){
+                fullDescription = `
+                    ${makingOfData[0]?.description} 
+                    <br> 
+                    <br> 
+                    <strong>Parallax info</strong>  
+                    <br>
+                    ${makingOfData[0]?.parallaxInfo}
+                `
+            }
             setDescription(fullDescription);
             setButtonText("Lees minder");
             setPageStyling("full-description"); 
         } else {
-            
-            const shortDiscription = fullDescription.length > 600 
-                ? fullDescription.substring(0, 600) + "..." 
-                : fullDescription;
-            
-            setDescription(shortDiscription);
+            setDescription(makingOfData[0]?.description);
             setButtonText("Lees meer");
             setPageStyling("");
         }
@@ -75,11 +81,12 @@ export const MakingOf = () => {
                         <div className={clsx(styles["making-of-wrapper"], styles[pageStyling])}>
                             <div className={clsx(styles["making-of-wrapper--info-wrapper"])}>
                                 <div className={clsx(styles["making-of-wrapper--info-wrapper--info"])}>
+                                    <strong>Verhaal</strong>
                                     <p dangerouslySetInnerHTML={{ __html: description }}></p>
                                 </div>
                                 <div className={clsx(styles["making-of-wrapper--info-wrapper--info"])}>
                                     <h4>Auteur</h4>
-                                    <p>{makingOfData[0]?.storyFrom}</p>
+                                    <p>{makingOfData[0]?.fairytaleAuthor}</p>
                                     <p>{makingOfData[0]?.genre}</p>
                                 </div>
                                 <div className="button-wrapper">
@@ -120,8 +127,10 @@ export const MakingOf = () => {
                                     ) : (
                                         <p key={index}>Image not found</p>
                                     )
-                                ))}
+                                ))
+                            }
                         </div>
+                        <p>{ makingOfData[0]?.imgsInfo }</p>
 
                     </section>
                 </>
